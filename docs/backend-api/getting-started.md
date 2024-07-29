@@ -6,7 +6,7 @@ description: Overview of Navixy Backend API
 # Navixy Backend API
 
 
-## General
+## General!
 
 Each API resource semantically corresponds to some entity, for example: 
 geofences, rules, objects, etc. The API calls for CRUD and other operations 
