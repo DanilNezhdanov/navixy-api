@@ -12,7 +12,6 @@ with trackers, configs, tasks, sending them into your Telegram bot, etc.
 Apps can be mobile or web-based. In each case, you need to subscribe it for push notifications differently. Let's examine
 each of these cases separately.
 
-***
 
 ## Mobile apps
 
@@ -27,7 +26,6 @@ To get push notifications on mobile devices, you need get app's push token. It m
 4. Get the push token of your app from Google Play Market or App Store.
 5. Then use the [push_token/bind](../resources/commons/user/session/push_token.md#bind) API call from your app. Substitute the push token and received from our support team application ID into it.
 
-***
 
 ## Web apps
 

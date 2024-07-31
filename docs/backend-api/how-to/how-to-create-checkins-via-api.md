@@ -19,7 +19,6 @@ In the X-GPS Tracker, form files are created when they are added when the form i
 Step 4. Create a check-in itself with [checkin/create](../resources/field_service/checkin.md#create) API call, where all the data is attached.
 If the form includes optional fields that should be left empty for your check-in, simply refrain from adding these fields to the form submission object.
 
-***
 
 ## File upload process
 

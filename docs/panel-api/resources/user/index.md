@@ -7,7 +7,6 @@ description: API calls on work with users in the admin panel.
 
 API calls on work with users in the admin panel.
 
-***
 
 ## User object structure
 
@@ -78,7 +77,6 @@ Next fields are read-only, they should not be used in `user/update` and `user/cr
 * `trackers_count` - user trackers count.
 * `comment` - comment about user (when creating and editing, the field must be separate from this object).
 
-***
 
 ## Discount object structure
 
@@ -96,26 +94,25 @@ Next fields are read-only, they should not be used in `user/update` and `user/cr
 * `end_date` - [date/time](../../../backend-api/getting-started.md#data-types). Discount end date, null means open date, nullable.
 * `strategy` - [enum](../../../backend-api/getting-started.md#data-types). One of "no_summing", "sum_with_progressive".\
 
-***
 
 ## API actions
 
 API path: `panel/user`.
 
-### change_password
+### `change_password`
 
 Changes password of a user.
 
 *required permissions*: `users: "update"`.
 
-#### parameters
+#### Parameters
 
 | name     | description                                        | type   |
 |:---------|:---------------------------------------------------|:-------|
 | user_id  | ID of a user.                                      | int    |
 | password | User's new password, 6 to 20 printable characters. | string |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -125,7 +122,7 @@ Changes password of a user.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "user_id": 231432, "password": "12@14Y$"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -133,19 +130,18 @@ Changes password of a user.
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if specified user does not exist or belongs to different dealer.
 
-***
 
-### corrupt
+### `corrupt`
 
 Marks user and its sub users and trackers as deleted and corrupt all user trackers.
 
 *required permissions*: `users: "corrupt"`.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                       | type    |
 |:---------------|:----------------------------------------------------------------------------------|:--------|
@@ -153,7 +149,7 @@ Marks user and its sub users and trackers as deleted and corrupt all user tracke
 | login          | Login of a user. Login parameter must match user login.                           | string  |
 | corrupt_clones | Optional. Default is `true`. Remove clones of the user's trackers for other users | boolean |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -163,7 +159,7 @@ Marks user and its sub users and trackers as deleted and corrupt all user tracke
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "user_id": 231432, "login": "user@login.com"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -171,7 +167,7 @@ Marks user and its sub users and trackers as deleted and corrupt all user tracke
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if a user not found.
 * 252 – Device already corrupted - if some of user's tracker already corrupted.
@@ -187,9 +183,8 @@ Marks user and its sub users and trackers as deleted and corrupt all user tracke
 }
 ```
 
-***
 
-### create
+### `create`
 
 Creates a new user.
 
@@ -197,7 +192,7 @@ Creates a new user.
 
 * `users: "global"` - Optional. Allows creating users of users, not only owned by a current dealer (use `user.dealer_id` parameter for other owners).
 
-#### parameters
+#### Parameters
 
 | name              | description                                                                                          | type                                              |
 |:------------------|:-----------------------------------------------------------------------------------------------------|:--------------------------------------------------|
@@ -211,7 +206,7 @@ Creates a new user.
 
 If `user.verified` not passed then it set equal to `user.activated`.
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -221,7 +216,7 @@ If `user.verified` not passed then it set equal to `user.activated`.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "user": {"activated": true, "verified": true, "login": "user@test.com", "first_name": "John", "middle_name": "William", "last_name": "Smith", "legal_name": "E. Biasi GmbH", "legal_type": "legal_entity", "phone": "491761234567", "post_country": "Germany", "post_index": "61169", "post_region": "Hessen", "post_city": "Wiesbaden", "post_street_address": "Marienplatz 2", "registered_country": "Germany", "registered_index": "61169", "registered_region": "Hessen", "registered_city": "Wiesbaden", "registered_street_address": "Marienplatz 2", "state_reg_num": "12-3456789", "tin": "1131145180", "okpo_code": "93281776", "iec": "773101001"}, "time_zone": "Europe/Moscow", "locale": "en_US", "password": "12@14Y$", "discount": {"value": 5.5, "min_trackers": 10, "end_date": null, "strategy": "sum_with_progressive"}, "comment": "about user"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -232,11 +227,10 @@ If `user.verified` not passed then it set equal to `user.activated`.
 
 * `id` - int. An ID of the created user.
 
-#### errors
+#### Errors
 
 * 206 - Login already in use – if this email already registered.
 
-***
 
 ### export
 
@@ -251,7 +245,7 @@ entities will be returned only if filter string is contained within one of the f
 
 *required permissions*: `users: "read"`.
 
-#### parameters
+#### Parameters
 
 | name          | description                                                                                                                            | type         |
 |:--------------|:---------------------------------------------------------------------------------------------------------------------------------------|:-------------|
@@ -266,7 +260,7 @@ entities will be returned only if filter string is contained within one of the f
 
 About user object structure see [above](#user-object-structure).
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -282,17 +276,16 @@ About user object structure see [above](#user-object-structure).
     {{ extra.api_example_url }}/panel/user/export?hash=fa7bf873fab9333144e171372a321b06
     ```
 
-#### response
+#### Response
 
 `XLSX` or `CSV` file download starts.
 
-#### errors
+#### Errors
 
 * [General](../../../backend-api/getting-started.md#error-codes) types only.
 
-***
 
-### list
+### `list`
 
 Returns a list of all users belonging to dealer.
 
@@ -305,7 +298,7 @@ entities will be returned only if filter string is contained within one of the f
 
 *required permissions*: `users: "read"`.
 
-#### parameters
+#### Parameters
 
 | name          | description                                                                                                                            | type    |
 |:--------------|:---------------------------------------------------------------------------------------------------------------------------------------|:--------|
@@ -316,7 +309,7 @@ entities will be returned only if filter string is contained within one of the f
 | offset        | Optional. Starting offset, used for pagination. Default is `0`.                                                                        | int     |
 | hide_inactive | Optional. If `true` only activated users will be returned. Default is `false`.                                                         | boolean |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -332,7 +325,7 @@ entities will be returned only if filter string is contained within one of the f
     {{ extra.api_example_url }}/panel/user/list?hash=fa7bf873fab9333144e171372a321b06
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -376,25 +369,24 @@ entities will be returned only if filter string is contained within one of the f
 * `list` - array of JSON objects. A list of [user objects](#user-object-structure).
 * `count` - int. Total number of records (ignoring offset and limit).
 
-#### errors
+#### Errors
 
 * [General](../../../backend-api/getting-started.md#error-codes) types only.
 
-***
 
-### read
+### `read`
 
 Returns user info by its id.
 
 *required permissions*: `users: "read"`.
 
-#### parameters
+#### Parameters
 
 | name    | description              | type |
 |:--------|:-------------------------|:-----|
 | user_id | An ID of a user to read. | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -410,7 +402,7 @@ Returns user info by its id.
     {{ extra.api_example_url }}/panel/user/read?hash=fa7bf873fab9333144e171372a321b06&user_id=231485
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -461,13 +453,12 @@ Returns user info by its id.
 * `discount` - JSON object. [Discount object](#discount-object-structure) described above.
 * `default_tariff_id` - integer number, nullable. ID of a tariff plan which will be applied to user's trackers by default.
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – when user with specified ID not found or belongs to other dealer.
 
-***
 
-### update
+### `update`
 
 Updates existing user with new field values (see [user object](#user-object-structure)). User must 
 exist and must belong to authorized dealer. Changing of `legal_type` is not permitted, i.e. 
@@ -475,7 +466,7 @@ this field will not be changed.
 
 *required permissions*: `users: "update"`.
 
-#### parameters
+#### Parameters
 
 | name              | description                                                                   | type                                              |
 |:------------------|:------------------------------------------------------------------------------|:--------------------------------------------------|
@@ -486,7 +477,7 @@ this field will not be changed.
 
 If `user.verified` not passed then it set equal to `user.activated`.
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -496,7 +487,7 @@ If `user.verified` not passed then it set equal to `user.activated`.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "user": {"dealer_id": 5001, "activated": true, "verified": true, "login": "user@test.com", "first_name": "John", "middle_name": "William", "last_name": "Smith", "legal_name": "E. Biasi GmbH", "legal_type": "legal_entity", "phone": "491761234567", "post_country": "Germany", "post_index": "61169", "post_region": "Hessen", "post_city": "Wiesbaden", "post_street_address": "Marienplatz 2", "registered_country": "Germany", "registered_index": "61169", "registered_region": "Hessen", "registered_city": "Wiesbaden", "registered_street_address": "Marienplatz 2", "state_reg_num": "12-3456789", "tin": "1131145180", "okpo_code": "93281776", "iec": "773101001", "id": 38935}, "discount": {"value": 5.5, "min_trackers": 10, "end_date": null, "strategy": "sum_with_progressive"}, "comment": "about user"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -504,14 +495,13 @@ If `user.verified` not passed then it set equal to `user.activated`.
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if specified user does not exist or belongs to different dealer.
 * 206 - Login already in use – if specified "login" is used by another user.
 
-***
 
-### session/create
+### `session/create`
 
 Creates an interface session for specified user and returns the hash for the created session.
 
@@ -519,13 +509,13 @@ Creates an interface session for specified user and returns the hash for the cre
 
 user_sessions: "global" - Optional. Allows sessions of users creation, not only owned by a current dealer.
 
-#### parameters
+#### Parameters
 
 | name    | description                        | type |
 |:--------|:-----------------------------------|:-----|
 | user_id | An ID of a user to create session. | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -541,7 +531,7 @@ user_sessions: "global" - Optional. Allows sessions of users creation, not only 
     {{ extra.api_example_url }}/panel/user/session/create?hash=fa7bf873fab9333144e171372a321b06&user_id=231485
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -552,13 +542,12 @@ user_sessions: "global" - Optional. Allows sessions of users creation, not only 
 
 * `hash` - string. Hash of the created session.
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if specified user does not exist or belongs to different dealer.
 
-***
 
-### transaction/change_balance
+### `transaction/change_balance`
 
 Changes user balance (increase or decrease) or bonus and write this change in transactions (type = `payment`, subtype = `partner`).
 
@@ -566,7 +555,7 @@ New balance (bonus) must be not negative.
 
 *required permissions*: `[users: "update", transactions: "create"]`.
 
-#### parameters
+#### Parameters
 
 | name    | description                                             | type                                                    |
 |:--------|:--------------------------------------------------------|:--------------------------------------------------------|
@@ -575,7 +564,7 @@ New balance (bonus) must be not negative.
 | type    | Type of balance to change. Can be "balance" or "bonus". | [enum](../../../backend-api/getting-started.md#data-types) |
 | text    | Description of transaction.                             | string (min length is 5 chars)                          |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -585,7 +574,7 @@ New balance (bonus) must be not negative.
         -d '{"hash": "fa7bf873fab9333144e171372a321b06", "user_id": 231485, "amount": 2.05, "type": "balance", "text": "additional payment"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -593,20 +582,19 @@ New balance (bonus) must be not negative.
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database – if user not found or not owned by a current dealer.
 * 251 – Insufficient funds (403) – if user have not enough funds to withdraw passed (negative) amount.
 
-***
 
-### transaction/list
+### `transaction/list`
 
 Gets list of user's billing transactions for the specified period. Same as [/transaction/list](../../../backend-api/resources/billing/transaction.md#list) from main api.
 
 *required permissions*: `[users: "read", transactions: "read"]`.
 
-#### parameters
+#### Parameters
 
 | name    | description                                                                | type                                                         |
 |:--------|:---------------------------------------------------------------------------|:-------------------------------------------------------------|
@@ -615,7 +603,7 @@ Gets list of user's billing transactions for the specified period. Same as [/tra
 | to      | End date/time for searching. Must be after "from" date.                    | [date/time](../../../backend-api/getting-started.md#data-types) |
 | limit   | Optional. A maximum number of the returned transactions.                   | int                                                          |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -625,7 +613,7 @@ Gets list of user's billing transactions for the specified period. Same as [/tra
         -d '{"hash": "fa7bf873fab9333144e171372a321b06", "user_id": 231485, "from": "2020-02-03 03:04:00", "to": "2021-02-03 03:04:00"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -663,11 +651,11 @@ Gets list of user's billing transactions for the specified period. Same as [/tra
     * `new_bonus` - double. User's bonus balance after transaction.
     * `old_bonus` - double. User's bonus balance before transaction.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if user not found or not owned by a current dealer.
 
-### upload
+### `upload`
 
 Upload users from CSV or XLS file.
 
@@ -700,7 +688,7 @@ New users will be created with the time zone specified in `default_user_time_zon
 
 *required permissions*: `[users: "create"]`.
 
-#### parameters
+#### Parameters
 
 | name            | description                                                                                                                         | type        | 
 |:----------------|:------------------------------------------------------------------------------------------------------------------------------------|:------------|
@@ -708,7 +696,7 @@ New users will be created with the time zone specified in `default_user_time_zon
 | redirect_target | Optional URL to redirect. If **redirect_target** passed return redirect to `<redirect_target>?response=<urlencoded_response_json>`. | string      |
 
 
-#### response
+#### Response
 
 ```json
 {
@@ -718,7 +706,7 @@ New users will be created with the time zone specified in `default_user_time_zon
 }
 ```
 
-#### errors
+#### Errors
 
 Most error responses include `row_number` - the line number in the file where the error was found.
 

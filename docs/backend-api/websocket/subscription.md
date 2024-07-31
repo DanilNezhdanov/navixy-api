@@ -10,7 +10,6 @@ events and unsubscribe from them.
 These actions are similar with any other [API REST actions](../getting-started.md) 
 but must be sent inside open `WebSocket` channel and use only JSON format for messages between the client and server.
 
-***
 
 ## Subscribe Action
 
@@ -185,13 +184,11 @@ the server will send a list of changed tracker states in the [event message](./e
 - Subscribing to a `state` or `state_batch` automatically creates a subscription to [lifecycle events](./events.md#state-event).
 - Subscribing to any event automatically creates a subscription to [logout events](./events.md#logout-event).
 
-***
 
 ## Unsubscribe Action
 
 For structure see [Subscribe Action](#subscribe-action).
 
-***
 
 ## Error Response
 

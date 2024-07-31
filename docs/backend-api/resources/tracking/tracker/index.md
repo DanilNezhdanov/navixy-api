@@ -9,7 +9,6 @@ This document contains tracker object structure and API calls to interact with i
 our API. It represents tracking device registered in our GPS monitoring system. Lots of API calls created for
 manipulation of tracker and/or its properties.
 
-***
 
 ## Tracker object structure
 
@@ -57,23 +56,22 @@ manipulation of tracker and/or its properties.
     * `tag_id` - int. An ID of tag. Must be unique for a tracker.
     * `ordinal` - int. Number that can be used as ordinal or kind of tag. Must be unique for a tracker. Max value is 5.
 
-***
 
 ## API actions
 
 API base path: `/tracker`.
 
-### read
+### `read`
 
 Gets tracker info by ID.
 
-#### parameters
+#### Parameters
 
 | name       | description                         | type | format |
 |:-----------|:------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id") | int  | 999199 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -89,7 +87,7 @@ Gets tracker info by ID.
     {{ extra.api_example_url }}/tracker/read?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=123456
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -117,17 +115,16 @@ Gets tracker info by ID.
 
 See tracker object structure description [here](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if tracker not found.
 
-***
 
-### list
+### `list`
 
 Gets user's trackers with optional filtering by labels. We described this API call in our [how-tos](../../../how-to/get-tracker-list.md).
 
-#### parameters
+#### Parameters
 
 | name   | description                                                                                                                         | type         | format        |
 |:-------|:------------------------------------------------------------------------------------------------------------------------------------|:-------------|:--------------|
@@ -143,7 +140,7 @@ Constraints for labels:
 For example, we have trackers with labels "aa1", "bb2", "cc3", if we pass `labels=["aa","b"]` only trackers
 containing "aa1" and "bb2" will be returned.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -159,7 +156,7 @@ containing "aa1" and "bb2" will be returned.
     {{ extra.api_example_url }}/tracker/list?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -191,11 +188,10 @@ containing "aa1" and "bb2" will be returned.
 
 See tracker object structure description [here](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 [General](../../../getting-started.md#error-codes) types only.
 
-***
 
 ### corrupt
 
@@ -203,13 +199,13 @@ Marks tracker as deleted and corrupt its source, device_id and phone.
 
 **required sub-user rights**: `tracker_register`.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -225,13 +221,13 @@ Marks tracker as deleted and corrupt its source, device_id and phone.
     {{ extra.api_example_url }}/tracker/corrupt?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 13 – Operation not permitted – if tracker already connected to server, or if user has insufficient rights.
 * 243 – Device already connected.
@@ -240,21 +236,20 @@ Marks tracker as deleted and corrupt its source, device_id and phone.
 * 252 – Device already corrupted.
 * 208 – Device blocked.
 
-***
 
-### delete
+### `delete`
 
 Deletes a tracker if it is "clone". Will not work if specified ID of the original tracker.
 
 **required sub-user rights**: `admin` (available only to master users).
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -270,13 +265,13 @@ Deletes a tracker if it is "clone". Will not work if specified ID of the origina
     {{ extra.api_example_url }}/tracker/delete?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if tracker not found.
 * 249 - Operation available for clones only – if tracker is not clone.
@@ -307,15 +302,14 @@ or
 * `rules` - list of associated rule IDs.
 * `vehicles` - list of associated vehicle IDs.
 
-***
 
-### change_phone
+### `change_phone`
 
 Changes tracker's phone and setup new apn.
 
 **required sub-user rights:** `tracker_configure`.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                     | type   | format             |
 |:-------------|:------------------------------------------------------------------------------------------------|:-------|:-------------------|
@@ -325,7 +319,7 @@ Changes tracker's phone and setup new apn.
 | apn_ user    | The user of GPRS APN of the sim card inserted into device. Max length 40, can be empty.         | string | "tmobile"          |
 | apn_password | The password of GPRS APN of the sim card inserted into device. Max length 40, can be empty.     | sting  | "tmobile"          |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -335,13 +329,13 @@ Changes tracker's phone and setup new apn.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 265489, "phone": "6156680000", "apn_name": "fast.tmobile.com", "apn_user": "tmobile", "apn_password": "tmobile"}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if tracker not found.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
@@ -351,19 +345,18 @@ Changes tracker's phone and setup new apn.
 * 241 – Cannot change phone to bundled sim. Contact tech support. If specified phone number belongs tp sim card bundled
   with the device.
 
-***
 
-### get_diagnostics
+### `get_diagnostics`
 
 Gets last CAN and OBD sensors and states values received from the device.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -379,7 +372,7 @@ Gets last CAN and OBD sensors and states values received from the device.
     {{ extra.api_example_url }}/tracker/get_diagnostics?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -477,24 +470,23 @@ List of state names for the field `states`:
 You can locate all inputs, states, and definitions by utilizing 
 the [tracker/sensor/input_name/list](./sensor/input_name.md#list) API call.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
 
-***
 
-### get_fuel
+### `get_fuel`
 
 Gets current fuel level (in liters) of tracker's fuel tanks.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -510,7 +502,7 @@ Gets current fuel level (in liters) of tracker's fuel tanks.
     {{ extra.api_example_url }}/tracker/get_fuel?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -547,25 +539,24 @@ List of available sensor's input names for the object `sensor value`:
 
 * `update_time` - [date/time](../../../getting-started.md#data-types). Date and time when the data updated.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
 
-***
 
-### get_inputs
+### `get_inputs`
 
 Gets current state of tracker's digital inputs and "semantic" inputs (ignition, buttons, car alarms, etc.)
 bound to them (if any).
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -581,7 +572,7 @@ bound to them (if any).
     {{ extra.api_example_url }}/tracker/get_inputs?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -622,24 +613,23 @@ List of `input types`:
 * **car_lock** - "on" if car's central lock is open.
 * **custom** - user-defined type. In general, should have non-empty "name" field.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
 
-***
 
-### get_last_gps_point
+### `get_last_gps_point`
 
 Gets last point of the tracker located by GPS. Points located by GSM LBS are excluded from consideration.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -655,7 +645,7 @@ Gets last point of the tracker located by GPS. Points located by GSM LBS are exc
     {{ extra.api_example_url }}/tracker/get_last_gps_point?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -681,14 +671,13 @@ Gets last point of the tracker located by GPS. Points located by GSM LBS are exc
   * `speed` - int. Speed in km/h.
   * `precision` - int. Optional. Exists if not equal to 0. Precision in meters.
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if there is no tracker with such ID belonging to authorized user.
 * 208 - Device blocked – if tracker exists but was blocked due to tariff restrictions or some other reason.
 
-***
 
-### get_readings
+### `get_readings`
 
 Gets last sensor values for sensors that are:
 
@@ -696,13 +685,13 @@ Gets last sensor values for sensors that are:
 - **not can- or obd-based**.
 - **not "fuel" sensors**.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -718,7 +707,7 @@ Gets last sensor values for sensors that are:
     {{ extra.api_example_url }}/tracker/get_readings?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -767,14 +756,13 @@ List of available sensor's input names for the object `sensor value`:
 * **temp_sensor**.
 * **ext_temp_sensor_x** (range for x: [1 – 10]).
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
 
-***
 
-### get_state
+### `get_state`
 
 Gets current tracker state (gps, gsm, outputs, etc.).
 
@@ -782,7 +770,7 @@ Gets current tracker state (gps, gsm, outputs, etc.).
 |:-----------|:------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int  | 999119 |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -798,7 +786,7 @@ Gets current tracker state (gps, gsm, outputs, etc.).
     {{ extra.api_example_url }}/tracker/get_state?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=265489
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -878,18 +866,17 @@ Gets current tracker state (gps, gsm, outputs, etc.).
         there are no updates.
 * `actual_track_update` - [date/time](../../../getting-started.md#data-types). When the last track was updated last time, when device last time moved.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database (if there is no tracker with such ID belonging to authorized user).
 * 208 – Device blocked (if tracker exists but was blocked due to tariff restrictions or some other reason).
 
-***
 
-### get_states
+### `get_states`
 
 Gets current states (gps, gsm, outputs, etc.) for several trackers.
 
-#### parameters
+#### Parameters
 
 | name            | description                                                                                                       | type      | format             |
 |:----------------|:------------------------------------------------------------------------------------------------------------------|:----------|:-------------------|
@@ -897,7 +884,7 @@ Gets current states (gps, gsm, outputs, etc.) for several trackers.
 | list_blocked    | Optional. If `true` call returns list of blocked tracker IDs instead of error 208. Default is `false`.            | boolean   | true/false         |
 | allow_not_exist | Optional. If `true` call returns list of nonexistent tracker IDs instead of error 217 or 201. Default is `false`. | boolean   | true/false         |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -907,7 +894,7 @@ Gets current states (gps, gsm, outputs, etc.) for several trackers.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "trackers": [999119, 999199, 9991911]}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -971,7 +958,7 @@ Gets current states (gps, gsm, outputs, etc.) for several trackers.
 * `blocked` - array of tracker IDs. Returned only if list_blocked=`true`.
 * `not_exist` - array of tracker IDs. Returned only if allow_not_exist=`true`.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database (if tracker corrupted and allow_not_exist = `false`).
 * 208 – Device blocked (if list_blocked = `false` and tracker exists but was blocked due to tariff restrictions 
@@ -979,13 +966,12 @@ Gets current states (gps, gsm, outputs, etc.) for several trackers.
 * 217 – List contains nonexistent entities (if allow_not_exist = `false` and there are nonexistent trackers 
   belonging to an authorized user).
 
-***
 
-### list_models
+### `list_models`
 
 Gets all integrated tracker models (from "models" table).
 
-#### parameters
+#### Parameters
 
 | name          | description                                                                                                                               | type         | format                    |
 |:--------------|:------------------------------------------------------------------------------------------------------------------------------------------|:-------------|:--------------------------|
@@ -993,7 +979,7 @@ Gets all integrated tracker models (from "models" table).
 | compact_index | Optional. `true` to compact view the indexed inputs: returns only input with max index. Default is `false`, but this value is deprecated. | boolean      | true/false                |
 | codes         | Optional. Array of model codes. If passed only given models will be returned.                                                             | string array | `[model_1, model_2, ...]` |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1009,7 +995,7 @@ Gets all integrated tracker models (from "models" table).
     {{ extra.api_example_url }}/tracker/list_models?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1109,24 +1095,23 @@ Possible values are:
 - **n,m** – n-digit generated ID starting with M. This means that device has configurable ID and our platform generates
   and configures it automatically. You don't need to pass any identifier during device registration in this case.
 
-#### errors
+#### Errors
 
 [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### tags/set
+### `tags/set`
 
 Set tags for a tracker. Tags must be created.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                     | type                  | format                                                           |
 |:-------------|:------------------------------------------------------------------------------------------------|:----------------------|:-----------------------------------------------------------------|
 | tracker_id   | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int                   | 999119                                                           |
 | tag_bindings | List of `tag_binding` objects.                                                                  | array of Json objects | `[{"tag_id" : 1, "ordinal" : 1}, {"tag_id" : 2, "ordinal" : 2}]` |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1136,23 +1121,22 @@ Set tags for a tracker. Tags must be created.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 123456, "tag_bindings": "[{"tag_id" : 1, "ordinal" : 1}, {"tag_id" : 2, "ordinal" : 2}]"}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### location_request
+### `location_request`
 
 Execute this command to get current position of the device. The device must support requesting function.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type                                           | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----------------------------------------------|:-------|
@@ -1165,7 +1149,7 @@ Request types:
 - **gsm** – GSM LBS data via GPRS. Device must have `online` or `GPS not updated` status.
 - **gprs** – GNSS data via GPRS. Device must have `online` or `GPS not updated` status.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1181,13 +1165,13 @@ Request types:
     {{ extra.api_example_url }}/tracker/location_request?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=123456
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
@@ -1195,16 +1179,15 @@ Request types:
 * 214 – Requested operation or parameters are not supported by the device.
 * 256 – Location already actual.
 
-***
 
-### register_quick
+### `register_quick`
 
 Registers a new tracker using only IMEI. Automatic SMS commands will not be sent for a register.
 The device must be preconfigured. This API call can be used only for bundles.
 
 **required sub-user rights:** `tracker_register`.
 
-#### parameters
+#### Parameters
 
 | name     | description                                                                                                                     | type   | format           |
 |:---------|:--------------------------------------------------------------------------------------------------------------------------------|:-------|:-----------------|
@@ -1212,7 +1195,7 @@ The device must be preconfigured. This API call can be used only for bundles.
 | group_id | Tracker group ID, 0 if tracker does not belong to any group. The specified group must exist. See [group/list](./group.md#list). | int    | 0                |
 | imei     | Tracker's IMEI.                                                                                                                 | string | "35645587458999" |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1228,7 +1211,7 @@ The device must be preconfigured. This API call can be used only for bundles.
     {{ extra.api_example_url }}/tracker/register_quick?hash=a6aa75587e5c59c32d347da438505fc3&label=Courier&group_id=0&imei=35645587458999
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1260,7 +1243,7 @@ The device must be preconfigured. This API call can be used only for bundles.
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 13 – Operation not permitted – if user has insufficient rights.
 * 201 – Not found in the database - if there is no bundle with such IMEI.
@@ -1274,15 +1257,14 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 * 226 – Wrong ICCID - if specified ICCID was not found.
 * 227 – Wrong activation code - if specified activation code not found or is already activated.
 
-***
 
-### register_retry
+### `register_retry`
 
 Resends registration commands to the device. The panel must have installed SMS gateway.
 
 **required sub-user rights:** `tracker_register`.
 
-#### parameters
+#### Parameters
 
 | name                   | description                                                                                                                                                                                | type    | format             |
 |:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|:-------------------|
@@ -1293,7 +1275,7 @@ Resends registration commands to the device. The panel must have installed SMS g
 | apn_password           | The password of GPRS APN of the sim card inserted into device. Max length 40, can be empty.                                                                                                | string  | "tmobile"          |
 | send_register_commands | Indicates send or not to send activation commands to device (via SMS or GPRS channel). If parameter is not specified or equals `null` will be used the platform settings. Default: `null`. | boolean | true or false      |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1309,7 +1291,7 @@ Resends registration commands to the device. The panel must have installed SMS g
     {{ extra.api_example_url }}/tracker/register_retry?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=999119&apn_name=fast.tmobile.com&apn_user=tmobile&apn_password=tmobile&send_register_commands=true
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1341,7 +1323,7 @@ Resends registration commands to the device. The panel must have installed SMS g
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 13 – Operation not permitted – if user has insufficient rights.
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
@@ -1350,9 +1332,8 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 * 214 – Requested operation or parameters are not supported by the device - if device does not have GSM module.
 * 242 – Device already connected - if tracker connected to the server.
 
-***
 
-### register
+### `register`
 
 Registers a new tracker device. During registration, device linked with current API user's account
 and automatically configured to send data to our servers (if device model supports it).
@@ -1362,7 +1343,7 @@ Find detailed instructions on tracker registration [there](../../../how-to/how-t
 
 **required sub-user rights:** `tracker_register`.
 
-#### parameters
+#### Parameters
 
 !!! warning "Important"
     Because of the variety of tracker models and business applications, there are different ways to 
@@ -1383,7 +1364,7 @@ Common parameters are:
 | device_id              | **Must** be specified if device model uses fixed device ID. See [tracker/list_models](#list_models).                                                                                       | string  | "4568005588562" |
 | send_register_commands | Indicates send or not to send activation commands to device (via SMS or GPRS channel). If parameter is not specified or equals `null` will be used the platform settings. Default: `null`. | boolean | true or false   |
 
-#### examples
+#### Examples
 
 In this example we use plugin ID = 37 (see [Plugin description](../../commons/plugin/index.md))
 to register Queclink GV55Lite. We chose to include the device to default group, so group ID is 0.
@@ -1406,7 +1387,7 @@ device and **activation_code** since these parameters required by the plugin.
     {{ extra.api_example_url }}/tracker/register?hash=a6aa75587e5c59c32d347da438505fc3&label=Courier&group_id=0&plugin_id=37&model=qlgv55lite&phone=79123122312&activation_code=123123123&device_id=123451234512346&apn_name=fast.tmobile.com&apn_user=tmobile&apn_password=tmobile
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1433,7 +1414,7 @@ device and **activation_code** since these parameters required by the plugin.
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 13 – Operation not permitted – if user has insufficient rights.
 * 204 – Entity not found - if specified group does not exist. See [group/list](./group.md#list).
@@ -1447,16 +1428,15 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 * 227 – Wrong activation code. Plugin specific: if specified activation code not found or is already activated.
 * 258 – Bundle not found. Plugin specific: if bundle not found for specified device ID.
 
-***
 
-### replace
+### `replace`
 
 Lets to replace the device without losing its history and some of its settings.
 Replacement allows you to register a new device with history, sensors (optional), and rules (optional) of the current tracker saved.
 
 **required sub-user rights:** `tracker_configure`.
 
-#### parameters
+#### Parameters
 
 !!! warning "Important"
     Because of the variety of tracker models and business applications, there are different ways to
@@ -1476,7 +1456,7 @@ Common parameters are:
 | plugin_id              | An ID of a registration plugin which will be used to register the device. See [Registration plugins](../../commons/plugin/index.md).                                                             | int     | 37              |
 | send_register_commands | Indicates send or not to send activation commands to a new device (via SMS or GPRS channel). If parameter is not specified or equals `null` will be used the platform settings. Default: `null`. | boolean | true/false      |
 
-#### examples
+#### Examples
 
 In this example we use plugin ID = 37 (see [Plugin description](../../commons/plugin/index.md))
 to replace device with Queclink GV55Lite.
@@ -1499,7 +1479,7 @@ device. Activation code is not used when replacing a device.
     {{ extra.api_example_url }}/tracker/replace?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=123456&plugin_id=37&model=qlgv55lite&phone=79123122312&device_id=123451234512346&apn_name=fast.tmobile.com&apn_user=tmobile&apn_password=tmobile
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1526,7 +1506,7 @@ device. Activation code is not used when replacing a device.
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 7 – Invalid parameters - if fields violate restrictions described above or one of the models is a mobile app.
 * 13 – Operation not permitted - if user has insufficient rights.
@@ -1543,21 +1523,21 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
 <hr>
 
-### replace_quick
+### `replace_quick`
 
 Replaces a device using only IMEI. Automatic SMS commands will not be sent for an activation.
 The replacement device must be preconfigured. This API call can be used only for bundles.
 
 **required sub-user rights:** `tracker_configure`.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type   | format           |
 |:-----------|:------------------------------------------------------------------------------------------------|:-------|:-----------------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int    |
 | imei       | IMEI of the new device                                                                          | string | "35645587458999" |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1573,7 +1553,7 @@ The replacement device must be preconfigured. This API call can be used only for
     {{ extra.api_example_url }}/tracker/replace_quick?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=123456&imei=35645587458999
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1605,7 +1585,7 @@ The replacement device must be preconfigured. This API call can be used only for
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 7 – Invalid parameters - if fields violate restrictions described above or one of the models is a mobile app.
 * 13 – Operation not permitted - if user has insufficient rights.
@@ -1622,13 +1602,13 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
 <hr>
 
-### replace_retry
+### `replace_retry`
 
 Resends registration commands to the new device. The panel must have installed SMS gateway.
 
 **required sub-user rights:** `tracker_configure`.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                     | type   | format             |
 |:-------------|:------------------------------------------------------------------------------------------------|:-------|:-------------------|
@@ -1637,7 +1617,7 @@ Resends registration commands to the new device. The panel must have installed S
 | apn_user     | The user of GPRS APN of this sim card inserted into device.                                     | string | "tmobile"          |
 | apn_password | The password of GPRS APN of the sim card inserted into device.                                  | string | "tmobile"          |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1653,7 +1633,7 @@ Resends registration commands to the new device. The panel must have installed S
     {{ extra.api_example_url }}/tracker/register_retry?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=999119&apn_name=fast.tmobile.com&apn_user=tmobile&apn_password=tmobile
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1685,7 +1665,7 @@ Resends registration commands to the new device. The panel must have installed S
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 * 13 – Operation not permitted – if user has insufficient rights.
 * 204 – Entity not found - if there is no tracker with such ID belonging to authorized user.
@@ -1697,7 +1677,7 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
 <hr>
 
-### send_command
+### `send_command`
 
 Sends command to tracker for performing special control, determined with `special_control` field of tracker model.
 
@@ -1759,14 +1739,14 @@ This command used to seal/unseal electronic lock.
 
 See [special settings JSON object](./settings/special/index.md#read)
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type        | format           |
 |:-----------|:------------------------------------------------------------------------------------------------|:------------|:-----------------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int         | 999119           |
 | command    | Command that will be sent to device. Not Null.                                                  | JSON object | See format above |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -1776,7 +1756,7 @@ See [special settings JSON object](./settings/special/index.md#read)
         -d '"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 999119, "command": {name: "electronic_lock_command", command_code: "unseal", special_settings:{"type":"electronic_lock_password", "password": "345892", "remember_password": true}}}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1809,21 +1789,20 @@ See [special settings JSON object](./settings/special/index.md#read)
 
 For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
-#### errors
+#### Errors
 
 [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### raw_command/send
+### `raw_command/send`
 
 Sends the GPRS command to the device, processing it in a protocol-dependent manner beforehand.
 
-Find more information about this API call usage in our [instructions](../../../how-to/how-to-send-commands-to-device.md).
+**Find more information about this API call** usage in our [instructions](/backend-api/guides/device-management/send-commands.md).
 
 **required sub-user rights:** `tracker_configure`, `tracker_set_output`.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                                                                         | type    |
 |:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:--------|
@@ -1832,7 +1811,7 @@ Find more information about this API call usage in our [instructions](../../../h
 | type       | Optional. `text` or `hex` format. Default is `text`.                                                                                                | string  |
 | reliable   | Optional. `false` if the command does not need to be resent when the device is disconnected or if no acknowledgment is received. Default is `true`. | boolean |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -1842,7 +1821,7 @@ Find more information about this API call usage in our [instructions](../../../h
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 265489, "command": "AT+GTRTO=gv200,A,,,,,,0001$", "type": "text"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -1850,12 +1829,12 @@ Find more information about this API call usage in our [instructions](../../../h
 }
 ```
 
-#### errors
+#### Errors
 
 * 7 - Invalid parameters.
 * 201 - Not found in the database – if there is no tracker with such device ID belonging to authorized user.
 
-#### example response with an error:
+##### Example response with an error:
 
 ```json
 {

@@ -10,7 +10,6 @@ the events and sends notifications to user.
 
 Described creation and using rules step-by-step in our [instructions](../../../../how-to/use-rules.md).
 
-***
 
 ## Rule object
 
@@ -105,26 +104,25 @@ Described creation and using rules step-by-step in our [instructions](../../../.
 * `date/time` and `local_time` types described at 
 the [data types description section](../../../../getting-started.md#data-types).
 
-***
 
 ## API actions
 
 API base path: `/tracker/rule`.
 
-### bind
+### `bind`
 
 Binds rule with `rule_id` to trackers list.
 
 **required sub-user rights:** `tracker_rule_update`.
 
-#### parameters
+#### Parameters
 
 | name     | description                                                                                          | type      |
 |:---------|:-----------------------------------------------------------------------------------------------------|:----------|
 | rule_id  | ID of a rule.                                                                                        | int       |
 | trackers | IDs of trackers. Trackers which do not exist, owned by other user or deleted ignored without errors. | int array |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -134,25 +132,24 @@ Binds rule with `rule_id` to trackers list.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "rule_id": 123, "trackers": [265489]}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if rule with `rule_id` does not exist or owned by other user.
 
-***
 
-### create
+### `create`
 
 Creates rule and scheduled intervals.
 
 **required sub-user rights:** `tracker_rule_update`.
 
-#### parameters
+#### Parameters
 
 Presented parameters are common for all rule types. However, there are specific parameters  `primary_text` and `secondary_text` 
 that are described for every rule type if exist in [rule types](./rule_types.md).
@@ -170,7 +167,7 @@ that are described for every rule type if exist in [rule types](./rule_types.md)
 | schedule        | An optional object. Configures the time - when the rule works. Described [above](#rule-object).                                                                                                                  | JSON object                                       |
 | extended_params | An optional object. Specified for concrete rule type. See [rule types](./rule_types.md).                                                                                                                         | JSON object                                       |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -180,7 +177,7 @@ that are described for every rule type if exist in [rule types](./rule_types.md)
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "rule": {"description": "", "type": "work_status_change", "primary_text": "status changed", "secondary_text": "", "alerts": {"push_enabled": true, "emails": ["example@gmail.com"], "emergency": false, "sms_phones": ["745494878945"], "phones": []}, "suspended": "", "name": "Status changing", "trackers": [123456], "extended_params": {"emergency": false, "zone_limit_inverted": false, "append_zone_title": "", "status_ids": [319281,319282,319283]}, "param": "", "schedule": [{"from": {"weekday": 1, "time": "00:00:00"}, "to": {"weekday": 7, "time": "23:59:59"}, "type": "weekly"}], "zone_ids": [], "group_id": 1}}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -191,25 +188,24 @@ that are described for every rule type if exist in [rule types](./rule_types.md)
 
 * `id` - int. An ID of created rule.
 
-#### errors
+#### Errors
 
 * 204 - Entity not found – when associated zone is not exist.
 
-***
 
-### delete
+### `delete`
 
 Deletes rule with rule_id and all related objects from the database.
 
 **required sub-user rights:** `tracker_rule_update`.
 
-#### parameters
+#### Parameters
 
 | name    | description   | type |
 |:--------|:--------------|:-----|
 | rule_id | ID of a rule. | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -225,23 +221,22 @@ Deletes rule with rule_id and all related objects from the database.
     {{ extra.api_example_url }}/tracker/rule/delete?hash=a6aa75587e5c59c32d347da438505fc3&rule_id=123
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if rule with `rule_id` does not exist or owned by other user.
 
-***
 
-### list
+### `list`
 
 List tracker rules bound to tracker with an ID=`tracker_id` or all users' tracker rules if `tracker_id` not passed.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -257,7 +252,7 @@ List tracker rules bound to tracker with an ID=`tracker_id` or all users' tracke
     {{ extra.api_example_url }}/tracker/rule/list?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -298,22 +293,21 @@ List tracker rules bound to tracker with an ID=`tracker_id` or all users' tracke
 
 * `list` - list of rules
 
-***
 
-### unbind
+### `unbind`
 
 Unbinds trackers from rule with `rule_id`.
 
 **required sub-user rights:** `tracker_rule_update`.
 
-#### parameters
+#### Parameters
 
 | name     | description                                                                                          | type      |
 |:---------|:-----------------------------------------------------------------------------------------------------|:----------|
 | rule_id  | ID of a rule.                                                                                        | int       |
 | trackers | IDs of trackers. Trackers which do not exist, owned by other user or deleted ignored without errors. | int array |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -323,25 +317,24 @@ Unbinds trackers from rule with `rule_id`.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "rule_id": 123, "trackers": [265489]}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if rule with `rule_id` does not exist or owned by other user.
 
-***
 
-### update
+### `update`
 
 Updates rule and scheduled intervals.
 
 **required sub-user rights:** `tracker_rule_update`.
 
-#### parameters
+#### Parameters
 
 Presented parameters are common for all rules, but there are specific parameters that can be found in [rule types](./rule_types.md).
 
@@ -359,7 +352,7 @@ Presented parameters are common for all rules, but there are specific parameters
 | schedule        | An optional object. Configures the time - when the rule works. Described [above](#rule-object).                                                                                                                                            | JSON object                                       |
 | extended_params | An optional object. Specified for concrete rule type. See [rule types](./rule_types.md).                                                                                                                                                   | JSON object                                       |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -369,13 +362,13 @@ Presented parameters are common for all rules, but there are specific parameters
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "rule": {"id": 123, "description": "", "type": "work_status_change", "primary_text": "status changed", "secondary_text": "", "alerts": {"push_enabled": true, "emails": ["example@gmail.com"], "emergency": false, "sms_phones": ["745494878945"], "phones": []}, "suspended": "", "name": "Status changing", "trackers": [123456], "extended_params": {"emergency": false, "zone_limit_inverted": false, "append_zone_title": "", "status_ids": [319281,319282,319283]}, "param": "", "schedule": [{"from": {"weekday": 1, "time": "00:00:00"}, "to": {"weekday": 7, "time": "23:59:59"}, "type": "weekly"}], "zone_ids": [], "group_id": 1}}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – if rule is not exists or owned by other user.
 * 204 - Entity not found – when new associated zone is not exists.

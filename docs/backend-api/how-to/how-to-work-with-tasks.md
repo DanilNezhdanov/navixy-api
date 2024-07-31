@@ -12,7 +12,6 @@ task description, contact numbers, etc.
 To start work with tasks, they must be created. It will be a task with one point or several? This will determine whether
 we create a single task, or a route task.
 
-***
 
 ### Single task
 
@@ -58,7 +57,6 @@ The response will contain ID of a new task.
 }
 ```
 
-***
 
 ### Route task
 
@@ -138,7 +136,6 @@ The response will be:
 }
 ```
 
-***
 
 #### Route optimization
 
@@ -175,7 +172,6 @@ Response will consist the order in that checkpoint objects should be specified i
 }
 ```
 
-***
 
 #### Association with address
 

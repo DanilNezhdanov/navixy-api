@@ -10,7 +10,6 @@ Vehicle maintenance feature helps to make sure that any scheduled maintenance or
 
 Described step-by-step about service task APIs in our [guides](../../../../how-to/service-works-exploitation.md).
 
-***
 
 ## Service task object
 
@@ -112,7 +111,6 @@ Described step-by-step about service task APIs in our [guides](../../../../how-t
 * `file_ids` - int array. One file will be specified in many service works. If one of the tasks will be deleted,
   then file will remain in others. File will be deleted only when the last task with it will be deleted.
 
-***
 
 ## Task status
 
@@ -123,17 +121,16 @@ Task **status** may be one of:
 * `expired` – one of conditions exceeded.
 * `done` – user [set](#set_status) task as "done".
 
-***
 
 ## API actions
 
 API path: `/vehicle/service_task`.
 
-### batch_create
+### `batch_create`
 
 Creates multiple service works.
 
-#### parameters
+#### Parameters
 
 
 | name        | description                                                                          | type        |
@@ -202,7 +199,7 @@ A `task` object is:
 * `file_ids` - int array. One file will be specified in many service works. If one of the tasks will be deleted,
   then file will remain in others. File will be deleted only when the last task with it will be deleted.
   
-#### example
+#### Example
 
 === "cURL"
 
@@ -212,29 +209,28 @@ A `task` object is:
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "vehicle_ids": [76801, 76449], "task": {"comment": "", "conditions": {"date": {"end": "2020-12-10 23:59:59", "notification_interval": 3}}, "cost": 100, "description": "service1", "file_ids": [], "notifications": {"sms_phones": [], "emails": [], "push_enabled": true}, "repeat": false, "unplanned": false}'
     ```
 
-#### response
+#### Response
 
 ```json
 {"success":true}
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../../getting-started.md#error-codes) types only.
 
-***
 
-### create
+### `create`
 
 Creates a new vehicle service work. For vehicles with associated tracker only.
 
-#### parameters
+#### Parameters
 
 | name | description             | type        |
 |:-----|:------------------------|:------------|
 | task | Service work to create. | JSON object |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -244,7 +240,7 @@ Creates a new vehicle service work. For vehicles with associated tracker only.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "task": {"vehicle_id": 76801, "comment": "", "conditions": {"date": {"end": "2020-12-10 23:59:59", "notification_interval": 3}}, "cost": 100, "description": "service1", "file_ids": [], "notifications": {"sms_phones": [], "emails": [], "push_enabled": true}, "repeat": false, "unplanned": false}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -255,18 +251,17 @@ Creates a new vehicle service work. For vehicles with associated tracker only.
 
 * `id` - int. An ID of created task.
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – vehicle or tracker not found.
 * 214 - Requested operation or parameters not supported by the device – engine hours condition passed but tracker hasn't ignition sensor.
 
-***
 
-### delete
+### `delete`
 
 Deletes a vehicle service work.
 
-#### parameters
+#### Parameters
 
 | name     | description                     | type      |
 |:---------|:--------------------------------|:----------|
@@ -275,7 +270,7 @@ Deletes a vehicle service work.
 
 Either **task_id** or **task_ids** should be specified.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -291,23 +286,22 @@ Either **task_id** or **task_ids** should be specified.
     {{ extra.api_example_url }}/vehicle/service_task/delete?hash=a6aa75587e5c59c32d347da438505fc3&task_id=33777
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../../getting-started.md#error-codes) types only.
 
-***
 
-### download
+### `download`
 
 Downloads pdf report of service works.
 
-#### parameters
+#### Parameters
 
 | name      | description                                              | type                                              |
 |:----------|:---------------------------------------------------------|:--------------------------------------------------|
@@ -321,7 +315,7 @@ Downloads pdf report of service works.
     * "status" - order by `status`.
     * "cost" - order by `cost`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -337,27 +331,26 @@ Downloads pdf report of service works.
     {{ extra.api_example_url }}/vehicle/service_task/download?hash=a6aa75587e5c59c32d347da438505fc3&order_by=vehicle&group_by=status
     ```
 
-#### response
+#### Response
 
 Report file.
 
-#### errors
+#### Errors
 
 * [General](../../../../getting-started.md#error-codes) types only.
 
-***
 
-### list
+### `list`
 
 List all service works of all user vehicles.
 
-#### parameters
+#### Parameters
 
 | name              | description                                 | type    |
 |:------------------|:--------------------------------------------|:--------|
 | return_prediction | Include legacy **prediction** field or not. | boolean |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -373,7 +366,7 @@ List all service works of all user vehicles.
     {{ extra.api_example_url }}/vehicle/service_task/list?hash=a6aa75587e5c59c32d347da438505fc3&return_prediction=false
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -430,24 +423,23 @@ List all service works of all user vehicles.
 
 * list - array of vehicle objects described [here](#service-task-object).
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – vehicle or tracker not found.
 
-***
 
-### read
+### `read`
 
 Get service work info by its id.
 
-#### parameters
+#### Parameters
 
 | name              | description                                 | type    |
 |:------------------|:--------------------------------------------|:--------|
 | task_id           | ID of service work.                         | int     |
 | return_prediction | Include legacy **prediction** field or not. | boolean |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -463,7 +455,7 @@ Get service work info by its id.
     {{ extra.api_example_url }}/vehicle/service_task/read?hash=a6aa75587e5c59c32d347da438505fc3&task_id=37577&return_prediction=false
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -525,26 +517,25 @@ Get service work info by its id.
 
 All parameters described [here](#service-task-object).
 
-#### errors
+#### Errors
 
 * 201 Not found in the database – does not exist one of tracker's counters which required to determine status.
 * 204 Entity not found – when vehicle or service work not found.
 
-***
 
-### set_status
+### `set_status`
 
 Updates task status, and saved (on `done` **status**) current date and values of used (in condition) counters for 
 "freeze" wearing percent.
 
-#### parameters
+#### Parameters
 
 | name    | description                                            | type                                              |
 |:--------|:-------------------------------------------------------|:--------------------------------------------------|
 | task_id | ID of service work.                                    | int                                               |
 | status  | A new task status. Only `done` status allowed for now. | [enum](../../../../getting-started.md#data-types) |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -560,24 +551,23 @@ Updates task status, and saved (on `done` **status**) current date and values of
     {{ extra.api_example_url }}/vehicle/service_task/set_status?hash=a6aa75587e5c59c32d347da438505fc3&task_id=37577&status=done
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – does not exist one of tracker's counters which required to determine status.
 * 204 - Entity not found – when vehicle or service work not found.
 
-***
 
-### update
+### `update`
 
 Updates information fields and notification settings of vehicle service work.
 
-#### parameters
+#### Parameters
 
 | name | description             | type        |
 |:-----|:------------------------|:------------|
@@ -585,7 +575,7 @@ Updates information fields and notification settings of vehicle service work.
 
 A [task object](#create) described in a task create. 
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -595,13 +585,13 @@ A [task object](#create) described in a task create.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "task": {"vehicle_id": 76801, "comment": "", "conditions": {"date": {"end": "2020-12-10 23:59:59", "notification_interval": 3}}, "cost": 100, "description": "service1", "file_ids": [], "notifications": {"sms_phones": [], "emails": [], "push_enabled": true}, "repeat": false, "unplanned": false}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 204 - Entity not found – when vehicle or service work not found.
 * 214 - Requested operation or parameters not supported by the device – engine hours condition passed but tracker

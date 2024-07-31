@@ -9,24 +9,23 @@ API base path: `panel/subpaas/password`.
 
 API call to change subpaas password.
 
-***
 
 ## API actions
 
 API base path: `panel/subpaas/password`.
 
-### change 
+### `change` 
 
 Changes subpaas password.
 
-#### parameters
+#### Parameters
 
 | name         | description                                          | type   |
 |:-------------|:-----------------------------------------------------|:-------|
 | subpaas_id   | Subpaas' ID.                                         | int    |
 | new_password | New subpaas' password, 6 to 20 printable characters. | string |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -36,7 +35,7 @@ Changes subpaas password.
         -d '{"hash": "fa7bf873fab9333144e171372a321b06", "subpaas_id": 99874, "new_password": "Fr1d@Y$"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -44,7 +43,7 @@ Changes subpaas password.
 }
 ```
 
-#### errors
+#### Errors
 
 * 13 –
     * The dealer is not paas.

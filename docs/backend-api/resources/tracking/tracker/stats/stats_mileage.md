@@ -7,17 +7,16 @@ description: API call to get mileage in kilometers in specified period grouped b
 
 Contains API call to read mileage counted for the specified period.
 
-***
 
 ## API actions
 
 API base path: `/tracker/stats/mileage`.
 
-### read
+### `read`
 
 Returns mileage in kilometers in specified period grouped by trackers and day.
 
-#### parameters
+#### Parameters
 
 | name     | description                                                                                         | type                                                         |
 |:---------|:----------------------------------------------------------------------------------------------------|:-------------------------------------------------------------|
@@ -25,7 +24,7 @@ Returns mileage in kilometers in specified period grouped by trackers and day.
 | from     | From date/time.                                                                                     | [date/time](../../../../getting-started.md#datetime-formats) |
 | to       | To date/time. Specified date must be after "from" date.                                             | [date/time](../../../../getting-started.md#datetime-formats) |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -35,7 +34,7 @@ Returns mileage in kilometers in specified period grouped by trackers and day.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "trackers": [123456], "from": "2020-09-24 03:24:00", "to": "2020-09-24 06:24:00"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -51,7 +50,7 @@ Returns mileage in kilometers in specified period grouped by trackers and day.
 }
 ```
 
-#### errors
+#### Errors
 
 * 211 – Requested time span is too big - if interval between "from" and "to" is too big (maximum value specified in API config).
 * 217 – List contains nonexistent entities.

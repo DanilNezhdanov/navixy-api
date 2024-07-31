@@ -6,8 +6,7 @@ description: Get involved into improving documentation and translations of the N
 # Get involved
 
 If you notice an inaccuracy, mistake, typo or want to supplement the information in 
-this documentation, then you can help us to improve it. All of this documentation is available in the 
-public domain on [GitHub]({{ config.repo_url }}).
+this documentation, then you can help us to improve it. All of this documentation is available in the public domain on [GitHub]({{ config.repo_url }}).
 
 There are several ways:
 
@@ -17,9 +16,8 @@ There are several ways:
 4. [Installing and editing](#hard-way) documentation locally on your PC.
 
 In each of these cases, a GitHub account is required.
-If you don't want to register on GitHub, you can just [contact us](./contacts.md) with any convenient way.
+If you don't want to register on GitHub, you can just [contact us](contacts.md) with any convenient way.
 
-***
 
 ### Easy way
 
@@ -27,7 +25,7 @@ On each page in the upper right corner of the text top there is a link with a pi
 After clicking on this link, you will be asked to create a fork of the repository (if you have
 not done this before). 
 
-![Create your fork](./assets/fork-proposal.png)
+![Create your fork](/general/assets/fork-proposal.png)
 
 Creating a fork done with one green button. After that, the edit form with page source code will open.
 
@@ -35,7 +33,7 @@ Creating a fork done with one green button. After that, the edit form with page 
 
 After editing the page, you must fill out a description of what you have done.
 
-![Please fill the commit message](./assets/commit-message.png)
+![Please fill the commit message](/general/assets/commit-message.png)
 
 Submitting a change will write it to a new branch in your fork, so you can send a pull request. 
 We will review your pull request and accept it in the main branch.
@@ -43,7 +41,6 @@ We will review your pull request and accept it in the main branch.
 Thus, this method is only suitable for simple edits on one page.
 There is [another way](#second-way) to create pull requests to fix multiple pages at once.
 
-***
 
 ### Second way
 
@@ -59,7 +56,6 @@ This method allows you to make several edits on different pages before proposing
 
 After review and pull request will be merged, and you can drop a fork.
 
-***
 
 ### Hard way
 
@@ -96,7 +92,6 @@ This method involves installing the Git, IDE, Python and
 12. After the PR has been reviewed and merged to upstream you can remove
     branch and rebase a fork to the upstream.
 
-***
 
 ## Introduction into Mkdocs
 
@@ -104,7 +99,6 @@ This documentation built on [mkdocs engine](https://mkdocs.org) and [mkdocs-mate
 Firstly, read [how to layout and write your Markdown source files](https://mkdocs.org/user-guide/writing-your-docs)
 for an overview of how to write docs.
 
-***
 
 ### Menu
 
@@ -124,7 +118,6 @@ nav:
 `title` sets the name for menu section. 
 `nav:` sets the sub-items order.
 
-***
 
 ### Meta information
 
@@ -140,20 +133,17 @@ description: Get involved into improving documentation and translations of the N
 
 Title will be displayed in menu and in browser title.
 
-***
 
 ### Headers
 
 The information on each page should be structured. On pages of the same type, 
 the structure should be uniform.
 
-***
 
 ### Example
 
 API resource page structure:
 
-```markdown
 # Resource name
 
 Resource description.
@@ -179,38 +169,47 @@ Method description.
 
 #### Examples
 
-=== "cURL"
+```
+# Resource name Resource description. 
 
-    ```shell
-    curl -X POST '{{ extra.api_example_url }}/resource/sub_resource/action' \
-        -H 'Content-Type: application/json' \
-        -d '{"param1": "value1", "param2": "value2", "hash": "a6aa75587e5c59c32d347da438505fc3"}'
-    ```
+## Object name
 
-=== "HTTP GET"
+Object and its description 
 
-    ```
-    {{ extra.api_example_url }}/resource/sub_resource/action?param1=value1&param2&hash=a6aa75587e5c59c32d347da438505fc3
-    ```
+## API actions
 
-#### Response
+Path: `/path/to/resource/`
 
-    ```json
-    { "success": true }
-    ```
+### method1 
 
-#### Errors
+Method description.
 
-Special error codes.
+#### Parameters 
+| name | description | type | restrictions |
+|:-------|:-------------|:--------|:---------------------|
+| param1 | description. | int | `[1..100]`, not null |
+| param2 | description. | boolean | not null |
 
-### method2
+#### Examples 
 
+=== "cURL" 
+    ```shell curl -X POST 'https://api.navixy.com/v2/resource/sub_resource/action' \ -H 'Content-Type: application/json' \ -d '{"param1": "value1", "param2": "value2", "hash": "a6aa75587e5c59c32d347da438505fc3"}' ``` 
+
+=== "HTTP GET" 
+    ``` https://api.navixy.com/v2/resource/sub_resource/action?param1=value1&param2&hash=a6aa75587e5c59c32d347da438505fc3 ```     
+
+#### Response 
+    ```json { "success": true } ``` 
+
+#### Errors 
+
+Special error codes
+
+### method2 
 ...
-
 ```
 
-!!! warning "Please note"
-    If the response or structure has comments it is necessary to write these comments separately in the form of a list below.
+> [!NOTE] Please note
+> If the response or structure has comments it is necessary to write these comments separately in the form of a list below.
 
-For real example see [/user](../backend-api/resources/commons/user/index.md) and
-[source](https://raw.githubusercontent.com/SquareGPS/navixy-api/master/docs/backend-api/resources/commons/user/index.md).
+For actual examples please refer to [/user](/backend-api/resources/commons/user/) and [/source](/backend-api/resources/commons/user/index.md).

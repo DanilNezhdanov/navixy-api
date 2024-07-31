@@ -34,7 +34,6 @@ API calls follow this structure:
     * `Response` - shows an example of a successful server response, including a description of each field.
     * `Errors` - lists any specific errors associated with the API action. A general error list applies to all calls.
 
-***
 
 ## Navixy API Sandbox
 
@@ -42,18 +41,16 @@ The [Navixy API Sandbox](https://www.postman.com/navixyapisandbox/workspace/navi
 
 Additionally, you can find information on how to use Postman to test all API calls listed in this documentation version [here](./postman.md).
 
-***
 
 ## Limits
 
 To ensure system stability for all users, the platform has an implemented limit of 50 requests per second per user and per IP address (in the case of an application serving multiple users). These limits are applied separately based on user session hash and API keys.
 
-***
 
 ## Get involved
 
-You can play a valuable role in improving the [Navixy Platform documentation](./get-involved.md) or [localizations](./localizations/contributing.md).
+You can play a valuable role in improving the [Navixy Platform documentation](get-involved.md) or [localizations](/general/localizations/contributing.md).
 
-If you notice that the user interface translation into your language is missing or contains errors, you can contribute to or correct the localization on the [CrowdIn platform](https://crowdin.com/). Refer to [this guide](./localizations/contributing.md) on how to do it.
+If you notice that the user interface translation into your language is missing or contains errors, you can contribute to or correct the localization on the [CrowdIn platform](https://crowdin.com/). Refer to [this guide](/general/localizations/contributing.md) on how to do it.
 
-Additionally, the current documentation may contain errors or omissions. As it is publicly available on [GitHub]({{ config.repo_url }}), you can independently contribute to its correction or expansion. Refer to [this guide](./get-involved.md) on how to do it.
+Additionally, the current documentation may contain errors or omissions. As it is publicly available on [GitHub]({{ config.repo_url }}), you can independently contribute to its correction or expansion. Refer to [this guide](/general/get-involved.md) on how to do it.

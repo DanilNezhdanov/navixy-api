@@ -8,7 +8,6 @@ description: Using the audit log, account owner can track the activity of all us
 Using the audit log, account owner can track the activity of all users added through the "Access rights" section. Contains
 audit object and list method to get the audit log.
 
-***
 
 ## Audit object
 
@@ -40,19 +39,18 @@ audit object and list method to get the audit log.
 * `user_agent` - string. User agent.
 * `action_date` - [date/time](../../../../getting-started.md#data-types). Date and time of the action.
 
-***
 
 ## API actions
 
 API path: `/user/audit/log`.
 
-### list
+### `list`
 
 Gets list of audit records available for current user.
 
 **required sub-user rights**: `admin` (available only to master users).
 
-#### parameters
+#### Parameters
 
 | name        | description                                                                                                                           | type                                                   |
 |:------------|:--------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------|
@@ -74,7 +72,7 @@ Properties available for sorting by:
 * `host`.
 If no sort param is specified, then sorting equivalent to option `["action_date=asc"]` will be applied.
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -84,7 +82,7 @@ If no sort param is specified, then sorting equivalent to option `["action_date=
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "from": "2020-12-25 03:24:00", "to": "2020-12-28 06:24:00", "limit": 50, "offset": 0}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -108,6 +106,6 @@ If no sort param is specified, then sorting equivalent to option `["action_date=
 }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../../getting-started.md#error-codes) types only.

@@ -8,7 +8,6 @@ description: This resource will describe - how to get information from tracker s
 Devices can be used not only to track GPS location. They can provide information about mileage, engine hours, measured
 from sensors like fuel level and temperature. All API calls to interact with devices can be found in tracking/tracker branch.
 
-***
 
 ## Counters
 
@@ -58,7 +57,6 @@ Engine hours:
 
 The platform will notify you about success in reply.
 
-***
 
 ### Getting values from counter
 
@@ -68,7 +66,6 @@ If necessary to get information from only specific counter type and one device t
 call will be suitable.
 The same information can be obtained for the list of devices . In this case use [value/list](../resources/tracking/tracker/counter.md#valuelist) call.
 
-***
 
 ### Counter values for a history period
 
@@ -105,7 +102,6 @@ return JSON with the next information:
     }
     ```
 
-***
 
 ### Counted mileage and engine hours for a period
 
@@ -113,7 +109,6 @@ Sometimes we need counted values for a period, for example, how many kilometers 
 the engine was on. In this case we should use [stats/mileage](../resources/tracking/tracker/stats/stats_mileage.md) or 
 [stats/engine_hours](../resources/tracking/tracker/stats/stats_engine_hours.md) calls.
 
-***
 
 ## Sensors
 
@@ -140,7 +135,6 @@ Full sensor creation has several steps:
 3. If this is an analog sensor, or it is a sensor that sends data in uncalibrated values (for example, fuel sensor that
    sends percents instead of liters) - it should be [calibrated](../resources/tracking/tracker/sensor/calibration_data.md).
    
-***
 
 ### Getting values from sensors
 
@@ -152,7 +146,6 @@ in the sensors readings, OBD & CAN and Fuel level widgets. For every widget we h
 * Data from the fuel sensors can be obtained using [get_fuel](../resources/tracking/tracker/index.md#get_fuel) call.
 * Readings from metering not CAN, OBD and fuel sensors mey be received with [get_readings](../resources/tracking/tracker/index.md#get_readings) call.
 
-***
 
 ### Getting values from all sensors and states
 
@@ -211,7 +204,6 @@ request. It will reply with the next information:
 * input status and output status fields will show you binary information in decimal form. For example, output_status 
   field shows 3 - it is 11 in binary. The example device has two outputs. That's why 11 means output 1 = On and output 2 = ON.
 
-***
 
 ### Getting data from multiple devices in one request
 
@@ -220,7 +212,6 @@ current data from a lot of devices in one account,
 use [tracker/readings/batch_list](../resources/tracking/tracker/readings.md#batchlist) API call.
 It allows getting the same information as in the previously described method for multiple trackers.
 
-***
 
 ### Getting historical data from sensors
 

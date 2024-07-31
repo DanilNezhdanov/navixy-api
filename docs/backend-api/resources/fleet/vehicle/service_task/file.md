@@ -7,17 +7,16 @@ description: Service work file creation API call.
 
 Contains call for creation the service work file.
 
-***
 
 ## API actions
 
 API path: `/vehicle/service_task/file`.
 
-### create
+### `create`
 
 Creates a file to specify its ID in service work later.
 
-#### parameters
+#### Parameters
 
 | name     | description                                                                                                                           | type                                              |
 |:---------|:--------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------|
@@ -26,7 +25,7 @@ Creates a file to specify its ID in service work later.
 | metadata | Optional. Metadata object. See [task/form](../../../field_service/task/form/index.md#read).                                           | JSON object                                       |
 | type     | Can be "image" or "file". Default is "file".                                                                                          | [enum](../../../../getting-started.md#data-types) |
 
-#### response
+#### Response
 
 ```json
 {

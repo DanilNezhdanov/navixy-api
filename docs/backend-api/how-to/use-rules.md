@@ -11,9 +11,8 @@ When a server receives a new portion of data from the device, it checks whether 
 or false for this data. If they are true, the server generates an event in history, logs it and immediately sends SMS,
 push message or email and saves event in history.
 
-***
 
-### Create
+### `create`
 
 To start work the rule must be created. Let's create a rule with conditions according to which the platform will generate events and schedule intervals when this
  rule should work using the [rule/create](../resources/tracking/tracker/rules/rule.md#create). The user must have access to rule update.
@@ -55,9 +54,8 @@ You will get ID of created rule in response.
 }
 ```
 
-***
 
-### Bind/Unbind
+### `bind`/Unbind
 
 When a rule created, [bind](../resources/tracking/tracker/rules/rule.md#bind) devices to it. For example, a newly registered device must have the same rule. Unnecessary
 to create another rule. Bind this device to an already existing rule.
@@ -86,9 +84,8 @@ API requests:
      -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "rule_id": 123, "trackers": [265489]}'
  ```
 
-***
 
-### Update
+### `update`
 
 If the rule must be updated, for example, one more phone number must be added for SMS notifications, you can use the 
 [rule/update](../resources/tracking/tracker/rules/rule.md#update) call. It is much better than deleting an existing rule and creating a new one.
@@ -107,7 +104,6 @@ API request:
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "rule": {"id": 123, "description": "", "type": "work_status_change", "primary_text": "status changed", "alerts": {"push_enabled": true, "emails": ["example@gmail.com"], "emergency": false, "sms_phones": ["745494878945"], "phones": []}, "suspended": false, "name": "Status changing", "trackers": [123456], "extended_params": {"emergency": false, "zone_limit_inverted": false, "status_ids": [319281,319282,319283]}, "schedule": [{"from": {"weekday": 1, "time": "00:00:00"}, "to": {"weekday": 7, "time": "23:59:59"}, "type": "weekly"}], "zone_ids": []}}'
     ```
 
-***
 
 ### Suspend
 

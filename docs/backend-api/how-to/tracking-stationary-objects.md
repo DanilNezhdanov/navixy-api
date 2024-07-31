@@ -18,7 +18,6 @@ Additionally, we'll share other use cases based on real situations.
 Find this instruction including BLE sensors configuration example in 
 our [Expert center](https://docs.navixy.com/expert-center/tracking-of-stationary-objects).
 
-***
 
 ## What you need to track stationary objects
 
@@ -34,7 +33,6 @@ It's worth noting that many BLE tags can transmit information about temperature 
 
 Now let's examine the procedure for implementing a real-world case study - tracking truck trailers for trip and usage information and subsequent service work.
 
-***
 
 ## How to get information about BLE beacons near the GPS device
 
@@ -66,7 +64,6 @@ According to it, you can understand how far away the beacon is from the tracker.
 * `longitude` - float. Longitude.
 * `ext_data` - object. Additional beacon data.
 
-***
 
 ## API calls to get information about BLE tags
 
@@ -122,7 +119,6 @@ This will show which devices were in the vicinity of this BLE beacon during peri
 }
 ```
 
-***
 
 ### Last data from BLE tags
 
@@ -160,7 +156,6 @@ This will provide information that there's a trailer "7cf..." next to the device
 }
 ```
 
-***
 
 ## How to obtain information on usage times and trip details
 
@@ -210,7 +205,6 @@ to pay the driver for transporting the cargo, whether the contractual speed was 
 Additionally, the trip length can be used in the future to calculate the number of kilometers until the next 
 maintenance of the trailer.
 
-***
 
 ### Detailed trip info
 
@@ -252,7 +246,6 @@ Response:
 
 You can use these points together with your preferred maps API to display them on a map.
 
-***
 
 ## Other examples of using BLE tags within Navixy API
 
@@ -276,7 +269,6 @@ compartment than in the trunk, the seat is likely in the trunk. As a result, you
 vehicles – first, those with a child seat in the passenger compartment, and then those with a child seat in the trunk. 
 This approach ensures that you efficiently match passengers with appropriate vehicles and drivers.
 
-***
 
 ### Agricultural machinery
 
@@ -291,7 +283,6 @@ the location of a specific tool, query  `beacon/last_values`  with a search for 
 device the tool is installed. This approach ensures efficient tracking and utilization of your agricultural equipment, 
 ultimately increasing productivity.
 
-***
 
 ### Use on construction sites
 
@@ -304,7 +295,6 @@ as well as on storage sites. This approach allows you to effectively track your 
 being used efficiently and minimizing the risk of loss or misplacement. By keeping a close eye on your tools and 
 machinery, you can optimize productivity at the construction site.
 
-***
 
 ### Indoor tracking
 
@@ -318,7 +308,6 @@ that staff members are where they need to be.
 as you don't have to search for them throughout the warehouse. This streamlines the retrieval process, making your 
 operations more efficient.
 
-***
 
 ### Tracking goods with BLE beacons
 

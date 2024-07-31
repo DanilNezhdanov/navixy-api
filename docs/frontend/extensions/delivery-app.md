@@ -8,7 +8,6 @@ description: Delivery is a special plugin which can be embedded to any other app
 **Delivery** is a special plugin which can be embedded to any other application or website and
  allows track user's task by external ID and bounded tracker in the real time.
 
-***
 
 ##Usage
 
@@ -42,7 +41,6 @@ Available colors: `000000, 993300, 333300, 003300, 003366, 000080,
 993366, C0C0C0, FF99CC, FFCC99, FFFF99, CCFFCC, CCFFFF, 99CCFF, 
 CC99FF, FFFFFF`.
 
-***
 
 ### Autoscaling
 
@@ -54,7 +52,6 @@ objects are visible.
 *   `0` – do not scale
 *   `1` – scale (by default)
 
-***
 
 ### Map scale
 
@@ -73,7 +70,6 @@ ignored with switched on autoscaling.
 *   `yandexpublic` – Yandex Public map
 *   `cdcom` – Progorod
 
-***
 
 ## API for keys
 
@@ -84,7 +80,6 @@ is described according to the link: [API authorization][1]
 
 [1]: ./../../backend-api/getting-started.md#authorization-and-access-levels
 
-***
 
 ### Creating a key
 
@@ -106,7 +101,6 @@ answer example if the key is successfully generated:
     All the links like http://ui.domain.com/pro/applications/locator/?key= <old key> 
     will not work anymore.
 
-***
 
 ### Retrieving a key
 

@@ -7,7 +7,6 @@ description: API calls to read and update notification settings.
 
 API calls to read and update notification settings.
 
-***
 
 ## Notification settings object
 
@@ -27,23 +26,22 @@ API calls to read and update notification settings.
 * `sms_originator` - string. Max length is 20, must match `(p{L}|d|[-'" .,:/])*`. E.g. "demo.navixy.com" or "491761234567".
 * `caller_id` - string. Voice messages originator. Max length is 20, must match `(p{L}|d|[-'" .,:/])*`. E.g. "491761234543".
 
-***
 
 ## API actions
 
 API path: `panel/dealer/settings/notification`.
 
-### read
+### `read`
 
 Gets current monitoring notification settings.
 
 *required permissions*: `notification_settings: "read"`.
 
-#### parameters
+#### Parameters
 
 Only session `hash`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -59,7 +57,7 @@ Only session `hash`.
     {{ extra.api_example_url }}/panel/dealer/settings/notification/read?hash=fa7bf873fab9333144e171372a321b06
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -76,19 +74,18 @@ Only session `hash`.
 
 * `value` - [Notification settings object](#notification-settings-object) described above.
 
-#### errors
+#### Errors
 
 [General](../../../../backend-api/getting-started.md#error-codes) types only.
 
-***
 
-### update
+### `update`
 
 Updates notification settings for the current dealer. 
 
 *required permissions*: `notification_settings: "update"`.
 
-#### parameters
+#### Parameters
  
 | name           | description                                                                                     | type   |
 |:---------------|:------------------------------------------------------------------------------------------------|:-------|
@@ -98,7 +95,7 @@ Updates notification settings for the current dealer.
 | sms_originator | SMS originator. Max length is 20.                                                               | string |
 | caller_id      | Voice messages originator. Max length is 20.                                                    | string |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -108,7 +105,7 @@ Updates notification settings for the current dealer.
         -d '{"hash": "fa7bf873fab9333144e171372a321b06", "email_from": "NAVIXY <no-reply@navixy.com>", "email_footer": "\n\n---nSincerely, Navixy", "sms_originator": "demo.navixy.com", "caller_id": "491761234543"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -116,6 +113,6 @@ Updates notification settings for the current dealer.
 }
 ```
 
-#### errors
+#### Errors
  
 [General](../../../../backend-api/getting-started.md#error-codes) types only.

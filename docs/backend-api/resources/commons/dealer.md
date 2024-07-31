@@ -7,19 +7,18 @@ description: Contains API call to get dealer info and dealer-specific UI setting
 
 Contains API call to get dealer info and dealer-specific UI settings.
 
-***
 
 ## API actions
 
 API path: `/dealer`.
 
-### get_ui_config
+### `get_ui_config`
 
 Gets dealer info and dealer-specific UI settings by a domain or hash.
 
 It doesn't require authentication and available in **UNAUTHORIZED** access level.
 
-#### parameters
+#### Parameters
 
 | name   | description                                                               | type   |
 |:-------|:--------------------------------------------------------------------------|:-------|
@@ -29,7 +28,7 @@ It doesn't require authentication and available in **UNAUTHORIZED** access level
 Params `domain` and `hash` is not required both, but one of them must be specified.
 If `hash` is specified the `domain` shouldn't be used.
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -39,7 +38,7 @@ If `hash` is specified the `domain` shouldn't be used.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "domain": "panel.navixy.com"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -189,7 +188,7 @@ If `hash` is specified the `domain` shouldn't be used.
 | subpaas         | Allow to use Sub-Dealers (can be used only together with `navixy_label`).         |
 | navixy_label    | Show "Powered by Navixy" in UI (required for subpaas feature).                    |
 
-#### errors
+#### Errors
 
 * 12 – Dealer not found (if corresponding dealer not found in the database).
 * 201 – Not found in the database (if there is no Ui settings data for corresponding dealer).

@@ -26,7 +26,6 @@ Example use cases you can achieve:
 * Send a Slack message on a tracker event; 
 * Deactivate tracker on an event.
 
-***
 
 ## Create your first Zap
 
@@ -68,7 +67,6 @@ for one user and make as many Zaps as you want with it. At the same time API key
 There you should choose the correct server where your account is located. If your user account ID starts with 
 1000xxxx - it is the US. Otherwise, choose the EU server.
 
-***
 
 ### Set trigger
 
@@ -215,7 +213,6 @@ The next step is to configure a trigger. To create a simple Zap we recommend you
 
     For example, 15 means - check events for the last 15 minutes before this Zap requested info. It should be the same as the frequency of your Zap requests.
 
-***
 
 ### Set action
 

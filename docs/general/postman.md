@@ -14,7 +14,6 @@ testing to creating and maintaining your own APIs for your own software.
 
 For our purposes we will only review their API client.
 
-***
 
 ## Your first request
 
@@ -65,7 +64,6 @@ This can be especially handy when working with large requests.
 
     ![Enter params](./assets/postman_tracker_list.png)
 
-***
 
 ### Working with parameters
 
@@ -73,7 +71,6 @@ If your request has multiple parameters listed - you can easily enable and disab
 
 ![Enter params](./assets/postman_params5.gif)
 
-***
 
 ### History of requests
 
@@ -83,7 +80,6 @@ or re-execute the request made in the past - a simple double-click will open a r
 
 ![Enter params](./assets/postman_response.gif)
 
-***
 
 ## Examples in documentation
 
@@ -93,7 +89,6 @@ In this case all parameters will be automatically separated to strings for more 
 
 ![Enter params](./assets/postman_apn.png)
 
-***
 
 ### cURL examples in Postman
 
@@ -102,7 +97,6 @@ Copy an example, open an import tab and choose the Raw text. Then paste our exam
 
 ![Enter params](./assets/postman_curl_in.png)
 
-***
 
 ## How to install
 

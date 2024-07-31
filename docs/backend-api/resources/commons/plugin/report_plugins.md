@@ -7,13 +7,12 @@ description: Contains report plugins with plugin-specific parameters.
 
 Contains report plugins with plugin-specific parameters.
 
-***
 
 ### Trips report
 
 A report on detailed trip history.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 4.
 
@@ -48,13 +47,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Stops report
 
 A report on detailed stops history.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 6.
 
@@ -79,13 +77,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Trips and stops by shifts report
 
 A report on trips and stops by shifts.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 77.
 
@@ -134,13 +131,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Geofence visits report
 
 A report on date, time, and mileage in geofence.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 8.
 
@@ -175,13 +171,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### POI visits report
 
 A report on date, time, and the number of POIs visits.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 85.
 
@@ -217,13 +212,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Car security report
 
 A report on alarms, towing alerts, AutoControl events, and crashes.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 15.
 
@@ -244,13 +238,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Emergency button (SOS) report
 
 A report on SOS button events log
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 16.
 
@@ -271,13 +264,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Fall detection report
 
 A report on fall detection sensor log.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 17.
 
@@ -298,13 +290,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Tracker detach report
 
 A report on demounting devices from tracking objects.
 
-#### parameters
+#### Parameters
 
 Default **plugin_id**: 18.
 
@@ -325,13 +316,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Overall security report
 
 A report on all events related to security and safety.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 19.
 
@@ -354,13 +344,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Engine hours report
 
 A report on time spent in motion and on idling.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 7.
 
@@ -388,13 +377,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Fuel volume report
 
 A report on fuel refills, drains, consumption (based on fuel level sensor).
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 10.
 
@@ -438,13 +426,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Flow meter report
 
 A report on fuel consumption counted by flow meter sensors.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 78.
 
@@ -468,13 +455,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Vehicle sensors report
 
 A report on CAN-bus and OBD2-port data.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 22.
 
@@ -518,13 +504,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Speed violation
 
 A report on speeding instances.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 27.
 
@@ -553,13 +538,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Device switching ON/OFF report
 
 A report on switching device using hardware switch.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 23.
 
@@ -580,13 +564,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### GSM connection lost
 
 A report on long disruptions of server connection
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 13.
 
@@ -607,13 +590,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Measuring sensors report
 
 A report on detailed sensor reading history.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 9.
 
@@ -661,13 +643,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Equipment working time
 
 A report on activity and idle time of the equipment.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 12.
 
@@ -708,13 +689,12 @@ default **plugin_id**: 12.
 }
 ```
 
-***
 
 ### Tasks report
 
 A report on tasks statuses.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 42.
 
@@ -741,13 +721,12 @@ default **plugin_id**: 42.
 }
 ```
 
-***
 
 ### Form completion statistics report
 
 A report on form fields completion rate.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 70.
 
@@ -766,13 +745,12 @@ default **plugin_id**: 70.
 }
 ```
 
-***
 
 ### Work statuses report
 
 A report on status changes history.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 47.
 
@@ -791,13 +769,12 @@ default **plugin_id**: 47.
 }
 ```
 
-***
 
 ### Check-in report
 
 A report on markers for Check-in function. Available only for X-GPS Trackers.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 80
 
@@ -823,13 +800,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Driver shift change report
 
 A report on driver identification.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 66.
 
@@ -850,13 +826,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Trips by state
 
 A report on trips breakdown by jurisdictions.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 73.
 
@@ -884,13 +859,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Report on all events
 
 An overall report about any kind of events.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 11.
 
@@ -1006,13 +980,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Geofence entry/exit events
 
 A report on ins ad outs of a certain geofence.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 89.
 
@@ -1035,13 +1008,12 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### SMS-locations report
 
 A report on location requests over SMS channel.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 20.
 
@@ -1066,7 +1038,7 @@ Plugin-specific parameters:
 
 Information on the points transmitted during the day. Maximum period is 24 hours.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 91.
 
@@ -1085,14 +1057,13 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Eco-driving report by trackers
 
 A report on safety driving by trackers. For [report/generate](../report/report_tracker.md#generate) request use trackers
 parameter.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 46.
 
@@ -1167,14 +1138,13 @@ Plugin-specific parameters:
 }
 ```
 
-***
 
 ### Eco-driving report by drivers
 
 A report on safety driving by drivers. For [report/generate](../report/report_tracker.md#generate) request use employees
 parameter.
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 82.
 
@@ -1221,7 +1191,7 @@ Plugin-specific parameters:
 
 ### Stay in zones report
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 84
 
@@ -1246,11 +1216,10 @@ plugin-specific parameters:
 }
 ```
 
-***
 
 ### Stay in places report
 
-#### parameters
+#### Parameters
 
 default **plugin_id**: 85
 

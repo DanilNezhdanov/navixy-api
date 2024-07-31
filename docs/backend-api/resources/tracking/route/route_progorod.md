@@ -7,17 +7,16 @@ description: API call for getting the route to destination point using Progorod 
 
 API call for getting the route to destination point using [Progorod router](https://giswiki.tmcrussia.com/index.php?title=%D0%9C%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F).
 
-***
 
 ## API actions
 
 API path: `/route/progorod`.
 
-### get
+### `get`
 
 Gets route points using Progorod router.
 
-#### parameters
+#### Parameters
 
 | name        | description                                                                                                                                                    | type                  |
 |:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------|
@@ -31,7 +30,7 @@ Gets route points using Progorod router.
 Where **location** described in [data types description section](../../../getting-started.md#data-types). Order of 
 waypoints may be changed.
 
-#### response
+#### Response
 
 ```json
 {
@@ -55,7 +54,7 @@ waypoints may be changed.
     * `lat` - float. Latitude.
     * `lng` - float. Longitude.
 
-#### errors
+#### Errors
 
 * 215 - External service error.
 * 218 - Malformed external service parameters – Contains info about error:

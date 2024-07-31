@@ -7,23 +7,22 @@ description: API call to create a subpaas session.
 
 API call to create a subpaas session key.
 
-***
 
 ## API actions
 
 API base path: `panel/subpaas/session`.
 
-### create
+### `create`
 
 Creates a subpaas session.
 
-#### parameters
+#### Parameters
 
 | name       | description  | type |
 |:-----------|:-------------|:-----|
 | subpaas_id | Subpaas' ID. | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -40,7 +39,7 @@ Creates a subpaas session.
     ```
 
 
-#### response
+#### Response
 
 ```json
 {
@@ -49,7 +48,7 @@ Creates a subpaas session.
 }
 ```
 
-#### errors
+#### Errors
 
 * 13 –
     * The dealer is not paas.

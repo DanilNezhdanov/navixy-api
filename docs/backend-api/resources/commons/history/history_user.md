@@ -7,13 +7,12 @@ description: Contains list method to get user's events.
 
 Contains list method to get user's events.
 
-***
 
 ## API actions
 
 API path: `/history/user/`.
 
-### list
+### `list`
 
 List less than or equal to `limit` of tracker events filtered by event types (`events`) between `from` date/time 
 and `to` date/time sorted by **time** field.
@@ -21,7 +20,7 @@ and `to` date/time sorted by **time** field.
 Added more information about this API call usage in 
 our [instructions](../../../how-to/how-to-work-with-notifications.md#all-events-of-a-user-per-specific-time-period).
 
-#### parameters
+#### Parameters
 
 | name      | description                                                                                      | type                                                       |
 |:----------|:-------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
@@ -37,7 +36,7 @@ Available event types can be obtained by [/history/user/list](./history_type.md#
 
 Default and max limit is 1000. (Note for StandAlone: this value configured by maxHistoryLimit config option).
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -47,7 +46,7 @@ Default and max limit is 1000. (Note for StandAlone: this value configured by ma
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "from": "2020-12-10 16:44:00", "to": "2020-12-22 16:44:00"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -89,7 +88,7 @@ Default and max limit is 1000. (Note for StandAlone: this value configured by ma
 * `limit_exceeded` - boolean. It indicates if the response has exceeded the `store_period` limit, set in the user's 
 tariff plan. Will be `true` if you request a period that exceeds what the user's plan allows.
 
-#### errors
+#### Errors
 
 * 211 – Requested time span is too big - time span between `from` and `to` is more than [report.maxTimeSpan](../dealer.md) days.
 * 212 – Requested `limit` is too big - `limit` is more than [history.maxLimit](../dealer.md).

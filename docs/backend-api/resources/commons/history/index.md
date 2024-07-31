@@ -9,7 +9,6 @@ Contains history entry object description and API calls to interact with it.
 
 Find instructions on getting notifications [here](../../../how-to/how-to-work-with-notifications.md).
 
-***
 
 ## Tracker history entry
 
@@ -70,24 +69,23 @@ Find instructions on getting notifications [here](../../../how-to/how-to-work-wi
 
 Date/time type described in [data types description section](../../../getting-started.md#data-types).
 
-***
 
 ## API actions
 
 API path: `/history`.
 
-### read
+### `read`
 
 Returns history entry with the specified ID.
 
-#### parameters
+#### Parameters
 
 | name              | description                                                 | type    | 
 |:------------------|:------------------------------------------------------------|:--------|
 | id                | [History entry](#tracker-history-entry) ID.                 | long    |
 | add_tracker_label | Optional. If `true` tracker label will be added to message. | boolean |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -103,7 +101,7 @@ Returns history entry with the specified ID.
     {{ extra.api_example_url }}/history/read?hash=a6aa75587e5c59c32d347da438505fc3&id=11231&add_tracker_label=true
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -140,23 +138,22 @@ Returns history entry with the specified ID.
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - when there are no history entries with that ID.
 
-***
 
-### mark_read
+### `mark_read`
 
 Marks history entry as read by `id` (see: [Tracker history entry](#tracker-history-entry)).
 
-#### parameters
+#### Parameters
 
 | name | description                                        | type | 
 |:-----|:---------------------------------------------------|:-----|
 | id   | [Tracker history entry](#tracker-history-entry) ID | long |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -172,27 +169,26 @@ Marks history entry as read by `id` (see: [Tracker history entry](#tracker-histo
     {{ extra.api_example_url }}/history/mark_read?hash=a6aa75587e5c59c32d347da438505fc3&id=11231
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - when there are no history entries with that ID.
 
-***
 
-### mark_read_all
+### `mark_read_all`
 
 Marks all the user's history entries read.
 
-#### parameters
+#### Parameters
 
 Only API key `hash`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -208,13 +204,13 @@ Only API key `hash`.
     {{ extra.api_example_url }}/history/mark_read_all?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.
     

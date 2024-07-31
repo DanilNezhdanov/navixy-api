@@ -18,7 +18,7 @@ not more than last 30 days. This API request returns data for all inputs and sta
 
 API base path: `/tracker/raw_data/`
 
-### get_inputs
+### `get_inputs`
 
 Returns available metering inputs and state fields of a device.
 
@@ -28,13 +28,13 @@ input and state fields it possesses.
 It's important to note that this API request does not provide actual device data. Rather, it serves as a supplementary 
 request aimed at gaining insights into the fields, which data that can be obtained subsequently.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                                                                         | type | format |
 |:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:-----|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). The tracker must be associated with the user whose hash is being used for the request, and not tariff-blocked. | int  | 123456 |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -45,7 +45,7 @@ request aimed at gaining insights into the fields, which data that can be obtain
     -d '{"hash": "6dc7d304dec4434f4c4202ec42817f83","tracker_id": 123456}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -82,19 +82,19 @@ For example:
 * If LLS Levels from 1 to 4 are available, `lls_level_4` is returned , and it is assumed that LLS levels 1 through 3 also exist. 
 * If AVL IOs from 1 to 100000 are available for a device, `avl_io_100000` is returned, and AVL IOs with smaller indexes also exist.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database – tracker ID does not exist. 
 * 204 – Entity not found – there is no tracker with such ID belonging to authorized user. 
 * 208 – Device blocked – tracker exists but was blocked due to tariff restrictions or some other reason.
 
-### read
+### `read`
 
 Retrieves parsed raw data - values received from tracking devices and decoded by the platform.
 
 !!! note "The names and values of the inputs and state fields returned by this request align with the names visible in [Air Console](https://docs.navixy.com/admin-panel/air-console) when connecting to a device. You can find them in the right column, where the incoming data is decoded."
 
-#### parameters
+#### Parameters
 
 | name               | description                                                                                                                                                                                                                                                      | type          | format                                                                                                                                                                            |
 |:-------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -166,7 +166,7 @@ You can append complex columns with an asterisk symbol:
 
 In this case, the platform will search for all available columns in the specified data range and then request them from the database. In the resulting CSV output, instead of the column with an asterisk will be all the existing columns in alphabetical order. If there are no columns, they will not be shown in the response.
 
-#### example for standard searching by message time only
+#### Example for standard searching by message time only
 
 === "cURL"
 
@@ -183,7 +183,7 @@ In this case, the platform will search for all available columns in the specifie
     "columns": ["lat","lng","speed","inputs.ble_lls_level_1","inputs.hw_mileage","discrete_inputs.*"]}'
     ```
 
-#### response
+#### Response
 
 ```
 "msg_time","lat","lng","speed","inputs.ble_lls_level_1","inputs.hw_mileage","discrete_inputs.1","discrete_inputs.2"
@@ -208,7 +208,7 @@ In this case, the platform will search for all available columns in the specifie
 "2023-11-30T13:15:00+0600",54.222275,69.5320816,36,2871,24297.44,0,1
 ```
 
-#### example for searching by server time additionally
+#### Example for searching by server time additionally
 
 This API is designed to accommodate scenarios where you retrieve information from trackers to your applications within specified time intervals. Occasionally, trackers may experience connectivity issues. During such occurrences, these trackers automatically store information in their memory buffers. Upon re-establishing a connection, devices promptly transmit their stored information to the platform.
 
@@ -235,7 +235,7 @@ To address such situations, there is an optional filtering using the `server_tim
     "columns": ["lat","lng","speed","inputs.ble_lls_level_1","inputs.hw_mileage","discrete_inputs.*"]}'
     ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database – tracker ID does not exist.
 * 204 – Entity not found – there is no tracker with such ID belonging to authorized user.

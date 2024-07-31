@@ -10,7 +10,6 @@ results can be used to improve certain areas of your business, concentration in 
 can be filled out by employees using the X-GPS tracker application. Employees can fill out forms when completing tasks 
 or sending check-ins.
 
-***
 
 ## Forms creation
 
@@ -49,7 +48,6 @@ The platform will respond with:
 }
 ```
 
-***
 
 ## Form filling
 
@@ -60,7 +58,6 @@ Forms can be filled in two ways:
 * Task completion. An employee performs a task and sends a form as progress report. A form should be assigned to a task 
   before an employee will have a possibility to fill it in a task completion zone. 
 
-***
 
 ### Form assigning
 
@@ -68,7 +65,6 @@ A form can be assigned to an existing task with [task update call](../resources/
 
 !!! note "`create_form` parameter should be `false` to add an already created form."
 
-***
 
 ## Obtaining information from submitted forms
 
@@ -87,7 +83,6 @@ Or
 * Get a [list of tasks](../resources/field_service/task/index.md#list) to find a specific task and obtain a form_id from it. 
 * Use this form_id to [read](../resources/field_service/form/index.md#read) and [download](../resources/field_service/form/index.md#download) forms.
 
-***
 
 ### Specific forms as they sent in check-ins
 

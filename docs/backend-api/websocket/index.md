@@ -7,7 +7,6 @@ description: Information about WebSocket API and how to open connection.
 
 Information about WebSocket API and how to open connection.
 
-***
 
 ## Introduction
 
@@ -16,7 +15,6 @@ from the server to the client through a constantly open connection. This allows 
 
 Currently, the [Atmosphere Framework](https://github.com/Atmosphere) used as an application layer library and protocol.
 
-***
 
 ## Standard workflow
 
@@ -39,7 +37,6 @@ Let's describe a standard workflow for WebSocket API:
       with common [API](../getting-started.md) format.
     * All `WebSocket` frames use a `JSON` format. Exceptions are heartbeat frames containing "X".
 
-***
 
 ## Open connection
 
@@ -114,7 +111,6 @@ After that, will be sent a first frame through the opened WebSocket channel:
 This is service message for the Atmosphere protocol negotiation.
 Now everything is ready to [subscribe on events](./subscription.md#subscribe-action).
 
-***
 
 ## Common fields
 

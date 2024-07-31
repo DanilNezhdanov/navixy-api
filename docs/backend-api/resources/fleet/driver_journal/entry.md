@@ -10,7 +10,6 @@ trips and categorize them by status to see the full picture of transport usage. 
 
 To get information on how-to work with driver journals refer to our [instructions](../../../how-to/driver-journals-usage.md).
 
-***
 
 ## Driver journal entry object
 
@@ -52,20 +51,19 @@ To get information on how-to work with driver journals refer to our [instruction
 * `start_odometer` - nullable float. Odometer's value at the start.
 * `end_odometer` - nullable float. Odometer's value at the end.
 
-***
 
 ## API actions
 
 API path: `/driver/journal/entry`.
 
-### list
+### `list`
 
 Gets driver journal entries. 
 There are two ways to get entries: by their IDs or by specifying date range.
 If there are no `entry_ids` in request, entries will be selected by intersecting their date range with date range from
  request (`from` and `to` parameters).
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                                                        | type                                                |
 |:-----------|:-----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|
@@ -88,7 +86,7 @@ If there are no `entry_ids` in request, entries will be selected by intersecting
     * `type` - Sort by type. 
     * If no `sort` param is specified, then `sort` option will be "start_date=asc".
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -98,7 +96,7 @@ If there are no `entry_ids` in request, entries will be selected by intersecting
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 123456, "from": "2020-10-13 00:00:00", "to": "2020-10-14 00:00:00"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -128,23 +126,22 @@ If there are no `entry_ids` in request, entries will be selected by intersecting
 }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### create
+### `create`
 
 Creates driver journal entries.
 
-#### parameters
+#### Parameters
 
 | name    | description                                                 | type             |
 |:--------|:------------------------------------------------------------|:-----------------|
 | entries | Array of `driver_journal_entry` objects without `id` field. | array of objects |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -154,23 +151,22 @@ Creates driver journal entries.
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "entries": [{"tracker_id": 1, "start_date": "2020-10-13 07:03:39", "end_date": "2020-10-14 08:05:02", "employee_id": 1, "type": "work", "comment": "comment string", "start_location": {"lat": 11.0, "lng": 22.0, "address": "address value"}, "end_location": {"lat": 11.0, "lng": 22.0, "address": "address value"}, "length": 1.44, "start_odometer": 1.34, "end_odometer": 5.34}]}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true}
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types.
 
-***
 
-### update
+### `update`
 
 Updates driver journal entry. Only two fields `type` and `comment` are available to update.
 
-#### parameters
+#### Parameters
 
 | name  | description                                            | type        |
 |:------|:-------------------------------------------------------|:------------|
@@ -190,7 +186,7 @@ Updates driver journal entry. Only two fields `type` and `comment` are available
 * `type` - [enum](../../../getting-started.md#data-types). Type of journal entry. Can be "work", "personal", "other".
 * `comment` - string. New comment of the driver journal entry.
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -200,30 +196,29 @@ Updates driver journal entry. Only two fields `type` and `comment` are available
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "entry": {"id": 1, "type": "work", "comment": "new comment"}}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 * 201 – if tracker not found
 * 204 - if entry not found. 
 * [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### delete
+### `delete`
 
 Deletes driver journal entries.
 
-#### parameters
+#### Parameters
 
 | name      | description                           | type      |
 |:----------|:--------------------------------------|:----------|
 | entry_ids | Array of driver journal entries' IDs. | int array |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -239,24 +234,23 @@ Deletes driver journal entries.
     {{ extra.api_example_url }}/driver/journal/entry/delete?hash=a6aa75587e5c59c32d347da438505fc3&entry_id=[127722, 127724]
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### download
+### `download`
 
 Gets driver journal entries. Entries selected by intersecting their date range with date range from request (`from` 
 and `to` parameters).
 
-#### parameters
+#### Parameters
 
 | name                | description                                                                                                                                 | type                                                |
 |:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|
@@ -274,7 +268,7 @@ and `to` parameters).
     * `type` - group entries by entry type.
     * `date` - group entries by start_date per day.
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -284,10 +278,10 @@ and `to` parameters).
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 123456, "from": "2020-10-13 00:00:00", "to": "2020-10-14 00:00:00", "add_filename_header": true, "format": "pdf"}'
     ```
 
-#### response
+#### Response
 
 A driver journal report file (standard file download).
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.

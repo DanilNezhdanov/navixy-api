@@ -9,7 +9,6 @@ Statuses are used to track current employee activity (in fact, of tracking devic
 The simplest example is "busy" | "not busy". This is a status listing consisting of two elements (working statuses). Different
 trackers can be assigned different status lists.
 
-***
 
 ## Create
 
@@ -65,7 +64,6 @@ The response will contain ID of a new working status:
 }
 ```
 
-***
 
 ## Assign
 

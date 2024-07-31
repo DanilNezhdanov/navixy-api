@@ -10,7 +10,6 @@ specified conditions and send events to emails and phones. It sends notification
 Sometimes, necessary to store those notifications and history entries to use them in special reports, or they can be 
 used for scripts build on APIs. Let's see how to work with them.
 
-***
 
 ## Obtain a list of history entries
 
@@ -72,7 +71,6 @@ that could be used for different purposes:
 }
 ```
 
-***
 
 ### Events for specific trackers and time period
 
@@ -106,7 +104,6 @@ necessary to know only when the device entered and exited the geofence. API requ
 
 Response will contain the [history entries](../resources/commons/history/index.md#tracker-history-entry) that match to our request.
 
-***
 
 ### All events of a user per specific time period
 

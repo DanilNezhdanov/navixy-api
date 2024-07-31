@@ -9,7 +9,6 @@ description: How to use tags and where they can help.
 places, geofences, employees, tasks, trackers, and vehicles. You can create custom tags according to your needs. One 
 object may have several tags. Tags are entities that could be assigned with objects.
 
-***
 
 ## Case
 
@@ -17,7 +16,6 @@ I need to get easier searching by objects. For example, we have several places t
 employees, who in turn can only use the specified vehicles. We also want to easily find the tasks that we set for these teams.
 To do this, we will assign a specific tag to all these objects.
 
-***
 
 ## Creation
 
@@ -42,7 +40,6 @@ API request:
 The platform will reply with the created tag id. We can find this tag using the [tag/list](../resources/commons/tag/index.md#list)
 call.
 
-***
 
 ## Assigning
 
@@ -57,7 +54,6 @@ this tag to a new object while creating. It can be done with adding the "tags" p
 * [zone](../resources/tracking/zone/index.md#entity-description) object - [update](../resources/tracking/zone/index.md#update)/[create](../resources/tracking/zone/index.md#create).
 * [tracker](../resources/tracking/tracker/index.md#tracker-object-structure) object - There are no create and update calls for trackers. We should use [tags/set](../resources/tracking/tracker/index.md#tagsset) call for them.
 
-***
 
 ## Searching objects with tag
 

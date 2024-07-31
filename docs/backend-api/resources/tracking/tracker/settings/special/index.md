@@ -16,24 +16,23 @@ This field contains `type`, which identifies a certain kind of settings. (For ex
 
 Such control assumes tracker special settings
 
-***
 
 ## API actions
 
 API base path: `/tracker/settings/special`.
 
-### read
+### `read`
 
 Gets special settings for the specified tracker.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type                                                 | format                     |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----------------------------------------------------|:---------------------------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int                                                  | 123456                     |
 | type       | Optional. Type of special object.                                                               | [enum](../../../../../getting-started.md#data-types) | "electronic_lock_password" |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -49,7 +48,7 @@ Gets special settings for the specified tracker.
     {{ extra.api_example_url }}/tracker/settings/special/read?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=123456
     ```
 
-#### responses
+#### Responses
 
 If parameter type is present:
 
@@ -913,28 +912,27 @@ defined by this parameter. Can be 1 - 255.
 * `timeout` - int. Can be 30 - 65500. A time parameter when the device doesn't move.
 * `pre_alarm_duration` - int. Can be 0 - 65500. A time parameter when the device continues not to move after timeout.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database (if there is no tracker with such ID belonging to authorized user).
 * 208 – Device blocked (if tracker exists but was blocked due to tariff restrictions or some other reason).
 * 214 – Requested operation or parameters are not supported by the device.
 
-***
 
-### update
+### `update`
 
 Sets special settings for a specified tracker with the new one.
 
 **required sub-user rights:** `tracker_configure`.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                     | type        |
 |:-----------|:------------------------------------------------------------------------------------------------|:------------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int         |
 | value      | Settings object, see above.                                                                     | JSON object |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -944,13 +942,13 @@ Sets special settings for a specified tracker with the new one.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "tracker_id": 123456, "value": {"type": "time_shift", "offset": 3.0}}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
 * 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.

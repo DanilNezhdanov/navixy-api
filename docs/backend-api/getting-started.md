@@ -3,8 +3,6 @@ title: Getting Started
 description: Overview of Navixy Backend API
 ---
 
-# Navixy Backend API
-
 
 ## General
 
@@ -12,7 +10,6 @@ Each API resource semantically corresponds to some entity, for example:
 geofences, rules, objects, etc. The API calls for CRUD and other operations 
 with these entities have similar names regardless the resource used: list, read, create, delete.
 
-***
 
 ## Standard workflow (example)
 
@@ -30,7 +27,6 @@ common example — requesting the track points data:
 In other words, to start working with API, the developers should have API call 
 description (as provided herein), and know user login and password.
 
-***
 
 ## API base URL
 
@@ -51,7 +47,6 @@ For white label solutions based on Navixy ServerMate platforms you can use your 
 
 The form is same for European and American Navixy ServerMate platforms without `eu` and `us` there.
 
-***
 
 ## API calls format
 
@@ -103,7 +98,6 @@ Typical actions:
 *   `update` – update one entity by ID
 *   `delete` – delete one entity by ID
 
-***
 
 ### Request and response format
 
@@ -191,7 +185,6 @@ Or error if hash is wrong:
 }
 ```
 
-***
 
 ### HTTP codes
 
@@ -199,7 +192,6 @@ If `success` is `true`, HTTP code is always `200 OK` (unless otherwise stated).
 If there is an error, HTTP code is `400 BAD REQUEST` (may vary depending on error type) 
 (see [error](#error-codes)).
 
-***
 
 ### Authorization and access levels
 
@@ -223,7 +215,6 @@ Authorization = "NVX" + " " + ApiKeyValue ;
 
 Read [how to get an API key](./how-to/get-api-key.md).
 
-***
 
 ### Data types
 
@@ -250,7 +241,6 @@ Read [how to get an API key](./how-to/get-api-key.md).
     country code, e.g. `en_US` or `ru`. User interface support only language codes: 
     `ru, en, es, ar, de, pt, ro and uk`.
     
-***
 
 #### Date/time formats
 
@@ -336,7 +326,6 @@ In the event of error occurs, the response will be in the following format:
 ```
 where `code` is one on the [error codes](#error-codes).
 
-***
 
 #### Error codes
 

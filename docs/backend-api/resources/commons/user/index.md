@@ -8,7 +8,7 @@ description: A user account lets you start working with the platform as well as 
 A user account lets you start working with the platform as well as customize your experience within it. Contains user 
 object structure and API calls to interact with users.
 
-***
+
 
 ## User object structure
 
@@ -121,13 +121,13 @@ object structure and API calls to interact with users.
     * `privileges` - object only returned for sub-users. Describes effective sub-user privileges. 
     * `rights` - string array. A set of rights granted to sub-user. Described in [security group rights](../subuser/security_group.md#security-group-rights).
 
-***
+
 
 ## API actions
 
 API path: `/user`.
 
-### activate
+### `activate`
 
 Activates previously registered user with the provided session hash 
 (it is contained in activation link from email sent to user).
@@ -139,15 +139,15 @@ Available only to master users.
     The only thing that API calls with a user session will work for is creating, 
     reading, and deleting API keys.
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-***
 
-### auth
+
+### `auth`
 
 Tries to authenticate user and get hash.
 
@@ -155,7 +155,7 @@ It does not need authentication/hash and is available at `UNAUTHORIZED` access l
 
 !!! note "We recommend using [API keys](../../../how-to/get-api-key.md) instead of user session hash."
 
-#### parameters
+#### Parameters
 
 | name      | description                                                                                            | type   | restrictions                            |
 |:----------|:-------------------------------------------------------------------------------------------------------|:-------|:----------------------------------------|
@@ -163,7 +163,7 @@ It does not need authentication/hash and is available at `UNAUTHORIZED` access l
 | password  | User password.                                                                                         | string | not null, 1 to 40 printable characters. |
 | dealer_id | If specified, API will check that user belongs to this dealer, and if not, error 102 will be returned. | int    | optional.                               |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -173,7 +173,7 @@ It does not need authentication/hash and is available at `UNAUTHORIZED` access l
         -d '{"login": "user@email.com", "password": "12@14Y$"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -184,7 +184,7 @@ It does not need authentication/hash and is available at `UNAUTHORIZED` access l
 
 * `hash` - string. Session hash.
 
-#### errors
+#### Errors
 
 * 11 – Access denied - if dealer blocked.
 * 102 – Wrong login or password.
@@ -192,19 +192,19 @@ It does not need authentication/hash and is available at `UNAUTHORIZED` access l
 * 104 – Logins limit exceeded, please reuse existing sessions instead (see also user/session/renew).
 * 105 – Login attempts limit exceeded, try again later.
 
-***
 
-### get_info
+
+### `get_info`
 
 Gets user information and some settings.
 
-#### parameters
+#### Parameters
 
 | name        | description                                                                            | type   | restrictions |
 |:------------|:---------------------------------------------------------------------------------------|:-------|:-------------|
 | application | If specified, the response will contain a description of the application's custom menu | string | optional     |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -220,7 +220,7 @@ Gets user information and some settings.
     {{ extra.api_example_url }}/user/get_info?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -288,21 +288,21 @@ Gets user information and some settings.
 
 * `user_object` - for more info see [user object structure](#user-object-structure).
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### get_tariff_restrictions
 
-Gets user tariff restrictions.
+### `get_tariff_restrictions`
 
-#### parameters
+Gets user plan restrictions.
+
+#### Parameters
 
 Only API key `hash`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -318,7 +318,7 @@ Only API key `hash`.
     {{ extra.api_example_url }}/user/get_tariff_restrictions?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -331,22 +331,21 @@ Only API key `hash`.
 
 * `allowed_maps` - string array. List of allowed maps.
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### logout
+### `logout`
 
 Destroys current user session.
 Works only with standard user session (not with API key).
 
-#### parameters
+#### Parameters
 
 Only session `hash`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -362,31 +361,31 @@ Only session `hash`.
     {{ extra.api_example_url }}/user/logout?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../getting-started.md#error-codes) types only.
 
-***
 
-### resend_activation
+
+### `resend_activation`
 
 Sends a new activation link to user.
 
 It does not need authentication/hash and is available at `UNAUTHORIZED` access level.
 
-#### parameters
+#### Parameters
 
 | name  | description         | type   | restrictions |
 |:------|:--------------------|:-------|:-------------|
 | login | User login (email). | string | not null.    |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -402,13 +401,13 @@ It does not need authentication/hash and is available at `UNAUTHORIZED` access l
     {{ extra.api_example_url }}/user/resend_activation?login=user@login.com
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database – user with a passed login not found.
 * 209 - Failed sending email – can't send email.

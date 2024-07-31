@@ -7,7 +7,6 @@ description: CRUD actions for user settings.
 
 CRUD actions for user settings.
 
-***
 
 ## settings object
 
@@ -53,21 +52,20 @@ CRUD actions for user settings.
 
 * `auto_overwrite` - boolean. If `true` new files will replace old ones when file storage is full. Default is `false`.
 
-***
 
 ## API actions
 
 API path: `/user/settings`.
 
-### read
+### `read`
 
 Reads current user's settings.
 
-#### parameters
+#### Parameters
 
 Only API key `hash`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -83,7 +81,7 @@ Only API key `hash`.
     {{ extra.api_example_url }}/user/settings/read?hash=a6aa75587e5c59c32d347da438505fc3
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -113,15 +111,14 @@ Only API key `hash`.
 
 **required sub-user rights** for `balance_alert_settings` and `file_storage_settings` fields: `admin` (available only to master users).
 
-***
 
-### update
+### `update`
 
 Update current user's settings.
 
 **required sub-user rights** for `balance_alert_settings` and `file_storage_settings`: `admin` (available only to master users).
 
-#### parameters
+#### Parameters
 
 | name                   | description                                                                            | type                                              |
 |:-----------------------|:---------------------------------------------------------------------------------------|:--------------------------------------------------|
@@ -134,7 +131,7 @@ Update current user's settings.
 | balance_alert_settings | Object containing array of emails.                                                     | JSON object                                       |
 | file_storage_settings  | Object containing file storage settings.                                               | JSON object                                       |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -144,31 +141,30 @@ Update current user's settings.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "time_zone": "Europe/Amsterdam", "locale": "nl_NL", "measurement_system": "metric", "geocoder": "osm", "route_provider": "google", "translit": false, "balance_alert_settings": {"emails": ["email1@example.com", "email2@example.com"]}, "file_storage_settings": {"auto_overwrite": true}}'
     ```
 
-#### response
+#### Response
 
 ```json
 { "success": true }
 ```
 
-#### errors
+#### Errors
 
 * [General](../../../../getting-started.md#error-codes) types only.
 
-***
 
-### file_storage/update
+### `file_storage/update`
 
 Updates current user's file storage settings.
 
 **required sub-user rights:** `admin` (available only to master users).
 
-#### parameters
+#### Parameters
 
 | name                  | description                              | type        |
 |:----------------------|:-----------------------------------------|:------------|
 | file_storage_settings | Object containing file storage settings. | JSON object |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -178,6 +174,6 @@ Updates current user's file storage settings.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "file_storage_settings": {"auto_overwrite": true}}'
     ```
 
-#### errors
+#### Errors
 
 * 13 – Operation not permitted – if user has insufficient rights.

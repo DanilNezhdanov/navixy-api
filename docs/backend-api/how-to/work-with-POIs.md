@@ -15,7 +15,6 @@ it's possible to assign specific employees to a customer.
 
 Here we will describe - how places with custom fields can be created and used.
 
-***
 
 ## Creation of fields and POIs
 
@@ -38,7 +37,6 @@ For our own CRM system we need to have the next fields:
 * Responsible employee - this field is necessary to assign a place to our responsible employee for this address. He will 
 be able to see and change necessary information using his mobile app.
 
-***
 
 ### Custom fields
 
@@ -133,7 +131,6 @@ API request:
         -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "entity": {"allowed": true, "id": 520, "type": "place", "settings": {"layout": {"sections": [{"label": "Places", "field_order": ["label", "location", "description", "tags", "2327", "2328", "2329", "2330", "2331", "2332"]}}}}'
     ```
 
-***
 
 ### POIs creation
 
@@ -162,7 +159,6 @@ The platform will confirm creation with:
 
 * `id` - int. An ID of the created place. It can be used for obtaining and updating the place object.
 
-***
 
 ## Obtaining and updating information about places
 
@@ -174,7 +170,6 @@ The platform will confirm creation with:
   
 * To update information about place use [place/update](../resources/field_service/place/index.md#update) API call.
 
-***
 
 ### Getting POI name by a tracker's location
 

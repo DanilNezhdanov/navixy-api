@@ -12,7 +12,6 @@ All event messages contain the next fields:
 * `event` - [enum](../getting-started.md#data-types). Can be "state", "state_batch", "lifecycle", or "logout".
 * `data` - optional object. Specific event payload. 
 
-***
 
 ## State event
 
@@ -71,7 +70,6 @@ Message sample:
 
 !!! note "`source_id` is not a `tracker_id`."
 
-***
 
 ## State batch event
 
@@ -129,7 +127,6 @@ Message sample:
 
 !!! note "`source_id` is not a `tracker_id`."
 
-***
 
 ### Compact source state
 
@@ -156,7 +153,6 @@ Sample:
 }
 ```
 
-***
 
 ## Lifecycle event
 
@@ -188,7 +184,6 @@ Message sample:
 }
 ```
 
-***
 
 ## Logout event
 

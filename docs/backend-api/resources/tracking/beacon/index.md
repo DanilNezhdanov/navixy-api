@@ -8,7 +8,6 @@ description: Contains list of methods to get BLE beacon data.
 Methods for obtaining collected BLE beacon data.
 BLE beacon data is data about radio tags (BLE beacons) visible to a tracker, e.g. iBeacon, Teltonika EYE Beacon\Sensor, Eddystone.
 
-***
 
 ## BLE beacon data entry
 ```json
@@ -38,11 +37,11 @@ BLE beacon data is data about radio tags (BLE beacons) visible to a tracker, e.g
 
 API path: `/beacon/data/read`.
 
-### read
+### `read`
 
 List of beacon data history between `from` date/time and `to` date/time sorted by **get_time** field.
 
-#### parameters
+#### Parameters
 
 | name      | description                                                                                              | type                                                       |
 |:----------|:---------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
@@ -52,7 +51,7 @@ List of beacon data history between `from` date/time and `to` date/time sorted b
 | beacons   | Optional. Default: null. List of beacons IDs. All IDs must not be empty and not more than 64 characters. | string array                                               |
  
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -68,7 +67,7 @@ List of beacon data history between `from` date/time and `to` date/time sorted b
     }'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -107,11 +106,11 @@ List of beacon data history between `from` date/time and `to` date/time sorted b
 
 API path: `/beacon/data/last_values`.
 
-### last values
+### `last values`
 
 List of last BLE beacon data visible on the trackers.
 
-#### parameters
+#### Parameters
 
 | name                    | description                                                                       | type              |
 |:------------------------|:----------------------------------------------------------------------------------|:------------------|
@@ -121,7 +120,7 @@ List of last BLE beacon data visible on the trackers.
 
 
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -135,7 +134,7 @@ List of last BLE beacon data visible on the trackers.
     }'
     ```
 
-#### response
+#### Response
 
 ```json
 {

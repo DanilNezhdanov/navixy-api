@@ -13,7 +13,6 @@ recommend reading [Backend API: getting started][1].
 
 Two main differences are _authorization system_ and _request paths_.
 
-***
 
 ### Panel API base URL
 
@@ -28,7 +27,6 @@ API call in Navixy ServerMate, you should use the URL:
 
     {{ extra.api_example_url }}/panel/account/auth
 
-***
 
 ### Authorization
 
@@ -99,7 +97,6 @@ its contents programmatically as it may change in the future.
 
 For more info, please see `account/auth`.
 
-***
 
 ### Using session hash
 
@@ -115,7 +112,6 @@ $ curl -X POST 'http://api.domain.com/v2/panel/user/list/' \
        -d 'hash=1dc2b813769d846c2c15030884948117&limit=10'
 ```
 
-***
 
 ### Session expiration
 
@@ -136,7 +132,6 @@ If you attempt to make a Panel API call with an expired session hash, you will r
 
 In this case, just obtain new hash using `account/auth`.
 
-***
 
 ### How to securely share panel's credentials
 
@@ -161,7 +156,6 @@ Technicians are not allowed:
 * Add, change, delete plans
 * Change platform settings
 
-***
 
 ### Panel API Permissions
 

@@ -7,7 +7,6 @@ description: API calls to search address and location using geocoder
 
 API calls to search address and location using geocoder.
 
-***
 
 ## Geocoder types
 
@@ -17,17 +16,16 @@ API calls to search address and location using geocoder.
 * osm.
 * locationiq.
 
-***
 
 ## API actions
 
 API path: `/geocoder`.
 
-### search_address
+### `search_address`
 
 Performs a forward geocoding. Returns a list of locations matching the given address. Items in the list sorted by relevance.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                                                                                                                                                                                                                  | type                                        | format                                                            |
 |:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|:------------------------------------------------------------------|
@@ -37,7 +35,7 @@ Performs a forward geocoding. Returns a list of locations matching the given add
 | lang         | Optional. Language in which results should be. ISO 639 [language code](../../getting-started.md#data-types).                                                                                                                                                                                                 | [enum](../../getting-started.md#data-types) | "en_US"                                                           |
 | with_details | Optional. If `true` then the response will contain details.                                                                                                                                                                                                                                                  | boolean                                     | `true`                                                            |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -47,7 +45,7 @@ Performs a forward geocoding. Returns a list of locations matching the given add
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "q": "750 Avenue E,San Francisco,CA 94130,USA", "lang": "en", "geocoder": "google"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -92,13 +90,12 @@ Performs a forward geocoding. Returns a list of locations matching the given add
         * `nw` - North West corner.
         * `se` - South East corner.
 
-***
 
-### search_location
+### `search_location`
 
 Search address by location using geocoder.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                                                     | type                                        | format               |
 |:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|:---------------------|
@@ -108,7 +105,7 @@ Search address by location using geocoder.
 | with_details | Optional. If `true` then the response will contain details.                                                                                     | boolean                                     | `true`               |
 | goal         | Helps to choose the target geocoder. Now supported `ui`, `ui_user_action`. Use `ui_user_action` for requests initiated by user, otherwise `ui`. | [enum](../../getting-started.md#data-types) | "ui"                 | 
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -118,7 +115,7 @@ Search address by location using geocoder.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "location": "{"lat": 37.825429, "lng": -122.371982}}'
     ```
 
-#### response
+#### Response
 
 ```json
 {

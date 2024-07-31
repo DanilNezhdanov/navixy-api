@@ -7,25 +7,24 @@ description: API calls for interaction with images that used for branding of the
 
 API calls for interaction with images that used for branding of the panel.
 
-***
 
 ## API actions
 
 API path: `panel/dealer/settings/image`.
 
-### delete 
+### `delete` 
 
 Deletes an image of specified `type`. 
 
 *required permissions*: `service_settings: "update"`.
 
-#### parameters
+#### Parameters
 
 | name | description                                                                                                     | type   |
 |:-----|:----------------------------------------------------------------------------------------------------------------|:-------|
 | type | Image type to delete. Can be one of `logo`, `favicon`, `login_wallpaper`, `desktop_wallpaper`, `document_logo`. | string |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -41,7 +40,7 @@ Deletes an image of specified `type`.
     {{ extra.api_example_url }}/panel/dealer/settings/image/delete?hash=fa7bf873fab9333144e171372a321b06&type=logo
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -49,13 +48,12 @@ Deletes an image of specified `type`.
 }
 ```
     
-#### errors
+#### Errors
 
 * 201 - Not found in the database - when there are no settings for a dealer in the db.
 
-***
 
-### upload
+### `upload`
 
 Uploads image of specified `type`. 
 
@@ -73,7 +71,7 @@ File part **mime** type must be one of:
 
 *required permissions*: `service_settings: "update"`.
 
-#### parameters
+#### Parameters
 
 
 | name            | description                                                                                                     | type   |
@@ -84,7 +82,7 @@ File part **mime** type must be one of:
 
 If `redirect_target` passed a return redirect to `response=<urlencoded response json>`.
 
-#### response
+#### Response
 
 ```json
 {
@@ -92,7 +90,7 @@ If `redirect_target` passed a return redirect to `response=<urlencoded response 
 }
 ```    
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database - when there are no settings for dealer in the db.
 * 233 - No data file - if `file` part not passed.

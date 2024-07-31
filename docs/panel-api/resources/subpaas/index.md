@@ -7,7 +7,6 @@ description: API calls to interact with Subpaases.
 
 API calls to interact with Subpaases.
 
-***
 
 ## Subpaas object
 
@@ -42,17 +41,16 @@ API calls to interact with Subpaases.
 * `contact_post` - string. Contact post (position).
 * `contact_phone` - string. Contact's phone.
 
-***
 
 ## API actions
 
 API base path: `panel/subpaas`.
 
-### create
+### `create`
 
 Creates subpaas. After creation its `dealer_block_type` will be in `INITIAL_BLOCK` status.
 
-#### parameters
+#### Parameters
 
 | name            | description                    | type   |
 |:----------------|:-------------------------------|:-------|
@@ -63,7 +61,7 @@ Creates subpaas. After creation its `dealer_block_type` will be in `INITIAL_BLOC
 | jur_country     | Subpaas' country               | string |
 | link_monitoring | Subpaas' domain name.          | string |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -72,7 +70,7 @@ Creates subpaas. After creation its `dealer_block_type` will be in `INITIAL_BLOC
         -H 'Content-Type: application/json' \
         -d '{"hash": "fa7bf873fab9333144e171372a321b06", "password": "B1r7d@Y", "title": "Company", "email": "email@company.com", "jur_name": "Company", "jur_country": "Finland", "link_monitoring": "company.com"}'
     ```
-#### response
+#### Response
 
 ```json
 {
@@ -80,20 +78,19 @@ Creates subpaas. After creation its `dealer_block_type` will be in `INITIAL_BLOC
 }
 ```
 
-#### errors
+#### Errors
 
 * 13 – If the dealer
     * is not paas.
     * has different status than `NOT_BLOCKED`.
     * his tariff doesn't allow subpaases.
 
-***
 
-### list
+### `list`
 
 Gets a list of all subpaases for a dealer. Dealer ID will be taken from the session key.
 
-#### parameters
+#### Parameters
 
 | name      | description                                                                                                                       | type                                                       |
 |:----------|:----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
@@ -102,7 +99,7 @@ Gets a list of all subpaases for a dealer. Dealer ID will be taken from the sess
 | limit     | Optional. Pagination. Maximum subpaases to return                                                                                 | int                                                        |
 | offset    | Optional. Pagination. Get subpaases starting from.                                                                                | int                                                        |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -118,7 +115,7 @@ Gets a list of all subpaases for a dealer. Dealer ID will be taken from the sess
     {{ extra.api_example_url }}/panel/subpaas/list?hash=fa7bf873fab9333144e171372a321b06
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -142,26 +139,25 @@ Gets a list of all subpaases for a dealer. Dealer ID will be taken from the sess
 
 * `list` - array of objects. List of [subpaas objects](#subpaas-object) described above.
 
-#### errors 
+#### Errors 
 
 * 13 – If the dealer
     * is not paas.
     * has different status than `NOT_BLOCKED`.
     * his tariff doesn't allow subpaases.
 
-***
 
-### read
+### `read`
 
 Gets subpaas info by its id.
 
-#### parameters
+#### Parameters
 
 | name       | description | type |
 |:-----------|:------------|:-----|
 | subpaas_id | Subpaas ID. | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -177,7 +173,7 @@ Gets subpaas info by its id.
     {{ extra.api_example_url }}/panel/subpaas/read?hash=fa7bf873fab9333144e171372a321b06&subpaas_id=97834
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -199,20 +195,19 @@ Gets subpaas info by its id.
 
 * `value` - [subpaas object](#subpaas-object) described above.
 
-#### errors
+#### Errors
 
 * 13 – If the dealer
     * is not paas.
     * has different status than `NOT_BLOCKED`.
     * his tariff doesn't allow subpaases.
 
-***
 
-### update
+### `update`
 
 Updates a subpaas with specified ID.
 
-#### parameters
+#### Parameters
 
 | name            | description                                                                                                    | type                                                       |
 |:----------------|:---------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
@@ -228,7 +223,7 @@ Updates a subpaas with specified ID.
 | contact_phone   | Contact's phone.                                                                                               | string                                                     |
 | block_type      | Panel and PaaS users block status. One of: "NOT_BLOCKED", "INITIAL_BLOCK", "BLOCK_LOGIN" or "CLIENTS_BLOCKED". | [enum](../../../backend-api/getting-started.md#data-types) |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -238,7 +233,7 @@ Updates a subpaas with specified ID.
         -d '{"hash": "fa7bf873fab9333144e171372a321b06", "password": "B1r7d@Y", "title": "Company", "email": "email@company.com", "jur_name": "Company", "jur_country": "Finland", "link_monitoring": "company.com", "contact_fio": "fio", "contact_post": "CEO", "contact_phone": "79999902190", "block_type": "NOT_BLOCKED"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -246,7 +241,7 @@ Updates a subpaas with specified ID.
 }
 ```
 
-#### errors
+#### Errors
 
 * 13 –
     * The dealer is not paas.

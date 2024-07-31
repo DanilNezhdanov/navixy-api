@@ -7,17 +7,16 @@ description: API call for getting the route to destination point using Google Di
 
 API call for getting the route to destination point using [Google Directions API](https://developers.google.com/maps/documentation/directions/intro).
 
-***
 
 ## API actions
 
 API path: `/route/google`.
 
-### get
+### `get`
 
 Gets route points using Google Directions API.
 
-#### parameters
+#### Parameters
 
 | name        | description                                                                                                      | type                  |
 |:------------|:-----------------------------------------------------------------------------------------------------------------|:----------------------|
@@ -28,7 +27,7 @@ Gets route points using Google Directions API.
 
 Where **location** described in [data types description section](../../../getting-started.md#data-types).
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -38,7 +37,7 @@ Where **location** described in [data types description section](../../../gettin
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "start": {"lat": 34.178868, "lng": -118.599672}, "end": {"lat": 31.738386, "lng": -106.453854}}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -67,7 +66,7 @@ Where **location** described in [data types description section](../../../gettin
     * `time` - int. Duration of full path from start in seconds (0 for start point).
     
 
-#### errors
+#### Errors
 
 215 - External service error.
 

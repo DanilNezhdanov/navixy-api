@@ -8,13 +8,12 @@ description: Rule types with all parameters to create. The rule availability dep
 Rule types with all parameters to create. The rule availability depends on the device, connected and configured equipment 
 and rule integration for it.
 
-***
 
 ### Geofence entrance or exit
 
 A rule that triggers on device entering/exiting created on platform [geofences](../../zone/index.md#list).
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                    | type                                              |
 |----------------|--------------------------------------------------------------------------------|---------------------------------------------------|
@@ -30,13 +29,12 @@ A rule that triggers on device entering/exiting created on platform [geofences](
 | private_rule      | Affects only sub users. If `true` then the rule and notifications are visible only to sub user. | boolean |
 | append_zone_title | Show or not the zone labels in a notification text.                                             | boolean |
 
-***
 
 ### Parking state detection
 
 A rule that triggers on detection of parking state calculated based on [parking detection settings](../settings/trip_detection.md).
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                   | type                                              |
 |----------------|-------------------------------------------------------------------------------|---------------------------------------------------|
@@ -53,13 +51,12 @@ A rule that triggers on detection of parking state calculated based on [parking 
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 
-***
 
 ### Speeding (hardware related)
 
 A rule that triggers on speed exceeding determined by hardware. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                   | type                                              |
 |--------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -75,13 +72,12 @@ A rule that triggers on speed exceeding determined by hardware. Based on the con
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Speeding (platform related)
 
 A rule that triggers on speed exceeding determined by the platform. Based on received speed from device.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                               | type                                              |
 |--------------|---------------------------------------------------------------------------|---------------------------------------------------|
@@ -98,13 +94,12 @@ A rule that triggers on speed exceeding determined by the platform. Based on rec
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Deviation from the route
 
 A rule that triggers on deviations from the route. Only the [route (sausage) type](../../zone/index.md#sausage) geofence may be assigned. 
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                 | type                                              |
 |--------------|---------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -120,13 +115,12 @@ A rule that triggers on deviations from the route. Only the [route (sausage) typ
 | private_rule            | Affects only sub users. If `true` then the rule and notifications are visible only to sub user. | boolean |
 | append_zone_title       | Show or not the zone labels in a notification text.                                             | boolean |
 
-***
 
 ### Driving time
 
 A rule that triggers when your employee drives more than allowed. The driving time is calculated based on [parking detection settings](../settings/trip_detection.md).
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                            | type                                              |
 |----------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -145,13 +139,12 @@ A rule that triggers when your employee drives more than allowed. The driving ti
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Parking time
 
 A rule that triggers when your employee standstill more than allowed. The parking time is calculated based on [parking detection settings](../settings/trip_detection.md).
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                   | type                                              |
 |----------------|---------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -169,13 +162,12 @@ A rule that triggers when your employee standstill more than allowed. The parkin
 | zone_limit_inverted  | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title    | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Task performance
 
 A rule that triggers when assigned to a tracker [task](../../../field_service/task/index.md) changes its status. 
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                 | type                                              |
 |--------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -194,14 +186,13 @@ A rule that triggers when assigned to a tracker [task](../../../field_service/ta
 | zone_limit_inverted         | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean      |
 | append_zone_title           | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean      |
 
-***
 
 ### Work status change
 
 A rule that triggers when tracker [work status](../../status/tracker.md) changes. Choose specific status IDs from a currently 
 assigned to tracker [status listing](../../status/listing/index.md).
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                     | type                                              |
 |--------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -218,13 +209,12 @@ assigned to tracker [status listing](../../status/listing/index.md).
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                                       | boolean   |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`.                | boolean   |
 
-***
 
 ### Excessive idling (hardware related)
 
 A rule that triggers on excessive idling registered by hardware. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                               | type                                              |
 |----------------|---------------------------------------------------------------------------|---------------------------------------------------|
@@ -241,13 +231,12 @@ A rule that triggers on excessive idling registered by hardware. Based on the co
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                                       | boolean   |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`.                | boolean   |
 
-***
 
 ### Excessive idling (platform related)
 
 A rule that triggers on excessive idling registered by the platform. The idling time is calculated based on [parking detection settings](../settings/trip_detection.md) and ignition state.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                | type                                              |
 |----------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -265,14 +254,13 @@ A rule that triggers on excessive idling registered by the platform. The idling 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                                       | boolean   |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`.                | boolean   |
 
-***
 
 ### Fuel level change
 
 Rule triggered by a drastic change in fuel level. A drastic change is when the fuel level changes faster than the 
 accuracy of the sensor in a span of ten minutes.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                   | type                                              |
 |----------------|-----------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -313,13 +301,12 @@ accuracy of the sensor in a span of ten minutes.
 }
 ```
 
-***
 
 ### Harsh driving
 
 A rule that triggers on harsh driving. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                         | type                                              |
 |--------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -335,13 +322,12 @@ A rule that triggers on harsh driving. Based on the configs on the device side.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Advanced driver assistance systems (ADAS)
 
 A rule that triggers on warnings from driver-assistance systems (ADAS). Detected by camera and based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                               | type                                              |
 |--------------|---------------------------------------------------------------------------|---------------------------------------------------|
@@ -363,13 +349,12 @@ A rule that triggers on warnings from driver-assistance systems (ADAS). Detected
 | zone_limit_inverted              | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title                | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Auto geofencing (unauthorized movement detected by location change)
 
 A rule that triggers on auto geofencing. When a car's ignition is off, and it outs the automatically created radius around it.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                                     | type                                              |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -385,13 +370,12 @@ A rule that triggers on auto geofencing. When a car's ignition is off, and it ou
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Autocontrol related rules
 
 Autocontrol related tracked rules like alarm, battery, doors and others. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                               | type                                              |
 |--------------|-------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -478,13 +462,12 @@ Autocontrol related tracked rules like alarm, battery, doors and others. Based o
 }
 ```
 
-***
 
 ### Car crash
 
 A rule that triggers when device's sensors detect car crash. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                       | type                                              |
 |--------------|-------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -500,13 +483,12 @@ A rule that triggers when device's sensors detect car crash. Based on the config
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Cruise control switched ON/OFF
 
 A rule that triggers when a device provides cruise control switching event. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                           | type                                              |
 |----------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -523,13 +505,12 @@ A rule that triggers when a device provides cruise control switching event. Base
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Distance between objects
 
 A rule that triggers a change in distance between objects. The distance is measured by the last valid GPS coordinates between chosen objects.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                     | type                                              |
 |----------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -549,13 +530,12 @@ A rule that triggers a change in distance between objects. The distance is measu
 | zone_limit_inverted     | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean                                           |
 | append_zone_title       | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean                                           |
 
-***
 
 ### Driver absence
 
 A rule that triggers when driver lefts or enters cabin. Detected by camera and based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                 | type                                              |
 |----------------|---------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -572,13 +552,12 @@ A rule that triggers when driver lefts or enters cabin. Detected by camera and b
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Driver change
 
 A rule that triggers on driver change automatically by the key or manually in widget with driver from a [drivers list](../../../field_service/employee/index.md).
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                               | type                                              |
 |--------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -594,13 +573,12 @@ A rule that triggers on driver change automatically by the key or manually in wi
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Driver distraction
 
 A rule that triggers when driver distracts from the road. Detected by camera and based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                    | type                                              |
 |----------------|----------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -617,13 +595,12 @@ A rule that triggers when driver distracts from the road. Detected by camera and
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Fall detection
 
 A rule that triggers when g-sensor or accelerometer detects falling.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                | type                                              |
 |--------------|--------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -639,13 +616,12 @@ A rule that triggers when g-sensor or accelerometer detects falling.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Fatigue driving
 
 A rule that triggers on fatigue driving. Detected by camera and based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                            | type                                              |
 |----------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -662,13 +638,12 @@ A rule that triggers on fatigue driving. Detected by camera and based on the con
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Identification via RFID/iButton/Camera
 
 A rule that triggers on a driver identification with help of RFID, iButton or Camera. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                      | type                                              |
 |----------------|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -685,13 +660,12 @@ A rule that triggers on a driver identification with help of RFID, iButton or Ca
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### No movement
 
 A rule that triggers when the device does not detect motion for longer than the time set in its settings. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                                                       | type                                              |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -707,13 +681,12 @@ A rule that triggers when the device does not detect motion for longer than the 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Pressing SOS button
 
 A rule that triggers on SOS button pressing. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                    | type                                              |
 |--------------|--------------------------------------------------------------------------------|---------------------------------------------------|
@@ -729,13 +702,12 @@ A rule that triggers on SOS button pressing. Based on the configs on the device 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Social distancing monitoring
 
 A rule that triggers on social distancing violation. Similar to distance between objects but related based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                | type                                              |
 |----------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -752,13 +724,12 @@ A rule that triggers on social distancing violation. Similar to distance between
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Unauthorized movement (determined by accelerometer)
 
 A rule that triggers on unauthorized movement detected by accelerometer when ignition is off. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                  | type                                              |
 |--------------|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -774,13 +745,12 @@ A rule that triggers on unauthorized movement detected by accelerometer when ign
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Backup battery low
 
 A rule that triggers on backup battery low. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                             | type                                              |
 |--------------|---------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -796,13 +766,12 @@ A rule that triggers on backup battery low. Based on the configs on the device s
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Bracelet sensor
 
 A rule that triggers on bracelet sensor opening/closing. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                            | type                                              |
 |----------------|----------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -819,13 +788,12 @@ A rule that triggers on bracelet sensor opening/closing. Based on the configs on
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Call button pressed
 
 A rule that triggers on call button pressing. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                     | type                                              |
 |--------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -841,13 +809,12 @@ A rule that triggers on call button pressing. Based on the configs on the device
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Car alarm triggered
 
 A rule that triggers on car alarm. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                              | type                                              |
 |--------------|------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -863,13 +830,12 @@ A rule that triggers on car alarm. Based on the configs on the device side.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Case intrusion
 
 A rule that triggers on case intrusion. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                          | type                                              |
 |--------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -885,13 +851,12 @@ A rule that triggers on case intrusion. Based on the configs on the device side.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Check engine (MIL)
 
 A rule that triggers on check engine (MIL) events. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                        | type                                              |
 |--------------|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -907,13 +872,12 @@ A rule that triggers on check engine (MIL) events. Based on the configs on the d
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Connection/disconnection to the OBDII port
 
 A rule that triggers on connection/disconnection to the OBD2 port. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                             | type                                              |
 |----------------|---------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -930,13 +894,12 @@ A rule that triggers on connection/disconnection to the OBD2 port. Based on the 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Door opening in alarm mode
 
 A rule that triggers on door opening in alarm mode. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                 | type                                              |
 |--------------|---------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -952,13 +915,12 @@ A rule that triggers on door opening in alarm mode. Based on the configs on the 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### External device connection
 
 A rule that triggers on connection/disconnection of an external device. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                                    | type                                              |
 |----------------|--------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -975,13 +937,12 @@ A rule that triggers on connection/disconnection of an external device. Based on
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### External power cut
 
 A rule that triggers when device disconnects from car's battery. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                    | type                                              |
 |----------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -998,13 +959,12 @@ A rule that triggers when device disconnects from car's battery. Based on the co
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### GPS antenna disconnected
 
 A rule that triggers on GPS antenna disconnect. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                            | type                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1020,13 +980,12 @@ A rule that triggers on GPS antenna disconnect. Based on the configs on the devi
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### GPS jamming (signal dump)
 
 A rule that triggers when device determines GPS jamming. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                    | type                                              |
 |--------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1042,13 +1001,12 @@ A rule that triggers when device determines GPS jamming. Based on the configs on
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### GPS signal lost/recover
 
 A rule that triggers on GPS signal lost/recover. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                              | type                                              |
 |----------------|------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1065,13 +1023,12 @@ A rule that triggers on GPS signal lost/recover. Based on the configs on the dev
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### GSM jamming (signal dump)
 
 A rule that triggers on GSM jamming. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                    | type                                              |
 |--------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1087,13 +1044,12 @@ A rule that triggers on GSM jamming. Based on the configs on the device side.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Hood opening in alarm mode
 
 A rule that triggers on hood opening in alarm mode. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                 | type                                              |
 |--------------|---------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1109,14 +1065,13 @@ A rule that triggers on hood opening in alarm mode. Based on the configs on the 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Ignition start in alarm mode
 
 A rule that triggers on ignition start in alarm mode. This rule is not related to usual ignition status change. 
 Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                    | type                                              |
 |--------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1132,13 +1087,12 @@ Based on the configs on the device side.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Light sensor
 
 A rule that triggers on when light sensor detects bright/dark environment. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                    | type                                              |
 |----------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1155,13 +1109,12 @@ A rule that triggers on when light sensor detects bright/dark environment. Based
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Location report on demand
 
 A rule that triggers on location requests.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                          | type                                              |
 |--------------|----------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1177,13 +1130,12 @@ A rule that triggers on location requests.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Locking/unlocking (padlock)
 
 A rule that triggers on locking/unlocking(padlock). Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                     | type                                              |
 |----------------|---------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1200,13 +1152,12 @@ A rule that triggers on locking/unlocking(padlock). Based on the configs on the 
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Low battery
 
 A rule that triggers on low internal battery. Based on the device's battery voltage and value specified for the model on the platform.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                     | type                                              |
 |--------------|-------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1222,13 +1173,12 @@ A rule that triggers on low internal battery. Based on the device's battery volt
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Padlock tampering
 
 A rule that triggers on padlock tampering. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                       | type                                              |
 |----------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1245,13 +1195,12 @@ A rule that triggers on padlock tampering. Based on the configs on the device si
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Tracker detach from the objects
 
 A rule that triggers when someone detach tracker from the object. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                             | type                                              |
 |--------------|---------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1267,13 +1216,12 @@ A rule that triggers when someone detach tracker from the object. Based on the c
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Tracker switch ON/OFF
 
 A rule that triggers on tracker switch ON/OFF. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                           | type                                              |
 |----------------|---------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1290,13 +1238,12 @@ A rule that triggers on tracker switch ON/OFF. Based on the configs on the devic
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Tracker switched OFF or lost connection
 
 A rule that triggers when tracker loses connection with the server - gets red offline status and keeps it for X minutes.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                    | type                                              |
 |----------------|----------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1312,13 +1259,12 @@ A rule that triggers when tracker loses connection with the server - gets red of
 | emergency           | If `true` enables emergency notification.                                                                                     | boolean |
 | private_rule        | Affects only sub users. If `true` then the rule and notifications are visible only to sub user.                               | boolean |
 
-***
 
 ### Tracker switched ON
 
 A rule that triggers on tracker switch ON. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                           | type                                              |
 |--------------|---------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1334,13 +1280,12 @@ A rule that triggers on tracker switch ON. Based on the configs on the device si
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Vibration sensor
 
 A rule that triggers when vibration sensor determines vibration. Based on the configs on the device side.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                              | type                                              |
 |----------------|------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1357,13 +1302,12 @@ A rule that triggers when vibration sensor determines vibration. Based on the co
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Inputs triggering.
 
 A rule that triggers when the input state changes.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                           | type                                              |
 |----------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1381,13 +1325,12 @@ A rule that triggers when the input state changes.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Outputs triggering
 
 A rule that triggers when the output state changes.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                             | type                                              |
 |----------------|---------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1405,13 +1348,12 @@ A rule that triggers when the output state changes.
 | zone_limit_inverted | The rule tracked inside of zones if `false` or outside if `true`. Default is: `false`.                                        | boolean |
 | append_zone_title   | Show or not the zone labels in a notification text. Must be `null` or `false` if the zone_limit_inverted param set to `true`. | boolean |
 
-***
 
 ### Parameter in range
 
 A rule that triggers when value of a chosen measurement sensor gets into or out of specified range. One rule per one sensor and device.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                         | type                                              |
 |----------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -1454,13 +1396,12 @@ Example:
 }
 ```
 
-***
 
 ### State field value
 
 A rule that triggers when specified value of a chosen state field sensor detected.
 
-#### parameters
+#### Parameters
 
 | name         | description                                                                                                     | type                                              |
 |--------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------|

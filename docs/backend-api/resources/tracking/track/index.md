@@ -9,17 +9,16 @@ This section includes API calls that allow you to interact with tracks and retri
 
 Learn more about the track API by following our [instructions](../../../how-to/get-track-points.md).
 
-***
 
 ## API actions
 
 API path: `/track`.
 
-### download
+### `download`
 
 This method allows you to download track points as a KML/KMZ file which can be used in other apps to show tracks.
 
-#### parameters
+#### Parameters
 
 | name            | description                                                                                                                                                                                                                                                                                                                                                                                   | type                                                      | format                  |
 |:----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------|:------------------------|
@@ -34,7 +33,7 @@ This method allows you to download track points as a KML/KMZ file which can be u
 | format          | File format can be "kml" or "kmz". Default is "kml".                                                                                                                                                                                                                                                                                                                                          | [enum](../../../getting-started.md#data-types)            | `"kml"`                 |
 | split           | If set to `true`, tracks in the file will be split by stops into folders with start/end markers. Default is`false`.                                                                                                                                                                                                                                                                           | boolean                                                   | `false`                 |
 
-#### example
+#### Example
 
 Let's consider an example, where we're looking for a KML file for a tracker with ID 1683258 that doesn't break down by stops. 
 The data should cover trips starting from 3:24 AM to 6:24 AM on November 19, 2023, according to the user's local time.
@@ -47,7 +46,7 @@ The data should cover trips starting from 3:24 AM to 6:24 AM on November 19, 202
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "tracker_id": 1683258, "from": "2023-11-19 03:24:00", "to": "2023-11-19 06:24:00", "format": "kml", "split": false}'
     ```
 
-#### response
+#### Response
 
 In case the available storage period is not exceeded, you will get the file.
 
@@ -111,7 +110,7 @@ For example, if the device's plan has maximum available storage period 3 months 
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 - Not found in database – the tracker ID in your request may not match any trackers linked to the user account with this 
 session hash. Ensure the correct tracker_id and hash of an appropriate user are used.
@@ -120,13 +119,12 @@ restrictions or any other reason.
 * 211 - Requested time span is too big – If the interval between the "from" and "to" dates is too large, it may exceed 
 the maximum value defined in the API configuration.
 
-***
 
-### list
+### `list`
 
 This method retrieves a list of tracks for a given tracker within a specified time period.
 
-#### parameters
+#### Parameters
 
 | name                   | description                                                                                                                                                                                                                                                                                                                                            | type                                                      | format                  |
 |:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------|:------------------------|
@@ -142,7 +140,7 @@ This method retrieves a list of tracks for a given tracker within a specified ti
 | with_points            | Optional. Default is `false`. If set to `true`, track point lists will be included.                                                                                                                                                                                                                                                                    | boolean                                                   | `false`                 |
 | point_limit            | Optional. If specified, the returned data will be reduced to contain that specified number of points. The minimum value is 2, and the maximum is 3000. If it is not specified, the server's default settings for simplifying tracks will be applied. This is not a strict limit; the returned data can potentially contain more points than specified. | int                                                       | `300`                   |
 
-#### example
+#### Example
 
 For example, if we need to retrieve all trips for tracker 1683258 in November, without applying smart filter, including 
 LBS points recorded, without clustering, separated by parkings, while also counting the number of events that occur during 
@@ -157,7 +155,7 @@ settings will provide us with necessary info by default.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "tracker_id": 1683258, "from": "2023-11-01 03:24:00", "to": "2023-11-30 06:24:00", "filter": false, "count_events": true}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -340,7 +338,7 @@ if "normAvgFuelConsumption" is not defined for the linked vehicle object.
 * `gsm_lbs` - optional boolean. GSM LBS flag. `true` if a cluster contains only GSM LBS points.
 * `bounds` - object. North-west and south-east coordinates of the bounding box that contains all points.
 
-#### errors
+#### Errors
 
 * 201 - Not found in database – the tracker ID in your request may not match any trackers linked to the user account with this
 session hash. Ensure the correct tracker_id and hash of an appropriate user are used.
@@ -349,14 +347,13 @@ restrictions or any other reason.
 * 211 - Requested time span is too big – If the interval between the "from" and "to" dates is too large, it may exceed
 the maximum value defined in the API configuration.
 
-***
 
-### read
+### `read`
 
 This method fetches all track points that a GPS tracker has recorded and sent to the platform within a specified time 
 frame. The timestamp for each point corresponds to when the tracker recorded the point, adjusted to the user's time zone.
 
-#### parameters
+#### Parameters
 
 | name            | description                                                                                                                                                                                                                                                                                                                                                                      | type                                                      | format                |
 |:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------|:----------------------|
@@ -369,7 +366,7 @@ frame. The timestamp for each point corresponds to when the tracker recorded the
 | point_limit     | Optional. If it is specified and `simplify=true`, the returned data will be reduced to contain that specified number of points. The minimum value is 2, and the maximum is 3000. If it is not specified, the server's default settings for simplifying tracks will be applied. This is not a strict limit; the returned data can potentially contain more points than specified. | int                                                       | `300`                 |
 | filter          | Optional. If this is set to `true`, the returned tracks will be filtered. This is currently only applicable to LBS tracks. If set to `false`, the response will include parking points.                                                                                                                                                                                          | boolean                                                   | false                 |
 
-#### example
+#### Example
 
 For instance, if we need to obtain track points for tracker 1683258 that fall within November 1, and are solely part of 
 track ID 923150, without applying a smart filter, LBS points and simplifier. Since these optional parameters by default 
@@ -383,7 +380,7 @@ are `true`, we should list them in our request.
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "tracker_id": 1683258, "track_id": 923150, "from": "2023-11-01 00:00:00", "to": "2023-11-01 23:59:59", "filter": false, "simplify": false, "include_gsm_lbs": false}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -432,7 +429,7 @@ for six months.
 * `parking` - optional boolean. It will return true if the point does not correspond to a trip. [Parking detection](https://www.navixy.com/docs/user/web-interface-docs/devices-doc/parking-detection/) feature on the platform influences the categorization of points as either trip or parking states.
 * `buffered` - optional boolean. It will return `true` if the point was initially saved in the device's memory and then sent to the server later. This parameter may vary based on the tracker model.
 
-#### errors
+#### Errors
 
 * 201 - Not found in database – the tracker ID in your request may not match any trackers linked to the user account with this
 session hash. Ensure the correct tracker_id and hash of an appropriate user are used.
@@ -441,13 +438,12 @@ restrictions or any other reason.
 * 211 - Requested time span is too big – If the interval between the "from" and "to" dates is too large, it may exceed
 the maximum value defined in the API configuration.
 
-***
 
-### visit/list
+### `visit/list`
 
 This method fetches IDs of zones and places that contain at least one track point.
 
-#### parameters
+#### Parameters
 
 | name           | description                                                                                                                                         | type                                                | format                |
 |:---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|:----------------------|
@@ -457,7 +453,7 @@ This method fetches IDs of zones and places that contain at least one track poin
 | include_zones  | Optional. Default is `true`. If the value is `false`, zones IDs will be excluded.                                                                   | boolean                                             | true                  |
 | include_places | Optional. Default is `true`. If the value is `false`, places IDs will be excluded.                                                                  | boolean                                             | true                  |
 
-#### example
+#### Example
 
 For instance, if we need to obtain IDs of zones and places that contain at least one track point related to tracker 1683258 in January.
 
@@ -469,7 +465,7 @@ For instance, if we need to obtain IDs of zones and places that contain at least
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "tracker_id": 1683258, "from": "2024-01-01 00:00:00", "to": "2024-01-31 00:00:00"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -489,7 +485,7 @@ For instance, if we need to obtain IDs of zones and places that contain at least
 * `zones` - int array. List of zones IDs.
 * `places` - int array. List of places IDs.
 
-#### errors
+#### Errors
 
 * 204 - Entity not found – the tracker ID in your request may not match any trackers linked to the user account with this
 session hash. Ensure the correct tracker_id and hash of an appropriate user are used.

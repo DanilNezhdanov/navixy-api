@@ -15,7 +15,6 @@ Forms can be attached to tasks. If form attached to task, this task cannot be co
 Android/iOS tracker applications). See [Task form actions](../task/form/index.md) to use forms with tasks.
 
 Find comprehinsive information on forms usage in our [instructions](../../../how-to/forms-creation.md).
-***
 
 ## Form object
 
@@ -65,7 +64,6 @@ Find comprehinsive information on forms usage in our [instructions](../../../how
 * `submitted` - [date/time](../../../getting-started.md#data-types). Date when form values last submitted.
 * `submit_location` - location at which form values last submitted.
 
-***
 
 ## Form file object
 
@@ -96,23 +94,22 @@ Find comprehinsive information on forms usage in our [instructions](../../../how
 * `state` - [enum](../../../getting-started.md#data-types). Can be "created" | "in_progress" | "uploaded" | "deleted".
 * `download_url` - string. Actual URL at which file is available. Can be null if file not yet uploaded.
 
-***
 
 ## API actions
 
 API path: `/form`.
 
-### read
+### `read`
 
 Gets form by an ID.
 
-#### parameters
+#### Parameters
 
 | name | description     | type  |
 |:-----|:----------------|:------|
 | id   | ID of the form. | int   |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -128,7 +125,7 @@ Gets form by an ID.
     {{ extra.api_example_url }}/form/read?hash=a6aa75587e5c59c32d347da438505fc3&id=2
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -186,24 +183,23 @@ Gets form by an ID.
 * `value` - A [form object](#form-object).
 * `files` - list of [form_file objects](#form-file-object). Files used in values of this form. Can be null or empty.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no form with such an ID.
 
-***
 
-### download
+### `download`
 
 Downloads form as a file by an ID.
 
-#### parameters
+#### Parameters
 
 | name   | description                          | type                                           |
 |:-------|:-------------------------------------|:-----------------------------------------------|
 | id     | ID of the form.                      | int                                            |
 | format | File format. Can be "pdf" or "xlsx". | [enum](../../../getting-started.md#data-types) |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -219,10 +215,10 @@ Downloads form as a file by an ID.
     {{ extra.api_example_url }}/form/download?hash=a6aa75587e5c59c32d347da438505fc3&id=2&format=pdf
     ```
 
-#### response
+#### Response
 
 Regular file download, or JSON with an error.    
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no form with such an ID.

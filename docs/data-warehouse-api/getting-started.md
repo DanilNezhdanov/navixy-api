@@ -8,7 +8,6 @@ description: Overview of Navixy Data Warehouse API.
 The structure of Data Warehouse API is mostly similar to [Backend API](../backend-api/getting-started.md), so if you're familiar with the basics of 
 user API, this will be a great advantage.
 
-***
 
 ## Base URL
 
@@ -23,17 +22,14 @@ For example, to make raw data readings API request in European Navixy ServerMate
 https://api.eu.navixy.com/dwh/v1/tracker/raw_data/read
 ```
 
-***
 
 ## Auth
 
-***
 
 ### Authentication
 
 Authentication is handled by [Backend API](../backend-api/how-to/get-api-key.md).
 
-***
 
 ### Authorization
 
@@ -63,13 +59,11 @@ Example:
     -d '{"hash": "6dc7d304dec4434f4c4202ec42817f83","tracker_id": 123456}'
     ```
 
-***
 
 ## Response format
 
 Depending on the API request, the responses can be in application/json or CSV markdown content types.
 
-***
 
 ### Errors
 
@@ -86,14 +80,12 @@ Example:
 }
 ```
 
-***
 
 #### Common error types
 
 * `errors/default/bad-request` - Causes: missing or invalid parameter value.
 * `errors/default/unauthorized` - Causes: missing `Authorization` header or credentials are insufficient or expired.
 
-***
 
 ### Date/time formats
 

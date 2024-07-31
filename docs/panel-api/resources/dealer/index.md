@@ -7,7 +7,6 @@ description: API call to get information about a dealer.
 
 API call to get information about a dealer.
 
-***
 
 ## API actions
 
@@ -19,11 +18,11 @@ Gets information about dealer's tariff, balance, available features, etc.
  
 *required permissions*: `base: "get_dealer_info"`.
 
-#### parameters
+#### Parameters
 
 Only session `hash`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -39,7 +38,7 @@ Only session `hash`.
     {{ extra.api_example_url }}/panel/dealer/get_info?hash=fa7bf873fab9333144e171372a321b06
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -131,6 +130,6 @@ Only session `hash`.
 * `default_user_time_zone` - string. [Time zone id](../timezone.md) for new users to be created via [user/upload](../user/index.md#upload).
   Also, this zone will be selected by default when creating a new user in the Navixy Admin Panel.
 
-#### errors
+#### Errors
 
 * 201 - Not found in the database.

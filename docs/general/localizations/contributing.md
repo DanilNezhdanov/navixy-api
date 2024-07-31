@@ -11,7 +11,6 @@ translate Navixy to your language.
 All translations are done through the [crowdin](http://crowdin.com) online translation service, developed 
 specifically for team-based translation projects.
 
-***
 
 ## Getting started
 
@@ -22,7 +21,6 @@ There are two ways to localize navixy platform:
 * Crowdin In-context translation
 * Translate via Crowdin UI
 
-***
 
 ## Crowdin In-context translation (only Web UI)
 
@@ -36,25 +34,24 @@ https://demo.navixy.com/?locale=ach#/login
 
 You should see crowdin authorization dialog.
 
-![Authorization dialog](../assets/crowdin-auth-dialog.png)
+![Authorization dialog](/general/assets/crowdin-auth-dialog.png)
 
 After authorization standard Navixy UI will appear in a special translation mode. Click on a little icon near each text
 item
 
-![Translation icon](../assets/little-icon.png)
+![Translation icon](/genereal/assets/little-icon.png)
 
 opens translation dialog
 
-![Translation dialog](../assets/translation-dialog.png)
+![Translation dialog](/general/assets/translation-dialog.png)
 
-***
 
 ## Translate via Crowdin UI
 
 Crowdin UI is a most powerful way to work with translations in Navixy, and the only way if you want to translate not
 Backend and Mobile apps.
 
-![Crowdin UI directory](../assets/crowdin-ui-directory.png)
+![Crowdin UI directory](/general/assets/crowdin-ui-directory.png)
 
 Translations in crowdin organized into several directories:
 
@@ -63,12 +60,10 @@ Translations in crowdin organized into several directories:
 3. android-client, android-tracker, navixy-tracker-ios, navixy-viewer-ios - translation strings for mobile apps.
 
 Each entry in each directory contains strings for translation, displayed in translation screen
-
 ![Crowdin Translation Screen](../assets/translation-screen.png)
 
 If you have some problems with translation feel free to ask questions in comments.
 
-***
 
 ## Translations delivery
 

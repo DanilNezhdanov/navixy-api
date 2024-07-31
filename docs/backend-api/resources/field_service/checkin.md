@@ -16,7 +16,6 @@ of the work done, or notify about a malfunction along with filled form describin
 Check-ins cannot be created using web API ([create](#create) is needed for exceptional cases and described 
 in [how-tos](../../how-to/how-to-create-checkins-via-api.md)), so all actions are read-only.
 
-***
 
 ## Check-in object
 
@@ -79,25 +78,24 @@ in [how-tos](../../how-to/how-to-create-checkins-via-api.md)), so all actions ar
 * `form_id` - int. An ID of the form which was sent along with a check-in, can be null.
 * `form_label` - string. Label of the form which was sent along with a check-in, can be null.
 
-***
 
 ## API actions
 
 API path: `/checkin`.
 
-### read
+### `read`
 
 Get check-in which ID is equal to `checkin_id`.
  
 **required sub-user rights:** `employee_update`.
 
-#### parameters
+#### Parameters
 
 | name       | description               | type |
 |:-----------|:--------------------------|:-----|
 | checkin_id | ID of the check-in entry. | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -113,7 +111,7 @@ Get check-in which ID is equal to `checkin_id`.
     {{ extra.api_example_url }}/checkin/read?hash=a6aa75587e5c59c32d347da438505fc3&checkin_id=1
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -153,20 +151,19 @@ Get check-in which ID is equal to `checkin_id`.
 }
 ```
 
-#### errors
+#### Errors
 
 * 7 – Invalid parameters.
 * 204 – Entity not found – when the marker entry is not exists.
 
-***
 
-### list
+### `list`
 
 Gets marker entries on a map for trackers and for the specified time interval.
 
 **required sub-user rights:** `employee_update`.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                                                                                                         | type                                                                               |
 |:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
@@ -206,7 +203,7 @@ It's a set of sort options. Each option is a pair of field name and sorting dire
 | comment     | string   |           |
 | form        | string   | label     |
 
-#### example
+#### Example
 
 === "cURL"
 
@@ -216,7 +213,7 @@ It's a set of sort options. Each option is a pair of field name and sorting dire
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "trackers": [616384,345623], "from": "2020-08-05 03:06:00", "to": "2020-09-05 03:00:00", "offset": 20, "limit": 100, "format": "xlsx"}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -229,7 +226,7 @@ It's a set of sort options. Each option is a pair of field name and sorting dire
 * `list` - list of check-in objects.
 * `count` - int. Total number of check-ins (ignoring offset and limit).
 
-#### errors
+#### Errors
 
 * 7 – Invalid parameters.
 * 211 – Requested time span is too big.
@@ -237,21 +234,20 @@ It's a set of sort options. Each option is a pair of field name and sorting dire
 doesn't have required tariff features.
 * 221 – Device limit exceeded - if device limit set for the user's dealer has been exceeded.
 
-***
 
-### delete
+### `delete`
 
 Deletes check-ins with the specified IDs.
 
 **required sub-user rights:** `checkin_update`.
 
-#### parameters
+#### Parameters
 
 | name        | description           | type      |
 |:------------|:----------------------|:----------|
 | checkin_ids | List of check-in IDs. | int array |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -267,7 +263,7 @@ Deletes check-ins with the specified IDs.
     {{ extra.api_example_url }}/checkin/delete?hash=a6aa75587e5c59c32d347da438505fc3&checkin_ids=[2132,4533]
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -275,21 +271,20 @@ Deletes check-ins with the specified IDs.
 }
 ```
 
-#### errors
+#### Errors
 
 * 7 – Invalid parameters.
 * 201 – Not found in the database - check-ins with the specified IDs don't exist, or their corresponding 
 trackers are not available to current sub-user.
 
-***
 
-### create
+### `create`
 
 Creates a new check-in. Needed for exceptional cases.
 
 **required sub-user rights**: `checkin_update`.
 
-#### parameters
+#### Parameters
 
 | name            | description                                                                                                                                                                                                     | type        |
 |:----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
@@ -310,7 +305,7 @@ where `form_submission` type is JSON object:
 }
 ```
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -320,7 +315,7 @@ where `form_submission` type is JSON object:
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "tracker_id": 22, "location": { "lat": 9.861999, "lng": -83.948999 }, "comment": "houston, we have a problem", "file_ids": [11, 22], "form_submission": { "form_id": 23423, "values": {"111-aaa-whatever": { "type": "text", "value": "John Doe" }} }}'
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -329,19 +324,18 @@ where `form_submission` type is JSON object:
 }
 ```
 
-#### errors
+#### Errors
 * 7 – Invalid parameters.
 * 201 – Not found in the database - form with the specified IDs don't exist, or their corresponding
   trackers are not available to current sub-user.
 * 242 – There were errors during content validation, if given values are invalid for the form.
 
-***
 
-### image/create
+### `image/create`
 
 Creates an image for check-in. If you have multiple files to upload, be sure to add a brief delay between uploading each one to ensure a smooth process.
 
-#### parameters
+#### Parameters
 
 | name     | description                                                                                                                             | type        |
 |:---------|:----------------------------------------------------------------------------------------------------------------------------------------|:------------|
@@ -349,7 +343,7 @@ Creates an image for check-in. If you have multiple files to upload, be sure to 
 | filename | Optional. If specified, uploaded file will have the specified name. If not, name will be taken from actual file upload form.            | string      |
 | metadata | Optional. Metadata object (for images only).                                                                                            | JSON object |
 
-#### response
+#### Response
 
 when using internal storage:
 ```json
@@ -481,25 +475,24 @@ Content-Type: image/png
 --WebAppBoundary--
 ```
 
-#### errors
+#### Errors
 
 * 268 – File cannot be created due to quota violation.
 * 271 – File size is larger than the maximum allowed (by default 16 MB).
 
-***
 
-### form/create
+### `form/create`
 
 Creates a new form that can be attached to a check-in. Form always created on the basis of form template.
 
-#### parameters
+#### Parameters
 
 | name        | description                                                                   | type |
 |:------------|:------------------------------------------------------------------------------|:-----|
 | tracker_id  | ID of the tracker. Tracker must belong to authorized user and not be blocked. | int  |
 | template_id | ID of the form template.                                                      | int  |
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -515,7 +508,7 @@ Creates a new form that can be attached to a check-in. Form always created on th
     {{ extra.api_example_url }}/checkin/form/create?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=22&template_id=12548
     ```
 
-#### response
+#### Response
 
 ```json
 {
@@ -524,17 +517,16 @@ Creates a new form that can be attached to a check-in. Form always created on th
 }
 ```
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no template with such an ID.
 
-***
 
-### form/file/create
+### `form/file/create`
 
 Creates a new file entry associated with form's field. If you have multiple files to upload, be sure to add a brief delay between uploading each one to ensure a smooth process.
 
-#### parameters
+#### Parameters
 
 | name       | description                                                                                                                             | type        |
 |:-----------|:----------------------------------------------------------------------------------------------------------------------------------------|:------------|
@@ -547,7 +539,7 @@ Creates a new file entry associated with form's field. If you have multiple file
 
 * Use only one parameter `checkin_id` or `form_id`.
 
-#### examples
+#### Examples
 
 === "cURL"
 
@@ -557,7 +549,7 @@ Creates a new file entry associated with form's field. If you have multiple file
         -d '{"hash": "22eac1c27af4be7b9d04da2ce1af111b", "checkin_id": 1, "field_id": "111-aaa-whatever", "size": 101}'
     ```
 
-#### response
+#### Response
 
 The response and update process are same to [image/create](#imagecreate).
 
@@ -568,7 +560,7 @@ The response and update process are same to [image/create](#imagecreate).
 * `fields` - these fields should be passed as additional fields in POST multipart upload request, field with a file
   must be the last one.
 
-#### errors
+#### Errors
 
 * 201 – Not found in the database - if there is no check-in with such an ID, or check-in doesn't have form, or form has no
   field with such a field_id.

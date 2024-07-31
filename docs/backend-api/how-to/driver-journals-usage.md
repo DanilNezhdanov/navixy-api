@@ -27,7 +27,6 @@ Also, they will contain important information about trips like driver, who was a
 dates of the trip, start/end locations, length, start/end odometer values. You can operate with this information or use 
 it in your CRM. 
 
-***
 
 ## Work with driver journals
 
@@ -110,7 +109,6 @@ The platform will reply with the information about all trips per period:
 }
 ```
 
-***
 
 ### Entries creation
 
@@ -135,7 +133,6 @@ The platform will confirm creation with:
 }
 ```
 
-***
 
 ### Driver journal obtaining
 

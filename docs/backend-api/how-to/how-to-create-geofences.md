@@ -11,7 +11,6 @@ Geofence is a virtual perimeter for a real geographic area. The system can contr
 Moreover, you can assign various rules for events to particular geofences. For example, if you need to get speeding alerts
 only within a certain area (e.g. in city) or route.
 
-***
 
 ## Geofence creation
 
@@ -39,7 +38,6 @@ API request:
 
 The platform will respond with status and created geofence ID. We can use this ID to [create a rule](./use-rules.md).
 
-***
 
 ### Polygon geofence
 
@@ -66,7 +64,6 @@ API request:
 
 Don't forget that the rule isn't created yet. The platform will respond with geofence ID. Use [the next instruction](./use-rules.md) to create rules.
 
-***
 
 ### Sausage geofence
 
@@ -89,7 +86,6 @@ The platform will provide the status, and geofence ID.
 The sausage geofence also, could be used to create a special route for cars with valuable cargo, such as cash collectors.
 Or for patrol cars. In this case, use the rule "deviation from the route".
 
-***
 
 ### Getting geofence name by a tracker's location
 
