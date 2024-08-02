@@ -132,4 +132,4 @@ List plans on which user can switch the passed tracker (even when tariff last ch
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.

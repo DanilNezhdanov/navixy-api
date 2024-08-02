@@ -8,7 +8,7 @@ description: API calls to interact with tracker's rules. Rules used to set up co
 Contains API calls to interact with tracker's rules. Rules used to set up conditions according to which the system logs
 the events and sends notifications to user.
 
-Described creation and using rules step-by-step in our [instructions](../../../../how-to/use-rules.md).
+Described creation and using rules step-by-step in the [guide](../../../../guides/rules-notifications/use-rules.md).
 
 
 ## Rule object
@@ -102,7 +102,7 @@ Described creation and using rules step-by-step in our [instructions](../../../.
     ```
 
 * `date/time` and `local_time` types described at 
-the [data types description section](../../../../getting-started.md#data-types).
+the [data types description section](../../../../getting-started/introduction.md#data-types).
 
 
 ## API actions
@@ -160,7 +160,7 @@ that are described for every rule type if exist in [rule types](./rule_types.md)
 | description     | Rule's description.                                                                                                                                                                                              | string                                            |
 | trackers        | List of tracker IDs belong to user for which the rule will work.                                                                                                                                                 | int array                                         |
 | zone_ids        | List of zones to bind where the rule will work. Leave it empty if rule should work everywhere. Parameter `zone_ids` is not allowed for rule `offline` and can't be empty for `route` and `inoutzone` rule types. | int array                                         |
-| type            | One of pre-defined types of rules. See [rule types](./rule_types.md).                                                                                                                                            | [enum](../../../../getting-started.md#data-types) |
+| type            | One of pre-defined types of rules. See [rule types](./rule_types.md).                                                                                                                                            | [enum](../../../../getting-started/introduction.md#data-types) |
 | param           | A common parameter that responsible for integer conditions. See [rule types](./rule_types.md).                                                                                                                   | int                                               |
 | alerts          | An object with destinations for notifications. Described [above](#rule-object).                                                                                                                                  | JSON object                                       |
 | suspended       | Starts or stops tracking the rule. `true` if the rule suspended.                                                                                                                                                 | boolean                                           |
@@ -345,7 +345,7 @@ Presented parameters are common for all rules, but there are specific parameters
 | description     | Rule's description.                                                                                                                                                                                                                        | string                                            |
 | zone_ids        | List of zones to bind where the rule will work. Leave it empty if rule should work everywhere. Parameter `zone_ids` is not allowed for rule `offline` and required for `route` and `inoutzone` rule types (there can be exactly one item). | int array                                         |
 | trackers        | List of tracker IDs belong to user for which the rule will work.                                                                                                                                                                           | int array                                         |
-| type            | One of pre-defined types of rules. See [rule types](./rule_types.md).                                                                                                                                                                      | [enum](../../../../getting-started.md#data-types) |
+| type            | One of pre-defined types of rules. See [rule types](./rule_types.md).                                                                                                                                                                      | [enum](../../../../getting-started/introduction.md#data-types) |
 | param           | A common parameter that responsible for integer conditions. See [rule types](./rule_types.md).                                                                                                                                             | int                                               |
 | alerts          | An object with destinations for notifications. Described [above](#rule-object).                                                                                                                                                            | JSON object                                       |
 | suspended       | Starts and stops tracking the rule. `true` if the rule suspended.                                                                                                                                                                          | boolean                                           |

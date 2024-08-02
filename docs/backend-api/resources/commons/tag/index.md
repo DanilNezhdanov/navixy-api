@@ -5,10 +5,9 @@ description: Tag is a label, or a key word that is used for a quick and easy sea
 
 # Tag
 
-Tag is a label, or a key word that is used for a quick and easy search. They help find the needed places, geofences, 
-employees, tasks, trackers, and vehicles. Contains tag object and API calls to interact with it.
+A tag is a label or keyword used for quick and easy searches. Tags help locate places, geofences, employees, tasks, trackers, and vehicles. This section contains information about the tag object and the API calls used to interact with it.
 
-Find more information about tags API usage in our [how-tos](../../../how-to/tags-usage.md).
+For more details on using the tags API, refer to our [how-to guide](../../../guides/fleet-management/use-tags.md).
 
 
 ## Tag object
@@ -83,7 +82,7 @@ Creates a new tag.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `delete`
@@ -171,7 +170,7 @@ Gets all tags belonging to user with optional filtering.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `search`
@@ -228,7 +227,7 @@ Search entities that bound with all of specified tags.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `update`

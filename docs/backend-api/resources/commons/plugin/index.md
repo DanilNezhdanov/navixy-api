@@ -101,7 +101,7 @@ Only API key `hash`.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 #### Standalone-specific:
 

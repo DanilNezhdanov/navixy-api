@@ -29,9 +29,9 @@ Transaction object description and API call to get list of user's billing transa
 ```
 
 * `description` - string. Transaction description.
-* `type` - [enum](../../getting-started.md#data-types). Type of transaction.
-* `subtype` - [enum](../../getting-started.md#data-types). Subtype of transaction.
-* `timestamp` - [date/time](../../getting-started.md#data-types). When transaction created.
+* `type` - [enum](../../getting-started/introduction.md#data-types). Type of transaction.
+* `subtype` - [enum](../../getting-started/introduction.md#data-types). Subtype of transaction.
+* `timestamp` - [date/time](../../getting-started/introduction.md#data-types). When transaction created.
 * `user_id` - int. ID of a user which made a transaction.
 * `dealer_id` - int. ID of a dealer.
 * `tracker_id` - int. Tracker id. 0 if transaction not associated with tracker.
@@ -57,8 +57,8 @@ Gets list of user's billing transactions for the specified period.
 
 | name  | description                                             | type                                             |
 |:------|:--------------------------------------------------------|:-------------------------------------------------|
-| from  | Start date/time for searching.                          | [date/time](../../getting-started.md#data-types) |
-| to    | End date/time for searching. Must be after `from` date. | [date/time](../../getting-started.md#data-types) |
+| from  | Start date/time for searching.                          | [date/time](../../getting-started/introduction.md#data-types) |
+| to    | End date/time for searching. Must be after `from` date. | [date/time](../../getting-started/introduction.md#data-types) |
 | limit | Optional. Maximum number of returned transactions.      | int                                              |
 
 #### Example

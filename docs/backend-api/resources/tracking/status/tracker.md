@@ -66,8 +66,8 @@ Assign a working status to the tracker.
     * `lat` - int. Latitude.
     * `lng` - int. Longitude.
     * `address` - string. Address of last change.
-    * `changed` - [date/time](../../../getting-started.md#data-types). Change date and time.
-    * `origin` - [enum](../../../getting-started.md#data-types). Origin – who changed the status ("employee" or "supervisor").
+    * `changed` - [date/time](../../../getting-started/introduction.md#data-types). Change date and time.
+    * `origin` - [enum](../../../getting-started/introduction.md#data-types). Origin – who changed the status ("employee" or "supervisor").
 
 #### Errors
 
@@ -151,8 +151,8 @@ Gets current assigned statuses for the specified trackers.
     * `old_status_id` - int. Previous status ID. May be null.
     * `new_status_id` - int. Current status ID. May be null.
     * `location` - Location and address at which status change occurred.
-    * `changed` - [date/time](../../../getting-started.md#data-types). Date and time of change.
-    * `origin` - [enum](../../../getting-started.md#data-types). Origin – who changed the status ("employee" or "supervisor").
+    * `changed` - [date/time](../../../getting-started/introduction.md#data-types). Date and time of change.
+    * `origin` - [enum](../../../getting-started/introduction.md#data-types). Origin – who changed the status ("employee" or "supervisor").
 
 #### Errors
 
@@ -218,8 +218,8 @@ Gets current assigned working status of the tracker.
     * `old_status_id` - int. Previous status ID. May be null.
     * `new_status_id` - int. Current status ID. May be null.
     * `location` - Location and address at which status change occurred.
-    * `changed` - [date/time](../../../getting-started.md#data-types). Date and time of change.
-    * `origin` - [enum](../../../getting-started.md#data-types). Origin – who changed the status ("employee" or "supervisor").
+    * `changed` - [date/time](../../../getting-started/introduction.md#data-types). Date and time of change.
+    * `origin` - [enum](../../../getting-started/introduction.md#data-types). Origin – who changed the status ("employee" or "supervisor").
 
 #### Errors
 

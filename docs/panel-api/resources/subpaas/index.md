@@ -31,7 +31,7 @@ API calls to interact with Subpaases.
 * `title` - string. Subpaas' name.
 * `jur_name` - string. Legal (juristic) company name.
 * `creation_date` - string. Creation date.
-* `block_type` - [enum](../../../backend-api/getting-started.md#data-types). Panel and Subpaas' users block status. One of: 
+* `block_type` - [enum](../../../backend-api/getting-started/introduction.md#data-types). Panel and Subpaas' users block status. One of: 
 "NOT_BLOCKED", "INITIAL_BLOCK", "BLOCK_LOGIN" or "CLIENTS_BLOCKED".
 * `users_count` - int. Count of users.
 * `active_users_count` - int. Count of active users.
@@ -94,7 +94,7 @@ Gets a list of all subpaases for a dealer. Dealer ID will be taken from the sess
 
 | name      | description                                                                                                                       | type                                                       |
 |:----------|:----------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
-| order_by  | Optional. Sort option. Can be "subpaas_id", "title", "jur_name", "login", "block_type", "creation_date". Default is `subpaas_id`. | [enum](../../../backend-api/getting-started.md#data-types) |
+| order_by  | Optional. Sort option. Can be "subpaas_id", "title", "jur_name", "login", "block_type", "creation_date". Default is `subpaas_id`. | [enum](../../../backend-api/getting-started/introduction.md#data-types) |
 | ascending | Optional. If `true` ordering will be ascending, descending otherwise. Default is `true`.                                          | boolean                                                    |
 | limit     | Optional. Pagination. Maximum subpaases to return                                                                                 | int                                                        |
 | offset    | Optional. Pagination. Get subpaases starting from.                                                                                | int                                                        |
@@ -221,7 +221,7 @@ Updates a subpaas with specified ID.
 | contact_fio     | Contact person.                                                                                                | string                                                     |
 | contact_post    | Contact post (position).                                                                                       | string                                                     |
 | contact_phone   | Contact's phone.                                                                                               | string                                                     |
-| block_type      | Panel and PaaS users block status. One of: "NOT_BLOCKED", "INITIAL_BLOCK", "BLOCK_LOGIN" or "CLIENTS_BLOCKED". | [enum](../../../backend-api/getting-started.md#data-types) |
+| block_type      | Panel and PaaS users block status. One of: "NOT_BLOCKED", "INITIAL_BLOCK", "BLOCK_LOGIN" or "CLIENTS_BLOCKED". | [enum](../../../backend-api/getting-started/introduction.md#data-types) |
 
 #### Example
 

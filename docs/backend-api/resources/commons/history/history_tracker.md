@@ -17,16 +17,15 @@ API path: `/history/tracker/`.
 List less than or equal to `limit` of tracker events filtered by event types (`events`) between `from` date/time 
 and `to` date/time sorted by **time** field. 
 
-Described this API call usage details in 
-our [how-tos](../../../how-to/how-to-work-with-notifications.md#events-for-specific-trackers-and-time-period).
+Described this API call usage details in our [guide](../../../guides/rules-notifications/work-with-notifications.md#events-for-specific-trackers-and-time-period).
 
 #### Parameters
 
 | name      | description                                                                                      | type                                                       |
 |:----------|:-------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
 | trackers  | List of tracker's IDs.                                                                           | int array                                                  |
-| from      | Start date/time for searching.                                                                   | string [date/time](../../../getting-started.md#data-types) |
-| to        | End date/time for searching. Must be after "from" date.                                          | string [date/time](../../../getting-started.md#data-types) |
+| from      | Start date/time for searching.                                                                   | string [date/time](../../../getting-started/introduction.md#data-types) |
+| to        | End date/time for searching. Must be after "from" date.                                          | string [date/time](../../../getting-started/introduction.md#data-types) |
 | events    | Optional. Default: all. List of history types.                                                   | string array                                               |
 | limit     | Optional. Default: [history.maxLimit](../dealer.md). Max count of entries in result.             | int                                                        |
 | ascending | Optional. Default: `true`. Sort ascending by time when it is `true` and descending when `false`. | boolean                                                    |

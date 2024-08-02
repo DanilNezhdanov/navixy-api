@@ -51,7 +51,7 @@ Particular report can be delivered to user's mailbox regularly. Contains report 
 * `enabled` - boolean. `true` if the scheduled report enabled.
 * `period` - string. Report period, "Xm" | "w" | "d" | "y".
 * `emails` - optional string array. List of emails.
-* `email_format` - [enum](../../../getting-started.md#data-types). Can be "pdf" | "xls".
+* `email_format` - [enum](../../../getting-started/introduction.md#data-types). Can be "pdf" | "xls".
 * `sending_time` - optional string. Local time for sending reports, default "00:00:00", hourly granularity.
 * `fire_time` - optional string. Last schedule fire time, ignored on create/update.
 * `last_result`  object with last report creation result.
@@ -213,7 +213,7 @@ Only API key `hash`.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `update`

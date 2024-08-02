@@ -7,9 +7,7 @@ description: Overview of Navixy Panel API
 
 The structure of Panel API (aka Administration API) – request paths, 
 response and error formats – is the same as for user API, so we highly 
-recommend reading [Backend API: getting started][1].
-
-  [1]: ../backend-api/getting-started.md
+recommend reading [Backend API: getting started](../backend-api/getting-started/introduction.md) 
 
 Two main differences are _authorization system_ and _request paths_.
 

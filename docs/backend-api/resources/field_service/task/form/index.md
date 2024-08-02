@@ -117,7 +117,7 @@ Retrieves attached form as file.
 | name    | description                                                | type                                              |
 |:--------|:-----------------------------------------------------------|:--------------------------------------------------|
 | task_id | An ID of the task.                                         | int                                               |
-| format  | Format of the download file. Can be "xls", "csv" or "pdf". | [enum](../../../../getting-started.md#data-types) |
+| format  | Format of the download file. Can be "xls", "csv" or "pdf". | [enum](../../../../getting-started/introduction.md#data-types) |
 
 #### Examples
 
@@ -299,7 +299,7 @@ where period_object is:
 #### Errors
 
 * 204 – Not found - if there is no form template with such ID belonging to authorized user.
-* [General](../../../../getting-started.md#error-codes) types of errors.
+* [General](../../../../getting-started/introduction.md#error-codes) types of errors.
 
 
 ### `read`
@@ -370,14 +370,14 @@ Gets form associated with the specified task.
 * `value` - [form object](../../form/index.md#form-object), or null if no form attached.
 * `files` - list of files, both submitted and unsubmitted, associated with this form's fields.
     * `id` - int. File ID.
-    * `type` - [enum](../../../../getting-started.md#data-types). Can be "image" or "file".
-    * `created` - [date/time](../../../../getting-started.md#data-types). Date when file created.
-    * `uploaded` - [date/time](../../../../getting-started.md#data-types). Date when file uploaded, can be null if file not yet uploaded.
+    * `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "image" or "file".
+    * `created` - [date/time](../../../../getting-started/introduction.md#data-types). Date when file created.
+    * `uploaded` - [date/time](../../../../getting-started/introduction.md#data-types). Date when file uploaded, can be null if file not yet uploaded.
     * `name` - string. Filename.
     * `size` - int. Size in bytes. If file not uploaded, show maximum allowed size for the upload.
     * `metadata` - metadata object.
     * `orientation` - int. Image exif orientation.
-    * `state` - [enum](../../../../getting-started.md#data-types). Can be "created", "in_progress", "uploaded", "deleted".
+    * `state` - [enum](../../../../getting-started/introduction.md#data-types). Can be "created", "in_progress", "uploaded", "deleted".
     * `download_url` - string. Actual URL at which file is available. Can be null if file not yet uploaded.
     * `bindings` - all entities to which this file linked.
     * `previews` - available preview images for the file. Can be null or empty for any file in any state.

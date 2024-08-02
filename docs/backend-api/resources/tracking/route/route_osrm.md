@@ -25,7 +25,7 @@ Gets route points via OSRM API.
 | waypoints   | Optional. List of transitional points. `[{locationA},{locationN}]`.                                              | array of JSON objects |
 | point_limit | Optional. If specified, the returned route will be simplified to contain this number of points (or less). Min=2. | int                   |
 
-Where **location** described in [data types description section](../../../getting-started.md#data-types).
+Where **location** described in [data types description section](../../../getting-started/introduction.md#data-types).
 
 #### Examples
 
@@ -83,7 +83,7 @@ Where **location** described in [data types description section](../../../gettin
     }
     ```
   
-    * `status` - [enum](../../../getting-started.md#data-types).
+    * `status` - [enum](../../../getting-started/introduction.md#data-types).
         * `NOT_FOUND` – indicates at least one of the locations specified in the request's origin, destination, or 
         waypoints could not be geocoded, or OSRM cannot find route.
         * `UNKNOWN_ERROR` – unexpected OSRM error code.

@@ -22,9 +22,9 @@ Bill object description and API calls for work with user's bills.
 ```
 
 * `order_id` - int. Unique bill ID.
-* `created` - [date/time](../../getting-started.md#data-types). When the bill created.
+* `created` - [date/time](../../getting-started/introduction.md#data-types). When the bill created.
 * `sum` - float. A bill sum in default currency of the panel.
-* `status` - [enum](../../getting-started.md#data-types). Bill order status. Can be one of:
+* `status` - [enum](../../getting-started/introduction.md#data-types). Bill order status. Can be one of:
     * `created` – but not settled.
     * `settled`.
     * `canceled`.

@@ -15,7 +15,7 @@ If there's an [employee](../employee) [assigned](../../tracking/tracker/employee
 and a POI has a custom field of type "responsible employee", such point of interest will be available in the mobile app to view.
 Thus, field employee/driver can view all points of interest assigned to him to visit them, etc.
 
-Working with POIs requires several actions so we described them in our [guides](../../../how-to/work-with-POIs.md).
+Working with POIs requires several actions so we described them in our [guides](../../../guides/places/manage-pois.md).
 
 
 ## Place object
@@ -192,7 +192,7 @@ Get POIs belonging to user.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `create`
@@ -242,7 +242,7 @@ Gets all POI IDs and names within which a specified coordinates are located insi
 
 | name     | description                                                                                                   | type        |
 |:---------|:--------------------------------------------------------------------------------------------------------------|:------------|
-| location | Location coordinates (see: [data types description section](../../../getting-started.md#data-types) section). | JSON object |
+| location | Location coordinates (see: [data types description section](../../../getting-started/introduction.md#data-types) section). | JSON object |
 
 #### Example
 

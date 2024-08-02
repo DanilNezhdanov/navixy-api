@@ -47,15 +47,15 @@ Every route consists of checkpoints. Using these actions, you can manipulate che
 * `location` - location associated with this checkpoint. cannot be null.
     * `address` - string. Address of the location.
     * `radius` - int. Radius of location zone in meters.
-* `creation_date` - [date/time](../../../getting-started.md#data-types). When checkpoint created. *IGNORED* in checkpoint/create, checkpoint/update.
-* `from` - [date/time](../../../getting-started.md#data-types). Date AFTER which checkpoint zone must be visited.
-* `to` - [date/time](../../../getting-started.md#data-types). Date BEFORE which checkpoint zone must be visited.
+* `creation_date` - [date/time](../../../getting-started/introduction.md#data-types). When checkpoint created. *IGNORED* in checkpoint/create, checkpoint/update.
+* `from` - [date/time](../../../getting-started/introduction.md#data-types). Date AFTER which checkpoint zone must be visited.
+* `to` - [date/time](../../../getting-started/introduction.md#data-types). Date BEFORE which checkpoint zone must be visited.
 * `external_id` - int. Used if task imported from external system. Arbitrary text string. Can be null.
-* `status` - [enum](../../../getting-started.md#data-types). Checkpoint status. *IGNORED* in checkpoint/create, checkpoint/update.
-* `status_change_date` - [date/time](../../../getting-started.md#data-types). When checkpoint status changed. *IGNORED* in checkpoint/create and checkpoint/update.
+* `status` - [enum](../../../getting-started/introduction.md#data-types). Checkpoint status. *IGNORED* in checkpoint/create, checkpoint/update.
+* `status_change_date` - [date/time](../../../getting-started/introduction.md#data-types). When checkpoint status changed. *IGNORED* in checkpoint/create and checkpoint/update.
 * `max_delay` - int. Maximum allowed checkpoint completion delay in minutes.
 * `min_stay_duration` - int. Minimum duration of stay in checkpoint zone for checkpoint completion, minutes.
-* `arrival_date` - [date/time](../../../getting-started.md#data-types). Wen tracker has arrived to the checkpoint zone. *IGNORED* in checkpoint/create, checkpoint/update.
+* `arrival_date` - [date/time](../../../getting-started/introduction.md#data-types). Wen tracker has arrived to the checkpoint zone. *IGNORED* in checkpoint/create, checkpoint/update.
 * `stay_duration` - int. Duration of stay in the checkpoint zone, seconds.
 * `origin` - string. Checkpoint origin. *IGNORED* in checkpoint/create, checkpoint/update.
 * `tags` - int array. List of tag IDs.
@@ -216,7 +216,7 @@ Get checkpoints belonging to user with given IDs
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `read`

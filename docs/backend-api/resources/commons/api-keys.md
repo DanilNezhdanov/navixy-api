@@ -27,7 +27,7 @@ To distinguish keys from each other, you should give them meaningful names.
     Do not publish API keys anywhere. Having a key, you can perform almost any action in the 
     user's account. Make API calls only over HTTPS because the key is transmitted in cleartext.
 
-Find more details on API keys usage in our [instructions](../../how-to/get-api-key.md).
+Find more details on API keys usage in our [instructions](../../getting-started/authentication.md).
 
 
 ## API Key object

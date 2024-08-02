@@ -17,15 +17,14 @@ API path: `/history/user/`.
 List less than or equal to `limit` of tracker events filtered by event types (`events`) between `from` date/time 
 and `to` date/time sorted by **time** field.
 
-Added more information about this API call usage in 
-our [instructions](../../../how-to/how-to-work-with-notifications.md#all-events-of-a-user-per-specific-time-period).
+Added more information about this API call usage in our [guide](../../../guides/rules-notifications/work-with-notifications.md#all-events-of-a-user-per-specific-time-period).
 
 #### Parameters
 
 | name      | description                                                                                      | type                                                       |
 |:----------|:-------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
-| from      | Start date/time for searching.                                                                   | string [date/time](../../../getting-started.md#data-types) |
-| to        | End date/time for searching. Must be after "from" date.                                          | string [date/time](../../../getting-started.md#data-types) |
+| from      | Start date/time for searching.                                                                   | string [date/time](../../../getting-started/introduction.md#data-types) |
+| to        | End date/time for searching. Must be after "from" date.                                          | string [date/time](../../../getting-started/introduction.md#data-types) |
 | events    | Optional. Default: all. List of history types.                                                   | string array                                               |
 | limit     | Optional. Default: [history.maxLimit](../dealer.md). Max count of entries in result.             | int                                                        |
 | ascending | Optional. Default: `true`. Sort ascending by time when it is `true` and descending when `false`. | boolean                                                    |

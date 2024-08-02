@@ -37,7 +37,7 @@ Tariff object description and API call to get the list of device's plans availab
 * `name` - string. Plans's label.
 * `group_id` - int. Group of plans. User can change the plan only on the plan in the same group.
 * `active` - boolean. Plan is active if `true`. User can change the plan only on the active plan.
-* `type` - [enum](../../../getting-started.md#data-types). Plan type. Can be "monthly", "everyday", "activeday".
+* `type` - [enum](../../../getting-started/introduction.md#data-types). Plan type. Can be "monthly", "everyday", "activeday".
 * `price` - double. Price per month for "monthly" and "everyday" plan or price per "active" day for "activeday" plan.
 * `early_change_price` - double. Price of change plan from current to another. With the last change in less than 30 days (**tariff.freeze.period** config option). When not passed or "null" user cannot change plan frequently.
 * `device_limit` - int. Maximum number of devices per account.
@@ -111,5 +111,5 @@ Only API key `hash`.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 

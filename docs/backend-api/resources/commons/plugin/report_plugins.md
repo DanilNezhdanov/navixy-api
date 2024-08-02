@@ -391,7 +391,7 @@ Plugin-specific parameters:
 | name                              | description                                                                                                                                                                   | type                                           |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
 | show_seconds                      | If `true`, timestamps will be with seconds.                                                                                                                                   | boolean                                        |
-| graph_type                        | The type of X-axis. Can be "time" or "mileage".                                                                                                                               | [enum](../../../getting-started.md#data-types) |
+| graph_type                        | The type of X-axis. Can be "time" or "mileage".                                                                                                                               | [enum](../../../getting-started/introduction.md#data-types) |
 | detailed_by_dates                 | If `true`, show final data on fuel traffic for each day in the period.                                                                                                        | boolean                                        |
 | include_summary_sheet_only        | If `true`, report will contain only a summary sheet for all chosen devices.                                                                                                   | boolean                                        |
 | include_summary_sheet             | If `true`, report will contain a summary sheet. Default is `true`.                                                                                                            | boolean                                        |
@@ -471,7 +471,7 @@ Plugin-specific parameters:
 | hide_empty_tabs          | If `true`, empty tabs will be hidden.                                | boolean                                        |
 | details_interval_seconds | The interval in seconds. From 30 to 21600.                           | int                                            |
 | details_interval_minutes | Deprecated! The interval in minutes. Can be `[5, 30, 60, 180, 360]`. | int                                            |
-| graph_type               | The type of X-axis. Can be "time" or "mileage".                      | [enum](../../../getting-started.md#data-types) |
+| graph_type               | The type of X-axis. Can be "time" or "mileage".                      | [enum](../../../getting-started/introduction.md#data-types) |
 | smoothing                | Smooth data if `true`.                                               | boolean                                        |
 | sensors                  | List of objects containing tracker_id and sensor_id.                 | array of objects                               |
 
@@ -606,7 +606,7 @@ Plugin-specific parameters:
 | hide_empty_tabs          | If `true`, empty tabs will be hidden.                                                                                                                                        | boolean                                        |
 | details_interval_seconds | The interval in seconds. From 30 to 21600.                                                                                                                                   | int                                            |
 | details_interval_minutes | Deprecated! The interval in minutes. Can be `[5, 30, 60, 180, 360]`.                                                                                                         | int                                            |
-| graph_type               | The type of X-axis. Can be "time" or "mileage".                                                                                                                              | [enum](../../../getting-started.md#data-types) |
+| graph_type               | The type of X-axis. Can be "time" or "mileage".                                                                                                                              | [enum](../../../getting-started/introduction.md#data-types) |
 | smoothing                | Smooth data if `true`.                                                                                                                                                       | boolean                                        |
 | show_address             | Address of each reading appears in report if `true`.                                                                                                                         | boolean                                        |
 | filter                   | If `true`,short trips will not coincide (shorter than 300m/have less than 4 points total and if the device circles around one point (e.g., star pattern from GPS drifting)). | boolean                                        |
@@ -844,7 +844,7 @@ Plugin-specific parameters:
 | filter                     | If `true`, short trips will not coincide (shorter than 300m/have less than 4 points total and if the device circles around one point (e.g., star pattern from GPS drifting)). | boolean                                        |
 | include_summary_sheet_only | If `true`, report will contain only a summary sheet for all chosen devices.                                                                                                   | boolean                                        |
 | include_summary_sheet      | If `true`, the report will contain a summary sheet. Default is `true`.                                                                                                        | boolean                                        |
-| group_type                 | A group type. Can be "province" or "country".                                                                                                                                 | [enum](../../../getting-started.md#data-types) |
+| group_type                 | A group type. Can be "province" or "country".                                                                                                                                 | [enum](../../../getting-started/introduction.md#data-types) |
 
 #### plugin example
 

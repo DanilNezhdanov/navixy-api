@@ -26,8 +26,8 @@ Our platform tracks changes to task fields and state for your convenience. Conta
 * `id` - int. Entry ID.
 * `user_id` - int. User ID.
 * `task_id` - int. An ID of the task with which this entry associated.
-* `event_date` - [date/time](../../../getting-started.md#data-types). Date when history event happened.
-* `operation` - [enum](../../../getting-started.md#data-types). Operation which happened. Can be "create", "update", "assign" or "status_change".
+* `event_date` - [date/time](../../../getting-started/introduction.md#data-types). Date when history event happened.
+* `operation` - [enum](../../../getting-started/introduction.md#data-types). Operation which happened. Can be "create", "update", "assign" or "status_change".
 * `payload` - depends on operation. Typically, contains fields which were changed during operation.
 
 
@@ -81,4 +81,4 @@ Returns history for the task with the specified ID.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.

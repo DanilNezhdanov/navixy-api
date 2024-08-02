@@ -103,7 +103,7 @@ Only session `hash`.
 
 * `id` - int. Dealer id.
 * `parent_dealer_id` - int. An ID of parent dealer.
-* `contract_type` - [enum](../../../backend-api/getting-started.md#data-types). Contract type: "PARTNER", "AGENT" or "PAAS".
+* `contract_type` - [enum](../../../backend-api/getting-started/introduction.md#data-types). Contract type: "PARTNER", "AGENT" or "PAAS".
 * `tariff_id` - int. PaaS tariff id.
 * `tariff` - PaaS tariff info.
     * `license_price` - nullable double. Price per license.
@@ -114,14 +114,14 @@ Only session `hash`.
 * `demo_tariff` - boolean. `true` for "TRIAL" PaaS tariffs.
 * `store_period` - string. Max data store period for users on `demo_tariff`.
 * `demo_ends` - string. TRIAL period end date or null.
-* `block_status` - [enum](../../../backend-api/getting-started.md#data-types). Panel and PaaS users block status. One of: 
+* `block_status` - [enum](../../../backend-api/getting-started/introduction.md#data-types). Panel and PaaS users block status. One of: 
 "NOT_BLOCKED", "INITIAL_BLOCK", "BLOCK_LOGIN" or "CLIENTS_BLOCKED".
 * `legal_name` - string. Dealer legal name.
 * `active_amount` - int. Amount of all active trackers (with Sub-PaaSes).
 * `active_amount_own` - int. Amount of active trackers (without Sub-PaaSes).
 * `active_amount_subpaas` - int. Amount of Sub-PaaSes' active trackers.
 * `active_limit` - int. Active trackers limit.
-* `locale` - [enum](../../../backend-api/getting-started.md#data-types). Dealer's default locale.
+* `locale` - [enum](../../../backend-api/getting-started/introduction.md#data-types). Dealer's default locale.
 * `domain` - string. Dealer's domain.
 * `favicon` - string. Path or URL to dealer's interface favicon or null.
 * `logo` - string. Path or URL to dealer's logotype or null.

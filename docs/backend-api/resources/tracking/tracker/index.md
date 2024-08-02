@@ -49,8 +49,8 @@ manipulation of tracker and/or its properties.
     * `blocked` - boolean. `true` if tracker blocked due to tariff end.
     * `tariff_id` - int. An ID of tracker tariff from "main_tariffs" table.
     * `status_listing_id` - int. An ID of the status listing associated with this tracker, or null.
-    * `creation_date` - [date/time](../../../getting-started.md#data-types). Date when the tracker registered.
-    * `tariff_end_date` - [date/time](../../../getting-started.md#data-types). Date of next tariff prolongation, or null.
+    * `creation_date` - [date/time](../../../getting-started/introduction.md#data-types). Date when the tracker registered.
+    * `tariff_end_date` - [date/time](../../../getting-started/introduction.md#data-types). Date of next tariff prolongation, or null.
     * `phone` - string. Phone of the device. Can be null or empty if device has no GSM module or uses bundled SIM which number hidden from the user.
 * `tag_binding` - object. List of attached tags. Appears only for [tracker/list](#list) call.
     * `tag_id` - int. An ID of tag. Must be unique for a tracker.
@@ -122,7 +122,7 @@ See tracker object structure description [here](#tracker-object-structure).
 
 ### `list`
 
-Gets user's trackers with optional filtering by labels. We described this API call in our [how-tos](../../../how-to/get-tracker-list.md).
+Gets user's trackers with optional filtering by labels. We described this API call in the [guide](../../../guides/data-retrieval/get-tracker-list.md).
 
 #### Parameters
 
@@ -190,7 +190,7 @@ See tracker object structure description [here](#tracker-object-structure).
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### corrupt
@@ -396,21 +396,21 @@ Gets last CAN and OBD sensors and states values received from the device.
 }
 ```
 
-* `user_time` - [date/time](../../../getting-started.md#data-types). Current time in user's timezone.
+* `user_time` - [date/time](../../../getting-started/introduction.md#data-types). Current time in user's timezone.
 * `inputs` - list of `sensor value` objects.
     * `label` - string. Sensor's label. E.g. "Sensor #1".
-    * `name` - [enum](../../../getting-started.md#data-types). Name of sensor's raw input.
-    * `type` - [enum](../../../getting-started.md#data-types). Type of quantity, measured by a sensor.
+    * `name` - [enum](../../../getting-started/introduction.md#data-types). Name of sensor's raw input.
+    * `type` - [enum](../../../getting-started/introduction.md#data-types). Type of quantity, measured by a sensor.
     * `value` - float. Reading's value, measured in units from an eponymous field. E.g. 100.0.
-    * `units_type` - [enum](../../../getting-started.md#data-types). Unit of measurement of input to the sensor.
+    * `units_type` - [enum](../../../getting-started/introduction.md#data-types). Unit of measurement of input to the sensor.
     * `units` - string. User label for sensor's units.
-    * `converted_units_type` - [enum](../../../getting-started.md#data-types). Unit of measurement system preferred by current user
+    * `converted_units_type` - [enum](../../../getting-started/introduction.md#data-types). Unit of measurement system preferred by current user
         (according to user/settings), suitable for this sensor. Can be null, if there is no need in 
         conversion (unit of sensor's input (field `units_type`) belongs to user's measurement system).
     * `converted_value` - float. Reading's value in units from field `converted_units_type`. 
         Can be null if there is no need in conversion.
 * `states` - map of last state values or null (see below).
-* `update_time` - [date/time](../../../getting-started.md#data-types). Date and time when the data updated.
+* `update_time` - [date/time](../../../getting-started/introduction.md#data-types). Date and time when the data updated.
 
 List of available sensor's input names for the object `sensor value`:
 
@@ -522,7 +522,7 @@ Gets current fuel level (in liters) of tracker's fuel tanks.
 }
 ```
 
-* `user_time` - [date/time](../../../getting-started.md#data-types). Current time in user's timezone.
+* `user_time` - [date/time](../../../getting-started/introduction.md#data-types). Current time in user's timezone.
 * `inputs` - array of last readings of fuel-related sensors. Items are object listed below.
 
 List of available sensor's input names for the object `sensor value`:
@@ -537,7 +537,7 @@ List of available sensor's input names for the object `sensor value`:
 * **can_fuel_litres** (fuel level in litres).
 * **can_fuel_economy** (fuel economy in km/litres).
 
-* `update_time` - [date/time](../../../getting-started.md#data-types). Date and time when the data updated.
+* `update_time` - [date/time](../../../getting-started/introduction.md#data-types). Date and time when the data updated.
 
 #### Errors
 
@@ -591,15 +591,15 @@ bound to them (if any).
 }
 ```
 
-* `user_time` - [date/time](../../../getting-started.md#data-types). Current time in user's timezone.
+* `user_time` - [date/time](../../../getting-started/introduction.md#data-types). Current time in user's timezone.
 * `inputs` - array (boolean) of states of all digital inputs. `[true, true, false]` means input 1 is on, 
   input 2 is on, input 3 is off.
 * `states` - array of state objects.
-    * `type` - [enum](../../../getting-started.md#data-types). One of predefined semantic input types (see below).
+    * `type` - [enum](../../../getting-started/introduction.md#data-types). One of predefined semantic input types (see below).
     * `name` - string. User-defined name for semantic input, or null if not specified.
     * `status` - boolean. True if input is active, false otherwise.
     * `input_number` - int. Number of the associated discrete input.
-* `update_time` - [date/time](../../../getting-started.md#data-types). Date and time when the data updated.
+* `update_time` - [date/time](../../../getting-started/introduction.md#data-types). Date and time when the data updated.
 
 List of `input types`:
 
@@ -663,7 +663,7 @@ Gets last point of the tracker located by GPS. Points located by GSM LBS are exc
 ```
 
 * `value` - track point object.
-  * `get_time` - [date/time](../../../getting-started.md#data-types). GPS timestamp of the point, in user's timezone.
+  * `get_time` - [date/time](../../../getting-started/introduction.md#data-types). GPS timestamp of the point, in user's timezone.
   * `heading` - int. Direction bearing in degrees (0-360).
   * `lat` - float. Latitude.
   * `lng` - float. Longitude.
@@ -727,20 +727,20 @@ Gets last sensor values for sensors that are:
 }
 ```
 
-* `user_time` - [date/time](../../../getting-started.md#data-types). Current time in user's timezone.
+* `user_time` - [date/time](../../../getting-started/introduction.md#data-types). Current time in user's timezone.
 * `inputs` - list of `sensor value` objects. See below.
   * `label` - string. Sensor's label. E.g. "Sensor #1".
-  * `name` - [enum](../../../getting-started.md#data-types). Name of sensor's raw input.
-  * `type` - [enum](../../../getting-started.md#data-types). Type of quantity, measured by a sensor.
+  * `name` - [enum](../../../getting-started/introduction.md#data-types). Name of sensor's raw input.
+  * `type` - [enum](../../../getting-started/introduction.md#data-types). Type of quantity, measured by a sensor.
   * `value` - float. Reading's value, measured in units from an eponymous field. E.g. 100.0.
-  * `units_type` - [enum](../../../getting-started.md#data-types). Unit of measurement of input to the sensor.
+  * `units_type` - [enum](../../../getting-started/introduction.md#data-types). Unit of measurement of input to the sensor.
   * `units` - string. User label for sensor's units.
-  * `converted_units_type` - [enum](../../../getting-started.md#data-types). Unit of measurement system preferred by current user
+  * `converted_units_type` - [enum](../../../getting-started/introduction.md#data-types). Unit of measurement system preferred by current user
     (according to user/settings), suitable for this sensor. Can be null, if there is no need in
     conversion (unit of sensor's input (field `units_type`) belongs to user's measurement system).
   * `converted_value` - float. Reading's value in units from field `converted_units_type`.
     Can be null if there is no need in conversion.
-* `update_time` - [date/time](../../../getting-started.md#data-types). Date and time when the data updated.
+* `update_time` - [date/time](../../../getting-started/introduction.md#data-types). Date and time when the data updated.
 
 List of available sensor's input names for the object `sensor value`:
 
@@ -829,10 +829,10 @@ Gets current tracker state (gps, gsm, outputs, etc.).
 }
 ```
 
-* `user_time` - [date/time](../../../getting-started.md#data-types). Current time in user's timezone.
+* `user_time` - [date/time](../../../getting-started/introduction.md#data-types). Current time in user's timezone.
 * `source_id` - int. Tracker data source ID (from "sources" table).
 * `gps` - gps object.
-    * `updated` - [date/time](../../../getting-started.md#data-types). Date of last gps coordinates update in a timezone of the user or null if there are 
+    * `updated` - [date/time](../../../getting-started/introduction.md#data-types). Date of last gps coordinates update in a timezone of the user or null if there are 
       no updates.
     * `signal_level` - int. GPS signal level in percent, e.g. 25, or null if device cannot provide such info.
     * `lat` - float. Latitude.
@@ -842,29 +842,29 @@ Gets current tracker state (gps, gsm, outputs, etc.).
     * `alt` - int. Altitude in meters, e.g. 10.
     * `precision` - int. Optional. Precision in meters.
     * `gsm_lbs` - boolean. Optional. True if location detected by GSM LBS.
-* `connection_status` - [enum](../../../getting-started.md#data-types). Device connection status, possible values: "signal_lost", 
+* `connection_status` - [enum](../../../getting-started/introduction.md#data-types). Device connection status, possible values: "signal_lost", 
 "just_registered", "offline", "idle", "active".
-* `movement_status` - [enum](../../../getting-started.md#data-types). Movement status, possible values: "moving", "stopped", "parked".
+* `movement_status` - [enum](../../../getting-started/introduction.md#data-types). Movement status, possible values: "moving", "stopped", "parked".
 * `gsm` - object. Can be null if device does not support transmission of gsm info.
-    * `updated` - [date/time](../../../getting-started.md#data-types). Date of last gsm status update in a timezone of the user or null if there are no updates.
+    * `updated` - [date/time](../../../getting-started/introduction.md#data-types). Date of last gsm status update in a timezone of the user or null if there are no updates.
     * `signal_level` - int. GSM signal level in percent, e.g. 25, or null if device cannot provide such info.
     * `network_name` - string. GSM network name, e.g. "T-MOBILE", or null if device cannot provide such info.
     * `roaming` - boolean. Roaming state, or null if device cannot provide such info.
-* `last_update` - [date/time](../../../getting-started.md#data-types). Date of last device state update in a timezone of the user or null if there are no updates.
+* `last_update` - [date/time](../../../getting-started/introduction.md#data-types). Date of last device state update in a timezone of the user or null if there are no updates.
 * `battery_level` - int. Battery level in percent, e.g. 25, or null if device cannot provide such info.
-* `battery_update` - [date/time](../../../getting-started.md#data-types). Date of last battery update in a timezone of the user or null if there are no updates.
+* `battery_update` - [date/time](../../../getting-started/introduction.md#data-types). Date of last battery update in a timezone of the user or null if there are no updates.
 * `inputs` - array of boolean. States of all digital inputs. `[true, true, false]` means input 1 is on, input 2 is on,
   input 3 is off.
-* `inputs_update` - [date/time](../../../getting-started.md#data-types). Date of last inputs update in a timezone of the user or null if there are no updates.
+* `inputs_update` - [date/time](../../../getting-started/introduction.md#data-types). Date of last inputs update in a timezone of the user or null if there are no updates.
 * `outputs` - array of boolean. States of all digital outputs. `[true, true, false]` means output 1 is on, 
   output 2 is on, output 3 is off.
-* `outputs_update` - [date/time](../../../getting-started.md#data-types). Date of last outputs update in a timezone of the user or null if there are no updates.
+* `outputs_update` - [date/time](../../../getting-started/introduction.md#data-types). Date of last outputs update in a timezone of the user or null if there are no updates.
 * `additional` - object. map of additional states, keys depends on tracker model.
     * `hardware_key` - last scanned hardware key object.
         * `value` - int. Hardware key.
-        * `updated` - [date/time](../../../getting-started.md#data-types). Date of last hardware key update in a timezone of the user or null if 
+        * `updated` - [date/time](../../../getting-started/introduction.md#data-types). Date of last hardware key update in a timezone of the user or null if 
         there are no updates.
-* `actual_track_update` - [date/time](../../../getting-started.md#data-types). When the last track was updated last time, when device last time moved.
+* `actual_track_update` - [date/time](../../../getting-started/introduction.md#data-types). When the last track was updated last time, when device last time moved.
 
 #### Errors
 
@@ -952,7 +952,7 @@ Gets current states (gps, gsm, outputs, etc.) for several trackers.
 }
 ```
 
-* `user_time` - [date/time](../../../getting-started.md#data-types). Current time in user's timezone.
+* `user_time` - [date/time](../../../getting-started/introduction.md#data-types). Current time in user's timezone.
 * `states` - object. A map containing state objects for requested trackers, where the key is the tracker ID 
   and the value is the state (see state object description in [tracker/get_state](#get_state) response).
 * `blocked` - array of tracker IDs. Returned only if list_blocked=`true`.
@@ -1054,7 +1054,7 @@ Gets all integrated tracker models (from "models" table).
 * `id` - int. Model ID.
 * `vendor` - string. Vendor name.
 * `parent_code` - string. Can be null.
-* `type` - [enum](../../../getting-started.md#data-types). Can be "logger", "portable", "vehicle", or "personal".
+* `type` - [enum](../../../getting-started/introduction.md#data-types). Can be "logger", "portable", "vehicle", or "personal".
 * `name` - string. Model name.
 * `has_auto_registration` - boolean. If `true` device may register by automatic commands from the platform.
 * `battery` - object. An internal device's battery.
@@ -1063,8 +1063,8 @@ Gets all integrated tracker models (from "models" table).
 * `digital_inputs` - int. Number of digital inputs.
 * `digital_outputs` - int. Number of digital outputs.
 * `rs232_inputs` - int. Number of RS232 inputs.
-* `inputs` - array of [enum](../../../getting-started.md#data-types). All available input types.
-* `rules` - array of [enum](../../../getting-started.md#data-types). Supported rules.
+* `inputs` - array of [enum](../../../getting-started/introduction.md#data-types). All available input types.
+* `rules` - array of [enum](../../../getting-started/introduction.md#data-types). Supported rules.
 * `has_led_control` - boolean. `true` if a switching LED supported by this tracker.
 * `has_location_request` - boolean. `true` if the tracker has an opportunity to request a location with a command by SMS.
 * `has_gprs_location_request` - boolean. `true` if the tracker has an opportunity to request a location with a command
@@ -1097,7 +1097,7 @@ Possible values are:
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `tags/set`
@@ -1129,7 +1129,7 @@ Set tags for a tracker. Tags must be created.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `location_request`
@@ -1141,7 +1141,7 @@ Execute this command to get current position of the device. The device must supp
 | name       | description                                                                                     | type                                           | format |
 |:-----------|:------------------------------------------------------------------------------------------------|:-----------------------------------------------|:-------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. | int                                            | 999119 |
-| type       | Optional. Default type `sms`.                                                                   | [enum](../../../getting-started.md#data-types) | "sms"  |
+| type       | Optional. Default type `sms`.                                                                   | [enum](../../../getting-started/introduction.md#data-types) | "sms"  |
 
 Request types:
 
@@ -1180,166 +1180,13 @@ Request types:
 * 256 – Location already actual.
 
 
-### `register_quick`
-
-Registers a new tracker using only IMEI. Automatic SMS commands will not be sent for a register.
-The device must be preconfigured. This API call can be used only for bundles.
-
-**required sub-user rights:** `tracker_register`.
-
-#### Parameters
-
-| name     | description                                                                                                                     | type   | format           |
-|:---------|:--------------------------------------------------------------------------------------------------------------------------------|:-------|:-----------------|
-| label    | User-defined label for this tracker. Must consist of printable characters and have length between 1 and 60.                     | string | "Courier"        |
-| group_id | Tracker group ID, 0 if tracker does not belong to any group. The specified group must exist. See [group/list](./group.md#list). | int    | 0                |
-| imei     | Tracker's IMEI.                                                                                                                 | string | "35645587458999" |
-
-#### Examples
-
-=== "cURL"
-
-    ```shell
-    curl -X POST '{{ extra.api_example_url }}/tracker/register_quick' \
-        -H 'Content-Type: application/json' \
-        -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "label": "Courier", "group_id": 0, "imei": "35645587458999"}'
-    ```
-
-=== "HTTP GET"
-
-    ```
-    {{ extra.api_example_url }}/tracker/register_quick?hash=a6aa75587e5c59c32d347da438505fc3&label=Courier&group_id=0&imei=35645587458999
-    ```
-
-#### Response
-
-```json
-{
-    "success": true,
-    "value": {
-      "id": 123456,
-      "label": "tracker label",
-      "clone": false,
-      "group_id": 167,
-      "avatar_file_name" : "file name",
-      "source": {
-        "id": 234567,
-        "device_id": 9999999988888,
-        "model": "telfmb920",
-        "blocked": false,
-        "tariff_id": 345678,
-        "status_listing_id": null,
-        "creation_date": "2011-09-21",
-        "tariff_end_date": "2016-03-24",
-        "phone" : "71234567890"
-      },
-      "tag_bindings": [{
-        "tag_id": 456789,
-        "ordinal": 4
-      }]
-    }
-}
-```
-
-For `tracker` object structure, see [tracker/](#tracker-object-structure).
-
-#### Errors
-
-* 13 – Operation not permitted – if user has insufficient rights.
-* 201 – Not found in the database - if there is no bundle with such IMEI.
-* 204 – Entity not found - if specified group does not exist.
-* 220 – Unknown device model - if specified device model does not exist.
-* 221 – Device limit exceeded - if device limit set for the user's dealer has been exceeded.
-* 222 – Plugin not found - if specified plugin not found or is not supported by device model.
-* 223 – Phone number already in use - if specified phone number already used in another device.
-* 224 – Device ID already in use - if specified device ID already registered in the system.
-* 225 – Not allowed for this legal type - if tariff of the new device is not compatible with user's legal type.
-* 226 – Wrong ICCID - if specified ICCID was not found.
-* 227 – Wrong activation code - if specified activation code not found or is already activated.
-
-
-### `register_retry`
-
-Resends registration commands to the device. The panel must have installed SMS gateway.
-
-**required sub-user rights:** `tracker_register`.
-
-#### Parameters
-
-| name                   | description                                                                                                                                                                                | type    | format             |
-|:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|:-------------------|
-| tracker_id             | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked.                                                                                            | int     | 999119             |
-| device_id              | Optional. Device ID that was used to register, e.g. IMEI. It can be used instead of `tracker_id` for models with a fixed ID.                                                               | string  | "4568005588562"    |
-| apn_name               | The name of GPRS APN of this sim card inserted into device. Max length 40.                                                                                                                 | string  | "fast.tmobile.com" |
-| apn_user               | The user of GPRS APN of this sim card inserted into device. Max length 40, can be empty.                                                                                                   | string  | "tmobile"          |
-| apn_password           | The password of GPRS APN of the sim card inserted into device. Max length 40, can be empty.                                                                                                | string  | "tmobile"          |
-| send_register_commands | Indicates send or not to send activation commands to device (via SMS or GPRS channel). If parameter is not specified or equals `null` will be used the platform settings. Default: `null`. | boolean | true or false      |
-
-#### Examples
-
-=== "cURL"
-
-    ```shell
-    curl -X POST '{{ extra.api_example_url }}/tracker/register_retry' \
-        -H 'Content-Type: application/json' \
-        -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 999119, "apn_name": "fast.tmobile.com", "apn_user": "tmobile", "apn_password": "tmobile", "send_register_commands": true}'
-    ```
-
-=== "HTTP GET"
-
-    ```
-    {{ extra.api_example_url }}/tracker/register_retry?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=999119&apn_name=fast.tmobile.com&apn_user=tmobile&apn_password=tmobile&send_register_commands=true
-    ```
-
-#### Response
-
-```json
-{
-    "success": true,
-    "value": {
-      "id": 123456,
-      "label": "tracker label",
-      "clone": false,
-      "group_id": 167,
-      "avatar_file_name" : "file name",
-      "source": {
-        "id": 234567,
-        "device_id": 9999999988888,
-        "model": "telfmb920",
-        "blocked": false,
-        "tariff_id": 345678,
-        "status_listing_id": null,
-        "creation_date": "2011-09-21",
-        "tariff_end_date": "2016-03-24",
-        "phone" : "+71234567890"
-      },
-      "tag_bindings": [{
-        "tag_id": 456789,
-        "ordinal": 4
-      }]
-    }
-}
-```
-
-For `tracker` object structure, see [tracker/](#tracker-object-structure).
-
-#### Errors
-
-* 13 – Operation not permitted – if user has insufficient rights.
-* 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
-* 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
-* 219 – Not allowed for clones of the device - if specified tracker is a clone.
-* 214 – Requested operation or parameters are not supported by the device - if device does not have GSM module.
-* 242 – Device already connected - if tracker connected to the server.
-
-
 ### `register`
 
 Registers a new tracker device. During registration, device linked with current API user's account
 and automatically configured to send data to our servers (if device model supports it).
 The panel must have installed SMS gateway.
 
-Find detailed instructions on tracker registration [there](../../../how-to/how-to-register-a-device.md).
+Find detailed instructions on tracker registration [there](../../../guides/device-management/activate-device.md).
 
 **required sub-user rights:** `tracker_register`.
 
@@ -1427,6 +1274,159 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 * 226 – Wrong ICCID. Plugin specific: if specified ICCID was not found.
 * 227 – Wrong activation code. Plugin specific: if specified activation code not found or is already activated.
 * 258 – Bundle not found. Plugin specific: if bundle not found for specified device ID.
+
+
+### `register_retry`
+
+Resends registration commands to the device. The panel must have installed SMS gateway.
+
+**required sub-user rights:** `tracker_register`.
+
+#### Parameters
+
+| name                   | description                                                                                                                                                                                | type    | format             |
+|:-----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|:-------------------|
+| tracker_id             | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked.                                                                                            | int     | 999119             |
+| device_id              | Optional. Device ID that was used to register, e.g. IMEI. It can be used instead of `tracker_id` for models with a fixed ID.                                                               | string  | "4568005588562"    |
+| apn_name               | The name of GPRS APN of this sim card inserted into device. Max length 40.                                                                                                                 | string  | "fast.tmobile.com" |
+| apn_user               | The user of GPRS APN of this sim card inserted into device. Max length 40, can be empty.                                                                                                   | string  | "tmobile"          |
+| apn_password           | The password of GPRS APN of the sim card inserted into device. Max length 40, can be empty.                                                                                                | string  | "tmobile"          |
+| send_register_commands | Indicates send or not to send activation commands to device (via SMS or GPRS channel). If parameter is not specified or equals `null` will be used the platform settings. Default: `null`. | boolean | true or false      |
+
+#### Examples
+
+=== "cURL"
+
+    ```shell
+    curl -X POST '{{ extra.api_example_url }}/tracker/register_retry' \
+        -H 'Content-Type: application/json' \
+        -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "tracker_id": 999119, "apn_name": "fast.tmobile.com", "apn_user": "tmobile", "apn_password": "tmobile", "send_register_commands": true}'
+    ```
+
+=== "HTTP GET"
+
+    ```
+    {{ extra.api_example_url }}/tracker/register_retry?hash=a6aa75587e5c59c32d347da438505fc3&tracker_id=999119&apn_name=fast.tmobile.com&apn_user=tmobile&apn_password=tmobile&send_register_commands=true
+    ```
+
+#### Response
+
+```json
+{
+    "success": true,
+    "value": {
+      "id": 123456,
+      "label": "tracker label",
+      "clone": false,
+      "group_id": 167,
+      "avatar_file_name" : "file name",
+      "source": {
+        "id": 234567,
+        "device_id": 9999999988888,
+        "model": "telfmb920",
+        "blocked": false,
+        "tariff_id": 345678,
+        "status_listing_id": null,
+        "creation_date": "2011-09-21",
+        "tariff_end_date": "2016-03-24",
+        "phone" : "+71234567890"
+      },
+      "tag_bindings": [{
+        "tag_id": 456789,
+        "ordinal": 4
+      }]
+    }
+}
+```
+
+For `tracker` object structure, see [tracker/](#tracker-object-structure).
+
+#### Errors
+
+* 13 – Operation not permitted – if user has insufficient rights.
+* 201 – Not found in the database - if there is no tracker with such ID belonging to authorized user.
+* 208 – Device blocked - if tracker exists but was blocked due to tariff restrictions or some other reason.
+* 219 – Not allowed for clones of the device - if specified tracker is a clone.
+* 214 – Requested operation or parameters are not supported by the device - if device does not have GSM module.
+* 242 – Device already connected - if tracker connected to the server.
+
+
+### `register_quick`
+
+Registers a new tracker using only IMEI. Automatic SMS commands will not be sent for a register.
+The device must be preconfigured. This API call can be used only for bundles.
+
+**required sub-user rights:** `tracker_register`.
+
+#### Parameters
+
+| name     | description                                                                                                                     | type   | format           |
+|:---------|:--------------------------------------------------------------------------------------------------------------------------------|:-------|:-----------------|
+| label    | User-defined label for this tracker. Must consist of printable characters and have length between 1 and 60.                     | string | "Courier"        |
+| group_id | Tracker group ID, 0 if tracker does not belong to any group. The specified group must exist. See [group/list](./group.md#list). | int    | 0                |
+| imei     | Tracker's IMEI.                                                                                                                 | string | "35645587458999" |
+
+#### Examples
+
+=== "cURL"
+
+    ```shell
+    curl -X POST '{{ extra.api_example_url }}/tracker/register_quick' \
+        -H 'Content-Type: application/json' \
+        -d '{"hash": "a6aa75587e5c59c32d347da438505fc3", "label": "Courier", "group_id": 0, "imei": "35645587458999"}'
+    ```
+
+=== "HTTP GET"
+
+    ```
+    {{ extra.api_example_url }}/tracker/register_quick?hash=a6aa75587e5c59c32d347da438505fc3&label=Courier&group_id=0&imei=35645587458999
+    ```
+
+#### Response
+
+```json
+{
+    "success": true,
+    "value": {
+      "id": 123456,
+      "label": "tracker label",
+      "clone": false,
+      "group_id": 167,
+      "avatar_file_name" : "file name",
+      "source": {
+        "id": 234567,
+        "device_id": 9999999988888,
+        "model": "telfmb920",
+        "blocked": false,
+        "tariff_id": 345678,
+        "status_listing_id": null,
+        "creation_date": "2011-09-21",
+        "tariff_end_date": "2016-03-24",
+        "phone" : "71234567890"
+      },
+      "tag_bindings": [{
+        "tag_id": 456789,
+        "ordinal": 4
+      }]
+    }
+}
+```
+
+For `tracker` object structure, see [tracker/](#tracker-object-structure).
+
+#### Errors
+
+* 13 – Operation not permitted – if user has insufficient rights.
+* 201 – Not found in the database - if there is no bundle with such IMEI.
+* 204 – Entity not found - if specified group does not exist.
+* 220 – Unknown device model - if specified device model does not exist.
+* 221 – Device limit exceeded - if device limit set for the user's dealer has been exceeded.
+* 222 – Plugin not found - if specified plugin not found or is not supported by device model.
+* 223 – Phone number already in use - if specified phone number already used in another device.
+* 224 – Device ID already in use - if specified device ID already registered in the system.
+* 225 – Not allowed for this legal type - if tariff of the new device is not compatible with user's legal type.
+* 226 – Wrong ICCID - if specified ICCID was not found.
+* 227 – Wrong activation code - if specified activation code not found or is already activated.
 
 
 ### `replace`
@@ -1727,7 +1727,7 @@ This command used to seal/unseal electronic lock.
 }
 ```
 
-* `command_code` - [enum](../../../getting-started.md#data-types). Can be "seal" or "unseal".
+* `command_code` - [enum](../../../getting-started/introduction.md#data-types). Can be "seal" or "unseal".
 * `special_settings` - This command is equivalent to API call [tracker/settings/special/update](./settings/special/index.md#update).
 
 ```json
@@ -1791,7 +1791,7 @@ For `tracker` object structure, see [tracker/](#tracker-object-structure).
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `raw_command/send`

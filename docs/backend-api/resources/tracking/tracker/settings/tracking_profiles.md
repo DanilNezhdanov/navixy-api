@@ -163,7 +163,7 @@ ATrack tracking profile.
     "on_stop_tracking_interval": 1
 }
 ```
-* `control_mode` - optional [enum](../../../../getting-started.md#data-types). Mode of tracking by the ACC or engine status. Can be "acc" | "engine_status".
+* `control_mode` - optional [enum](../../../../getting-started/introduction.md#data-types). Mode of tracking by the ACC or engine status. Can be "acc" | "engine_status".
 * `tracking_interval` - optional int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=65535x10, default=300.
 * `tracking_distance` - optional int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=50, max=65535, default=100.
 * `tracking_angle` - optional int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=10, max=80, default=10.
@@ -188,7 +188,7 @@ Autofon profile.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Tracking type "interval" or "power_save".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Tracking type "interval" or "power_save".
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=240.
 * `online_on_ext_power` - boolean. Connect to server when external power connected.
 * `timer1_time` - date/time. Date/time for timer1 for checking incoming SMS commands.
@@ -273,7 +273,7 @@ Tracking profile for Bofan PT502, Bofan PT521.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=10, max=90.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=50, max=5000.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=10, max=1200.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### box
@@ -512,9 +512,9 @@ name: 'cguard_asset'
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=0, max=65535, default=100.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=0, max=180, default=45.
 * `psm_interval` - int. Duration in seconds for the device to stay in the deep sleep mode. Min=0, max=65535, default=300.
-* `mode` - [enum](../../../../getting-started.md#data-types). Device working mode. `TRACKER` means that device work in the continuous mode. `ASSET` means that device work in the periodical mode and wakes up on schedule or by period.
-* `wakeup_type` - [enum](../../../../getting-started.md#data-types). Can be "SCHEDULED" | "PERIODICAL". How device wakes up in `ASSET` mode. default="PERIODICAL".
-* `wakeup_day` - [enum](../../../../getting-started.md#data-types). Can be "EVERYDAY" | "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY", default="EVERYDAY". What day to wake up if wakeup_type = `SCHEDULED`.
+* `mode` - [enum](../../../../getting-started/introduction.md#data-types). Device working mode. `TRACKER` means that device work in the continuous mode. `ASSET` means that device work in the periodical mode and wakes up on schedule or by period.
+* `wakeup_type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "SCHEDULED" | "PERIODICAL". How device wakes up in `ASSET` mode. default="PERIODICAL".
+* `wakeup_day` - [enum](../../../../getting-started/introduction.md#data-types). Can be "EVERYDAY" | "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY", default="EVERYDAY". What day to wake up if wakeup_type = `SCHEDULED`.
 * `wakeup_time` - string. What time in minutes to wake up if wakeup_type = `SCHEDULED`. Format `HH:mm`, default="12:00"
 * `wakeup_period` - int. Wakeup period in minutes. Min=15, max=65535, default=1440. Required if wakeup_type = `PERIODICAL`
 * `moving_detection` - boolean. If `true` means that device will be wakes up at the beginning of the movement. Required if mode == 'ASSET'
@@ -567,7 +567,7 @@ Tracking profile for Concox AT3, Concox AT4, Concox GT710.
 
 * `psm_interval` - int. Duration in hours for the device to stay in the deep sleep mode. Min=1, max=24. Valid values are 1, 2, 3, 4, 6, 8, 12, 24.
 * `tracking_interval` - int. Interval in minutes. Min=1, max=30.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 * `wakeup_time` - string. Format `hh:mm`.
 
 
@@ -645,7 +645,7 @@ Tracking profile for Concox GV20, Concox X1, Protrack VT05.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=0, max=180.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=50, max=10000.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=65535.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### default
@@ -660,7 +660,7 @@ Default tracking profile.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" (send tracking data based on time intervals) or "distance" (send tracking data after passing specified distance).
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" (send tracking data based on time intervals) or "distance" (send tracking data after passing specified distance).
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
 
@@ -678,7 +678,7 @@ Default profile with optional angle-based tracking.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" (send tracking data based on time intervals) or "distance" (send tracking data after passing specified distance).
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" (send tracking data based on time intervals) or "distance" (send tracking data after passing specified distance).
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
 * `tracking_angle` - optional int. If specified, the device will additionally send data when it changes direction to specified angle, e.g. 30 degrees.
@@ -698,7 +698,7 @@ Default powersave profile with optional angle-based tracking.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" (send tracking data based on time intervals) or "distance" (send tracking data after passing specified distance).
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" (send tracking data based on time intervals) or "distance" (send tracking data after passing specified distance).
 * `tracking_interval` - optional int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - optional int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
 * `tracking_angle` - optional int. If specified, the device will additionally send data when it changes direction to specified angle, e.g. 30 degrees.
@@ -840,8 +840,8 @@ Tracking profile for Eelink GPT18, Eelink TK-319.
 ```
 
 * `active_tracking_interval` - int. Active tracking interval in seconds. Min=30, max=65535.
-* `gps_working_mode` - [enum](../../../../getting-started.md#data-types). Can be "always_on" | "auto".
-* `gsm_working_mode` - [enum](../../../../getting-started.md#data-types). Can be "always_on" | "auto".
+* `gps_working_mode` - [enum](../../../../getting-started/introduction.md#data-types). Can be "always_on" | "auto".
+* `gsm_working_mode` - [enum](../../../../getting-started/introduction.md#data-types). Can be "always_on" | "auto".
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=0, max=180.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=50, max=10000.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=65535.
@@ -938,7 +938,7 @@ Queclink/Ruslink GL200/GL300 profile
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Tracking type "distance" or "interval" or "power_save".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Tracking type "distance" or "interval" or "power_save".
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees.
@@ -960,7 +960,7 @@ Queclink/Ruslink GL500 profile.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Tracking type "interval" or "power save".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Tracking type "interval" or "power save".
 * `tracking_interval` - int. Interval in minutes.
 * `wakeup_time` - int. Wakeup time for power_save mode in a format "HH:mm".
 * `psm_interval` - int. Update interval in power_save mode, hours (1, 2, 3, 4, 6, 8, 12, 24).
@@ -1017,7 +1017,7 @@ Queclink/Ruslink GV500 profile.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Tracking type when ignition is ON, "distance" or "interval".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Tracking type when ignition is ON, "distance" or "interval".
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees.
@@ -1040,7 +1040,7 @@ Queclink/Ruslink GV55Lite profile.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Tracking type when ignition is ON, "distance" or "interval".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Tracking type when ignition is ON, "distance" or "interval".
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees.
@@ -1158,7 +1158,7 @@ Tracking profile for IntelliTrac X1, IntelliTrac X1+.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=5, max=358.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=100, max=65534.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=65534.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### interval
@@ -1269,7 +1269,7 @@ Tracking profile for Jointech GP4000, Jointech GP6000, Jointech GP6000F.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=10, max=90.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=100, max=65535.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=65535.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### jointech_jt701
@@ -1299,7 +1299,7 @@ Profile for Jointech JT703B
 ```
 
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=10, max=60000.
-* `sleep_mode` - [enum](../../../../getting-started.md#data-types). Can be "enabled" | "disabled".
+* `sleep_mode` - [enum](../../../../getting-started/introduction.md#data-types). Can be "enabled" | "disabled".
 * `wakeup_timers` - optional string. Define wake-up timers when the sleep mode enabled, 1-48 timers. Local time in a standard format `HH:mm:ss`.
 * `sleep_time_in_minutes` - optional int. Define the time interval which the unit stays in the sleeping state when wake-up timers not defined. Min=10, max=1440.
 
@@ -1348,7 +1348,7 @@ Tracking profile for Laipac S911 Lola, Laipac-911BL.
 
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=50, max=100000.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=5, max=43200.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### lk200
@@ -1377,7 +1377,7 @@ Tracking profile for Logosoft Log-101.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Tracking type "interval" or "distance" or "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Tracking type "interval" or "distance" or "intelligent".
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30.
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=300.
 * `tracking_angle` - int. The device will additionally send data when it changes direction to specified angle, e.g. 30 degrees. Min=10.
@@ -1401,7 +1401,7 @@ Profile for Navixy M7.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" (send tracking data based on time intervals), "distance" (send tracking data after passing specified distance).
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" (send tracking data based on time intervals), "distance" (send tracking data after passing specified distance).
 * `psm_mode` - int. Power save mode, 0 - disable, 1 - powersave without timers, 2 - powersave with timers.
 * `tracking_interval` - optional int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - optional int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
@@ -1471,7 +1471,7 @@ Tracking profile for Megastek MT100.
 
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=50, max=100000.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=30, max=65535.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### meiligaovt
@@ -1752,8 +1752,8 @@ Profile Wireless Links for Piccolo Plus
 }
 ```
 
-* `sleep_mode` - [enum](../../../../getting-started.md#data-types). Can be "disabled" | "engine" | "asset" | "hybrid".
-* `track_by` - optional [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance". Need for disabled, engine, hybrid modes.
+* `sleep_mode` - [enum](../../../../getting-started/introduction.md#data-types). Can be "disabled" | "engine" | "asset" | "hybrid".
+* `track_by` - optional [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance". Need for disabled, engine, hybrid modes.
 * `tracking_interval` - optional int. Interval in seconds, need for disabled, engine, hybrid modes. Min=60, max=86400.
 * `tracking_distance` - optional int. Distance in meters, need for disabled, engine, hybrid modes. Min=100, max=10000.
 * `track_by_angle` - optional boolean. Need for disabled, engine, hybrid modes.
@@ -1906,7 +1906,7 @@ Tracking profile for Spetrotec i-WATCHER AVL.
 
 * `tracking_distance` - int. Distance in meters, e.g. 100 means that the device will send data every 100 meters. Min=100, max=100000.
 * `tracking_interval` - int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds. Min=60, max=86400.
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" | "distance" | "power_save" | "distance_interval_angle" | "interval_angle" | "intelligent".
 
 
 ### stab_liner
@@ -2023,8 +2023,8 @@ Teltonika FM tracking profile.
 * `tracking_distance` – int. Distance in meters 50-65535, e.g. 100 means that the device will send data every 100 meters.
 * `tracking_interval` – int. Interval in seconds 30-255, e.g. 30 means that the device will send tracking data no more frequently than every 30 seconds.
 * `on_stop_tracking_interval` – int. On stop interval in seconds 30-65535, e.g. 30 means that the device will send tracking data not less frequently than every 30 seconds.
-* `sleep_mode` – [enum](../../../../getting-started.md#data-types). Can be "disabled" | "soft_sleep".
-* `stop_detection` – [enum](../../../../getting-started.md#data-types). Can be "ignition" | "g_sensor" | "gps".
+* `sleep_mode` – [enum](../../../../getting-started/introduction.md#data-types). Can be "disabled" | "soft_sleep".
+* `stop_detection` – [enum](../../../../getting-started/introduction.md#data-types). Can be "ignition" | "g_sensor" | "gps".
 
 
 ### telfm5x
@@ -2041,7 +2041,7 @@ Tracking profile for Teltonika FM5500, Teltonika FM6320, Teltonika FMB630, Telto
 }
 ```
 
-* `sleep_mode` – [enum](../../../../getting-started.md#data-types). Can be "disabled" | "soft_sleep".
+* `sleep_mode` – [enum](../../../../getting-started/introduction.md#data-types). Can be "disabled" | "soft_sleep".
 * `sleep_timeout` - int. Can be min=300, max=2592000 seconds.
 * `tracking_angle` – int. Degrees min=0, max=180, the device will send tracking data when course changing more than defined value.
 * `tracking_distance` – int. Distance in meters min=50, max=65535, e.g. 100 means that the device will send data every 100 meters.
@@ -2252,7 +2252,7 @@ Profile for Navixy TT-1.
 }
 ```
 
-* `type` - [enum](../../../../getting-started.md#data-types). Can be "interval" (send tracking data based on time intervals), "distance" (send tracking data after passing specified distance).
+* `type` - [enum](../../../../getting-started/introduction.md#data-types). Can be "interval" (send tracking data based on time intervals), "distance" (send tracking data after passing specified distance).
 * `psm_mode` - int. power save mode, 0 - disable, 1 - powersave mode, 2 - Back-up Battery Power Saving Mode
 * `tracking_interval` - optional int. Interval in seconds, e.g. 30 means that the device will send tracking data every 30 seconds.
 * `tracking_distance` - optional int. Distance in meters, e.g. 100 means that the device will send data every 100 meters.
@@ -2369,7 +2369,7 @@ name: 'yatut_poisk'
 }
 ```
 
-* `mode` - [enum](../../../../getting-started.md#data-types). Device's working mode. Can be "DAILY" | "TEST" | "SEARCH", default="DAILY".
+* `mode` - [enum](../../../../getting-started/introduction.md#data-types). Device's working mode. Can be "DAILY" | "TEST" | "SEARCH", default="DAILY".
 * `main_wakeup_time` - string. At what time to wake up if mode == "DAILY". Format `HH:mm`, default="12:00"
-* `wakeup_period` - [enum](../../../../getting-started.md#data-types). Only values `8`, `12` or `24` (hours). Default="24"
+* `wakeup_period` - [enum](../../../../getting-started/introduction.md#data-types). Only values `8`, `12` or `24` (hours). Default="24"
 * `gps_determination_period` - int. How often to determine the position by satellites (in days). Zero (0) means on each waking up. Min=0, max=30, default=0.

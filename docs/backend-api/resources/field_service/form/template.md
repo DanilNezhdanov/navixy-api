@@ -42,9 +42,9 @@ User can assign form to the task or checkin by choosing template without the nee
 * `id` - int. An ID of a template.
 * `label` - string. User-defined template label, from 1 to 100 characters.
 * `fields` - array of multiple [form_field](./field-types.md) objects.
-* `created` - [date/time](../../../getting-started.md#data-types). Date when this template created. The read-only field.
+* `created` - [date/time](../../../getting-started/introduction.md#data-types). Date when this template created. The read-only field.
 * `submit_in_zone` - boolean. If `true`, form can be submitted only in task zone.
-* `updated` - [date/time](../../../getting-started.md#data-types). Date when this template last modified. The read-only field.
+* `updated` - [date/time](../../../getting-started/introduction.md#data-types). Date when this template last modified. The read-only field.
 * `default` - boolean. This form will be chosen default for all new tasks with form if `true`.
 
 
@@ -101,7 +101,7 @@ Gets all form templates belonging to current master user.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `create`

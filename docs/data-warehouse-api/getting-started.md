@@ -5,8 +5,7 @@ description: Overview of Navixy Data Warehouse API.
 
 # Navixy Data Warehouse API
 
-The structure of Data Warehouse API is mostly similar to [Backend API](../backend-api/getting-started.md), so if you're familiar with the basics of 
-user API, this will be a great advantage.
+The structure of Data Warehouse API is mostly similar to [Backend API](../backend-api/getting-started/introduction.md), so if you're familiar with the basics of user API, this will be a great advantage.
 
 
 ## Base URL
@@ -28,7 +27,7 @@ https://api.eu.navixy.com/dwh/v1/tracker/raw_data/read
 
 ### Authentication
 
-Authentication is handled by [Backend API](../backend-api/how-to/get-api-key.md).
+Authentication is handled by [Backend API](../backend-api/getting-started/authentication.md).
 
 
 ### Authorization

@@ -11,7 +11,7 @@ an event happened inside the geofence.
 This document describes CRUD actions for geofences. Note that geofence points handled separately because they are 
 represented by big arrays of data.
 
-Find instructions on working with geofences of different types [here](../../../how-to/how-to-create-geofences.md).
+Find instructions on working with geofences of different types [here](../../../guides/places/manage-geofences.md).
 
 
 ## Entity description
@@ -142,8 +142,8 @@ Convert batch of tab-delimited circle geofences and return list of checked geofe
 |:---------------|:--------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|
 | batch          | Batch of tab-delimited places.                                                                          | string                                               |
 | file_id        | ID of file preloaded with [/data/spreadsheet/parse](../../commons/data.md#dataspreadsheetparse) method. | string                                               |
-| fields         | Optional, array of field names, default is `["label", "address", "lat", "lng", "radius", "tags"]`.      | [enum](../../../getting-started.md#data-types) array |
-| geocoder       | Optional. Geocoder type.                                                                                | [enum](../../../getting-started.md#data-types)       |
+| fields         | Optional, array of field names, default is `["label", "address", "lat", "lng", "radius", "tags"]`.      | [enum](../../../getting-started/introduction.md#data-types) array |
+| geocoder       | Optional. Geocoder type.                                                                                | [enum](../../../getting-started/introduction.md#data-types)       |
 | default_radius | Optional. Radius for point, default is 100.                                                             | int                                                  |
 
 If 'file_id' is set – 'batch' parameter will be ignored.
@@ -461,7 +461,7 @@ Gets all geofence IDs and names within which a specified coordinates are located
 
 | name     | description                                                                                                   | type        |
 |:---------|:--------------------------------------------------------------------------------------------------------------|:------------|
-| location | Location coordinates (see: [data types description section](../../../getting-started.md#data-types) section). | JSON object |
+| location | Location coordinates (see: [data types description section](../../../getting-started/introduction.md#data-types) section). | JSON object |
 
 #### Example
 

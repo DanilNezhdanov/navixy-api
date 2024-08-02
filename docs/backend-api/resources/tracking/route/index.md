@@ -24,9 +24,9 @@ Gets route points via specified route provider.
 | end           | Location JSON object. End of route.                                                                              | JSON object                                    |
 | waypoints     | Optional. List of transitional points. `[{locationA},{locationN}]`.                                              | array of JSON objects                          |
 | point_limit   | Optional. If specified, the returned route will be simplified to contain this number of points (or less). Min=2. | int                                            |
-| provider_type | Optional. If not specified, the default user provider is used. One of "progorod", or "google", "osrm".           | [enum](../../../getting-started.md#data-types) |
+| provider_type | Optional. If not specified, the default user provider is used. One of "progorod", or "google", "osrm".           | [enum](../../../getting-started/introduction.md#data-types) |
 
-* `location` object described in [data types description section](../../../getting-started.md#data-types).
+* `location` object described in [data types description section](../../../getting-started/introduction.md#data-types).
 
 #### Example
 

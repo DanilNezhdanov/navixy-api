@@ -14,15 +14,14 @@ API path: `/history/unread`.
 
 ### `list`
 
-List less than or equal to `limit` of the latest user's unread history events. Described how it works in our 
-[instructions](../../../how-to/how-to-work-with-notifications.md#all-unread-events-of-user).
+List less than or equal to `limit` of the latest user's unread history events. Described how it works in our [guide](../../../guides/rules-notifications/work-with-notifications.md#all-unread-events-of-user).
 
 #### Parameters
 
 | name  | description                                                                                                                  | type      |
 |:------|:-----------------------------------------------------------------------------------------------------------------------------|:----------|
 | limit | Optional. Limit of entries in response.                                                                                      | int       |
-| from  | Optional. Start [date/time](../../../getting-started.md#data-types) for searching. Default `from` is **now** minus one year. | date/time |
+| from  | Optional. Start [date/time](../../../getting-started/introduction.md#data-types) for searching. Default `from` is **now** minus one year. | date/time |
 
 Default and max limit is [history.maxLimit](../dealer.md).
 
@@ -94,8 +93,8 @@ Get count of user's unread history messages starting `from` date.
 
 | name | description                                                                                                                   | type                                           |
 |:-----|:------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------|
-| from | Optional. Start [date/time](../../../getting-started.md#data-types) for searching.  Default `from` is **now** minus one year. | date/time                                      |
-| type | Optional. Type of devices that should be count. Can be "socket", "tracker", or "camera".                                      | [enum](../../../getting-started.md#data-types) |
+| from | Optional. Start [date/time](../../../getting-started/introduction.md#data-types) for searching.  Default `from` is **now** minus one year. | date/time                                      |
+| type | Optional. Type of devices that should be count. Can be "socket", "tracker", or "camera".                                      | [enum](../../../getting-started/introduction.md#data-types) |
 
 #### Examples
 
@@ -124,4 +123,4 @@ Get count of user's unread history messages starting `from` date.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.

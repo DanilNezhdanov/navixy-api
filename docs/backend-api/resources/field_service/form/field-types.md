@@ -197,7 +197,7 @@ A date picker.
 }
 ```
 
-* `value` - [date/time](../../../getting-started.md#data-types).
+* `value` - [date/time](../../../getting-started/introduction.md#data-types).
 
 
 ### Rating
@@ -246,7 +246,7 @@ File attachment. For example, document or spreadsheet.
 
 * `max_file_size` - int. Max file size, bytes, no more than 16 Mb.
 * `min_file_size` - int. Minimum file size, bytes.
-* `allowed_extensions` - [enum](../../../getting-started.md#data-types) array. List of allowed file extensions, up to 16 items, cannot be empty, but can
+* `allowed_extensions` - [enum](../../../getting-started/introduction.md#data-types) array. List of allowed file extensions, up to 16 items, cannot be empty, but can
  be null, which means "no extension limits".
 
 ##### value object:

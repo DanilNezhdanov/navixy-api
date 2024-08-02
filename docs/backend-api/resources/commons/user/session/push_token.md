@@ -7,7 +7,7 @@ description: Contains API calls to interact with push token.
 
 Contains API calls to interact with push token. 
 
-Find information about push token usage in our [instructions](../../../../how-to/getting-pushes.md).
+Find information about push token usage in our [instructions](../../../../guides/rules-notifications/get-push-notifications.md).
 
 
 ## API actions
@@ -22,7 +22,7 @@ Binds Push token with a current session.
 
 | name            | description                                                                                                                              | type                                              |
 |:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------|
-| application     | Application ID, "navixy_iphone_viewer" or "navixy_android_viewer" or "w3c_pushapi".                                                      | [enum](../../../../getting-started.md#data-types) |
+| application     | Application ID, "navixy_iphone_viewer" or "navixy_android_viewer" or "w3c_pushapi".                                                      | [enum](../../../../getting-started/introduction.md#data-types) |
 | token           | Push token or endpoint from pushSubscription, full URL like https://fcm.googleapis.com/fcm/send/f6kicrBn7S0:APA91b if your app ID is " " | string                                            |
 | parameters      | Should be used only with object with "w3c_pushapi". Contain keys from pushSubscription {"p256dh": "...", "auth":"..."}                   | JSON object                                       |
 | category_filter | Optional. Push notifications category filter, default is `*`.                                                                            | string                                            |
@@ -62,7 +62,7 @@ Prepended with minus and delimited with comma list means that all categories all
 
 #### Errors
 
-* [General](../../../../getting-started.md#error-codes) types only.
+* [General](../../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `delete`
@@ -97,5 +97,5 @@ Only session `hash`.
 
 #### Errors
 
-[General](../../../../getting-started.md#error-codes) types only.
+[General](../../../../getting-started/introduction.md#error-codes) types only.
 

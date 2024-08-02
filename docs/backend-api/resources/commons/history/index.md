@@ -7,7 +7,7 @@ description: Contains history entry object description and API calls to interact
 
 Contains history entry object description and API calls to interact with it.
 
-Find instructions on getting notifications [here](../../../how-to/how-to-work-with-notifications.md).
+Find instructions on getting notifications [here](../../../guides/rules-notifications/work-with-notifications.md).
 
 
 ## Tracker history entry
@@ -45,11 +45,11 @@ Find instructions on getting notifications [here](../../../how-to/how-to-work-wi
 ```
 
 * `id` - long. An ID of event.
-* `type` - [enum](../../../getting-started.md#data-types). Type of device. Can be "socket", "tracker", or "camera".
+* `type` - [enum](../../../getting-started/introduction.md#data-types). Type of device. Can be "socket", "tracker", or "camera".
 * `is_read` - boolean. If `true` the notification seen by user and marked as read.
 * `message` - string. Notification message.
-* `time` - [date/time](../../../getting-started.md#data-types). When this notification received.
-* `event` - [enum](../../../getting-started.md#data-types). Type of history event extension. Available event types can be obtained by [/history/type/list](./history_type.md#list) action.
+* `time` - [date/time](../../../getting-started/introduction.md#data-types). When this notification received.
+* `event` - [enum](../../../getting-started/introduction.md#data-types). Type of history event extension. Available event types can be obtained by [/history/type/list](./history_type.md#list) action.
 * `tracker_id` - int. An ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked.
 * `rule_id` - int. An ID of assigned rule.
 * `track_id` - int. An ID of a track on which the event happened.
@@ -67,7 +67,7 @@ Find instructions on getting notifications [here](../../../how-to/how-to-work-wi
     * `emergency` - boolean. `true` for emergency events with the same flag in a rule.
     * `employee_id` - int. Driver ID at the time of the event.
 
-Date/time type described in [data types description section](../../../getting-started.md#data-types).
+Date/time type described in [data types description section](../../../getting-started/introduction.md#data-types).
 
 
 ## API actions
@@ -212,5 +212,5 @@ Only API key `hash`.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
     

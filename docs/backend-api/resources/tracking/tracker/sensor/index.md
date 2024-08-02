@@ -45,7 +45,7 @@ Contains API calls to interact with sensors.
 * `divider` - double. 
 * `accuracy` - double. The minimum=`0.0`, maximum=`100.0` with step `0.25`.
 * `units` - string.
-* `units_type` - [enum](../../../../getting-started.md#data-types). Units type for a sensor.
+* `units_type` - [enum](../../../../getting-started/introduction.md#data-types). Units type for a sensor.
 * `parameters` - optional object with additional parameters.
     * `parent_ids` - optional array of parent_ids for composite sensor.
     * `volume` - double. Optional. Volume for composite sensor.
@@ -133,7 +133,7 @@ Contains API calls to interact with sensors.
 * `name` - string, max size 100. A name of sensor.
 * `input_name` - string, max size 64. A source input field name (identifier).
 * `parameters` - optional object with additional parameters.
-  * `calc_method` - [enum](../../../../getting-started.md#data-types). A method of sensor value calculation. One of this: "in_range", "identity", "bit_index".
+  * `calc_method` - [enum](../../../../getting-started/introduction.md#data-types). A method of sensor value calculation. One of this: "in_range", "identity", "bit_index".
   * `range_from` - double. Low bound of range. It is used only with "in_range" calc method.
   * `range_to` - double. High bound of range. It is used only with "in_range" calc method.
   * `bit_index` - int, [1..N]. A bit index in input field source value. It is used only with "bit_index" calc method.
@@ -444,8 +444,8 @@ It can't be used with discrete sensor.
 |:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------|:----------------------|
 | tracker_id | ID of the base tracker (aka "object_id") from which you want to read sensor's data. Tracker must belong to authorized user and not be blocked.                                   | int                                                    | 123456                |
 | sensor_id  | Sensor ID.                                                                                                                                                                       | int                                                    | 234567                |
-| from       | Start date and time for searching.                                                                                                                                               | [date/time](../../../../getting-started.md#data-types) | "2022-02-28 00:00:00" |
-| to         | End date and time for searching. Must be after `from` date. Maximum period is `maxReportTimeSpan`, default 30 days.                                                              | [date/time](../../../../getting-started.md#data-types) | "2022-03-28 23:59:00" |
+| from       | Start date and time for searching.                                                                                                                                               | [date/time](../../../../getting-started/introduction.md#data-types) | "2022-02-28 00:00:00" |
+| to         | End date and time for searching. Must be after `from` date. Maximum period is `maxReportTimeSpan`, default 30 days.                                                              | [date/time](../../../../getting-started/introduction.md#data-types) | "2022-03-28 23:59:00" |
 | raw_data   | If `true` then the response will contain raw data without any calibration and multiplication. Affects only `metering` sensors. Default value is false for backward compatibility. | boolean                                                | false                 |
 
 #### Example

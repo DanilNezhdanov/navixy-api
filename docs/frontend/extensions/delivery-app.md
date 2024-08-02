@@ -78,7 +78,7 @@ ignored with switched on autoscaling.
 To use the calls described further you have to be authorized in system as it 
 is described according to the link: [API authorization][1]
 
-[1]: ./../../backend-api/getting-started.md#authorization-and-access-levels
+[1]: ./../../backend-api/getting-started/introduction.md#authorization-and-access-levels
 
 
 ### Creating a key

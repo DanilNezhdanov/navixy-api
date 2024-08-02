@@ -37,7 +37,7 @@ geofence leaving you can open an account and switch output responsible for its w
 done automatically, isn't it?
 
 You can [create a rule in the UI](https://www.navixy.com/docs/user/web-interface-docs/rules-docs/create-rule/) or make a 
-new one [with APIs](../../backend-api/how-to/use-rules.md).
+new one [with APIs](../../backend-api/guides/rules-notifications/use-rules.md).
 
 Open the [invitation link](https://zapier.com/developer/public-invite/150604/ce501cb480b559ee2b402283f0c8faa9/)
 to get access to the Navixy triggers and actions. Without this link actions will be not in search results. Click on the
@@ -61,7 +61,7 @@ The program will request you connect an account.
 
 Insert a User Session Key. Go to Navixy Admin Panel -> Users -> User -> click Get session key in the right menu. Read 
 about limitations of [User Session Keys](https://developers.navixy.com/backend-api/resources/commons/api-keys/).
-Also, you can [create an API key](../../backend-api/how-to/get-api-key.md)
+Also, you can [create an API key](../../backend-api/getting-started/authentication.md)
 for one user and make as many Zaps as you want with it. At the same time API keys will not expire.
 
 There you should choose the correct server where your account is located. If your user account ID starts with 

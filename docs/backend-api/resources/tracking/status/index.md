@@ -9,7 +9,7 @@ Contains status object and API calls to interact with them. Working statuses use
 fact, of tracking devices owned by employees). The simplest example is "busy" | "not busy". This is a status listing 
 consisting of two elements. Different trackers can be assigned different status lists.
 
-Find details on working status usage in our [guides](../../../how-to/how-to-work-with-statuses.md).
+Find details on working status usage in our [guides](../../../guides/field-service-management/change-task-statuses.md).
 
 
 ## Status object structure

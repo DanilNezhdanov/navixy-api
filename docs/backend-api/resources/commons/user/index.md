@@ -5,8 +5,7 @@ description: A user account lets you start working with the platform as well as 
 
 # User
 
-A user account lets you start working with the platform as well as customize your experience within it. Contains user 
-object structure and API calls to interact with users.
+A user account lets you start working with the platform as well as customize your experience within it. Contains user object structure and API calls to interact with users.
 
 
 
@@ -82,20 +81,20 @@ object structure and API calls to interact with users.
     * `login` - string. User's login (in most cases it's an email address).
     * `title` - string. User first and last name or organization title.
     * `phone` - string. User phone (if not empty).
-    * `creation_date` - [date/time](../../../getting-started.md#data-types). User registration date/time.
+    * `creation_date` - [date/time](../../../getting-started/introduction.md#data-types). User registration date/time.
     * `balance` - float. User balance, max. 2 digits after dot. For sub-users, this field should be ignored.
     * `bonus` - float. User bonus, max. 2 digits after dot. For sub-users, this field should be ignored.
-    * `locale` - [enum](../../../getting-started.md#data-types). User locale, for example "en_EN".
+    * `locale` - [enum](../../../getting-started/introduction.md#data-types). User locale, for example "en_EN".
     * `demo` - boolean. `true` if this is a demo user, `false` otherwise.
     * `verified` - boolean. `true` if user email already verified.
-    * `legal_type` - [enum](../../../getting-started.md#data-types). Can bed "legal_entity", "individual" or "sole_trader".
-    * `default_geocoder` - [enum](../../../getting-started.md#data-types). User's default geocoder. Can be "google", "yandex",
+    * `legal_type` - [enum](../../../getting-started/introduction.md#data-types). Can bed "legal_entity", "individual" or "sole_trader".
+    * `default_geocoder` - [enum](../../../getting-started/introduction.md#data-types). User's default geocoder. Can be "google", "yandex",
      "progorod", "osm", or "locationiq".
-    * `route_provider` - [enum](../../../getting-started.md#data-types). User's route provider. Can be "progorod", "google" or "osrm".
-    * `time_zone` - [enum](../../../getting-started.md#data-types). User timezone name.
-    * `measurement_system` - [enum](../../../getting-started.md#data-types). User's measurement system "metric", "imperial", "us", "metric_gal_us" or "nautical".
-    * `date_format` - Optional [enum](../../../getting-started.md#data-types). Date representation. Can be "ddMMyyyy_dots"("dd.MM.yyyy", "01.12.2021"), "ddMMyyyy_slashes"("dd/MM/yyyy", "01/12/2021"), "MMddyyyy_hyphens"("MM-dd-yyyy", "12-01-2021"), "yyyyMMdd_hyphens"("yyyy-MM-dd", "2021-12-01"), "dMMMy"("d MMM y", "1 Dec 2021") or "dMMMMy"("d MMMM y", "1 December 2021")
-    * `hour_mode` - Optional [enum](../../../getting-started.md#data-types). Time representation. Can be "TWENTY_FOUR_HOURS" (24-hour clock, "HH:mm" or "HH:mm:ss", "17:45"/"17:45:46") or "TWELVE_HOURS" (12-hour clock, "h:mm a" or "h:mm:ss a", "5:45 PM"/"5:45:46 PM")
+    * `route_provider` - [enum](../../../getting-started/introduction.md#data-types). User's route provider. Can be "progorod", "google" or "osrm".
+    * `time_zone` - [enum](../../../getting-started/introduction.md#data-types). User timezone name.
+    * `measurement_system` - [enum](../../../getting-started/introduction.md#data-types). User's measurement system "metric", "imperial", "us", "metric_gal_us" or "nautical".
+    * `date_format` - Optional [enum](../../../getting-started/introduction.md#data-types). Date representation. Can be "ddMMyyyy_dots"("dd.MM.yyyy", "01.12.2021"), "ddMMyyyy_slashes"("dd/MM/yyyy", "01/12/2021"), "MMddyyyy_hyphens"("MM-dd-yyyy", "12-01-2021"), "yyyyMMdd_hyphens"("yyyy-MM-dd", "2021-12-01"), "dMMMy"("d MMM y", "1 Dec 2021") or "dMMMMy"("d MMMM y", "1 December 2021")
+    * `hour_mode` - Optional [enum](../../../getting-started/introduction.md#data-types). Time representation. Can be "TWENTY_FOUR_HOURS" (24-hour clock, "HH:mm" or "HH:mm:ss", "17:45"/"17:45:46") or "TWELVE_HOURS" (12-hour clock, "h:mm a" or "h:mm:ss a", "5:45 PM"/"5:45:46 PM")
     * `tin` - string. Taxpayer identification number aka "VATIN" or "INN".
     * `iec` - optional string. Industrial Enterprises Classifier aka "KPP". Used in Russia for legal entities.
     * `post_country` - string. Country part of user's post address.
@@ -153,7 +152,7 @@ Tries to authenticate user and get hash.
 
 It does not need authentication/hash and is available at `UNAUTHORIZED` access level.
 
-!!! note "We recommend using [API keys](../../../how-to/get-api-key.md) instead of user session hash."
+!!! note "It is strongly recommended using [API keys](../../../getting-started/authentication.md) instead of user session hash."
 
 #### Parameters
 
@@ -290,7 +289,7 @@ Gets user information and some settings.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 
@@ -333,7 +332,7 @@ Only API key `hash`.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `logout`
@@ -369,7 +368,7 @@ Only session `hash`.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 

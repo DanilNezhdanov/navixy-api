@@ -61,8 +61,8 @@ VIN, speed, consumption and other. Vehicle object should be assigned to tracker 
 * `label` - string. Vehicle's label.
 * `max_speed` - int. Maximum speed of a vehicle.
 * `model` - string. Vehicle's model.
-* `type`  [enum](../../../getting-started.md#data-types). Vehicle's type. Can be "truck" | "car" | "bus" | "special".
-* `subtype` - optional [enum](../../../getting-started.md#data-types). Depends on type, null means undefined. Possible subtypes listed below.
+* `type`  [enum](../../../getting-started/introduction.md#data-types). Vehicle's type. Can be "truck" | "car" | "bus" | "special".
+* `subtype` - optional [enum](../../../getting-started/introduction.md#data-types). Depends on type, null means undefined. Possible subtypes listed below.
 * `garage_id` - nullable int. An ID of a garage.
 * `garage_organization_name` - optional string. Garage organization name.
 * `trailer` - optional string. Information about a trailer.
@@ -79,7 +79,7 @@ VIN, speed, consumption and other. Vehicle object should be assigned to tracker 
 * `payload_width` - decimal. Payload width in millimeters.
 * `passengers` - int. A maximum count of passengers.
 * `gross_weight` - optional int. Gross weight in kilograms.
-* `fuel_type` - [enum](../../../getting-started.md#data-types). Can be "petrol" | "diesel" | "gas". 
+* `fuel_type` - [enum](../../../getting-started/introduction.md#data-types). Can be "petrol" | "diesel" | "gas". 
 * `fuel_grade` - string. Grade of fuel used in a vehicle.
 * `norm_avg_fuel_consumption` - decimal. Normal average fuel consumption in liters per 100 km.
 * `fuel_tank_volume` - int. Fuel tank capacity in liters.
@@ -277,7 +277,7 @@ Gets all vehicles belonging to user.
 
 #### Errors
 
-[General](../../../getting-started.md#error-codes) types only.
+[General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `read`

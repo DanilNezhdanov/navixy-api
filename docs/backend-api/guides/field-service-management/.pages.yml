@@ -1,6 +1,7 @@
 title: Field service management
 nav:
-  - Creating and assigning tasks: manage-tasks.md
-  - Optimizing routes: optimize-routes.md
+  - Manage tasks: manage-tasks.md
   - Creating forms for tasks: create-forms.md
-  - Chane task statuses: change-task-statuses.md
+  - Change task statuses: change-task-statuses.md
+  - Optimizing routes: optimize-routes.md
+  - Create check-ins: check-ins.md

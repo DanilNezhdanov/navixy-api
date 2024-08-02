@@ -8,7 +8,7 @@ description: Contains service task object description and API calls to work with
 Contains service task object description and API calls to interact with vehicle service works that is used for vehicle maintenance.
 Vehicle maintenance feature helps to make sure that any scheduled maintenance or urgent repair is carried out in a timely manner.
 
-Described step-by-step about service task APIs in our [guides](../../../../how-to/service-works-exploitation.md).
+Described step-by-step about service task APIs in our [guides](../../../../guides/fleet-management/service-works.md).
 
 
 ## Service task object
@@ -70,19 +70,19 @@ Described step-by-step about service task APIs in our [guides](../../../../how-t
 
 * `id` - int. An ID of created task.
 * `vehicle_label` - string. Vehicle label.
-* `status` - [enum](../../../../getting-started.md#data-types). [Status](#task-status).
+* `status` - [enum](../../../../getting-started/introduction.md#data-types). [Status](#task-status).
 * `prediction` - optional object. Legacy field, is not used anymore. check return_prediction parameter.
-    * `end_date` - [date/time](../../../../getting-started.md#data-types). Predicted end date.
+    * `end_date` - [date/time](../../../../getting-started/introduction.md#data-types). Predicted end date.
     * `wear_percentage` - int. Wear percentage.
 * `completion` - object. Date and counter's values when the task marked as done. Non-editable.
-* `completion_date` - [date/time](../../../../getting-started.md#data-types). Date when a service work completed.
+* `completion_date` - [date/time](../../../../getting-started/introduction.md#data-types). Date when a service work completed.
 * `current_position` - object. Current position values.
     * `mileage` - int. Current mileage.
-    * `date` - [date/time](../../../../getting-started.md#data-types). Current date.
+    * `date` - [date/time](../../../../getting-started/introduction.md#data-types). Current date.
     * `engine_hours` - int. Current engine hours.
 * `start` - object. Consists initial values.
     * `mileage` - int. Initial odometer value for tasks with mileage condition.
-    * `date` - [date/time](../../../../getting-started.md#data-types). Task creation date for tasks with date condition.
+    * `date` - [date/time](../../../../getting-started/introduction.md#data-types). Task creation date for tasks with date condition.
     * `engine_hours` - int. Initial engine hours value for tasks with engine hours condition.
 * `vehicle_id` - int. An ID of associated vehicle.
 * `description` - string. Name of a service work. Max 255 characters.
@@ -94,7 +94,7 @@ Described step-by-step about service task APIs in our [guides](../../../../how-t
         * `notification_interval` - int. Notify about task in specified number of kilometers.
         * `repeat_interval` - int. Interval in kilometers to set `limit` for a new repeatable task when current one is completed. If this parameter is not set, the initial `limit` value will be used.
     * `date` - optional date condition object.
-        * `end` - [date/time](../../../../getting-started.md#data-types). Task end date.
+        * `end` - [date/time](../../../../getting-started/introduction.md#data-types). Task end date.
         * `notification_interval` - int. Notify about task in specified number of days.
         * `repeat_interval` - int. Interval in days to calculate a new end date for repeatable tasks when they are completed. If this parameter is not specified, the interval will be calculated as the difference between the start date and the end date.
     * `engine_hours` - optional engine hours condition object.
@@ -184,7 +184,7 @@ A `task` object is:
         * `limit` - int. Task limit in kilometers.
         * `notification_interval` - int. Notify about task in specified number of kilometers.
     * `date` - optional date condition object.
-        * `end` - [date/time](../../../../getting-started.md#data-types). Task end date.
+        * `end` - [date/time](../../../../getting-started/introduction.md#data-types). Task end date.
         * `notification_interval` - int. Notify about task in specified number of days.
     * `engine_hours` - optional engine hours condition object.
         * `limit` - int. Task limit in hours.
@@ -217,7 +217,7 @@ A `task` object is:
 
 #### Errors
 
-* [General](../../../../getting-started.md#error-codes) types only.
+* [General](../../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `create`
@@ -294,7 +294,7 @@ Either **task_id** or **task_ids** should be specified.
 
 #### Errors
 
-* [General](../../../../getting-started.md#error-codes) types only.
+* [General](../../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `download`
@@ -305,9 +305,9 @@ Downloads pdf report of service works.
 
 | name      | description                                              | type                                              |
 |:----------|:---------------------------------------------------------|:--------------------------------------------------|
-| order_by  | Sort option. Possible values listed below.               | [enum](../../../../getting-started.md#data-types) |
+| order_by  | Sort option. Possible values listed below.               | [enum](../../../../getting-started/introduction.md#data-types) |
 | ascending | Optional. Default is `true`. Sort direction.             | boolean                                           |
-| group_by  | Optional. Group by option. Can be "vehicle" or "status". | [enum](../../../../getting-started.md#data-types) |
+| group_by  | Optional. Group by option. Can be "vehicle" or "status". | [enum](../../../../getting-started/introduction.md#data-types) |
 
 * `order_by` possible values:
     * "vehicle" - order by `vehicle_id`.
@@ -337,7 +337,7 @@ Report file.
 
 #### Errors
 
-* [General](../../../../getting-started.md#error-codes) types only.
+* [General](../../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `list`
@@ -533,7 +533,7 @@ Updates task status, and saved (on `done` **status**) current date and values of
 | name    | description                                            | type                                              |
 |:--------|:-------------------------------------------------------|:--------------------------------------------------|
 | task_id | ID of service work.                                    | int                                               |
-| status  | A new task status. Only `done` status allowed for now. | [enum](../../../../getting-started.md#data-types) |
+| status  | A new task status. Only `done` status allowed for now. | [enum](../../../../getting-started/introduction.md#data-types) |
 
 #### Examples
 

@@ -12,7 +12,7 @@ Contains list method to get event types available to user with localized descrip
 
 API path: `/history/type`.
 
-### `list`
+``### `list`
 
 Returns available history event types with localized descriptions.
 
@@ -20,7 +20,7 @@ Returns available history event types with localized descriptions.
 
 | name                | description                                                                  | type                                           |
 |:--------------------|:-----------------------------------------------------------------------------|:-----------------------------------------------|
-| locale              | Locale code to set language of descriptions.                                 | [enum](../../../getting-started.md#data-types) |
+| locale              | Locale code to set language of descriptions.                                 | [enum](../../../getting-started/introduction.md#data-types) |
 | only_tracker_events | Optional. Default is `true`. Will return only tracker type events if `true`. | boolean                                        |
 
 #### Example
@@ -50,4 +50,4 @@ Returns available history event types with localized descriptions.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.

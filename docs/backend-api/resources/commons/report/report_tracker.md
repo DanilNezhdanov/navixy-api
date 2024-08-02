@@ -3,13 +3,11 @@ title: Report tracker
 description: User reports allow acquiring all-round statistics and analytics. The summary data can be shown in various perspectives, in tables and graphs.Contains API calls to interact with tracker reports.
 ---
 
-# Report tracker
+# Report Tracker
 
-User reports allow acquiring all-round statistics and analytics. The summary data can be shown in various perspectives,
-in tables and graphs.Contains API calls to interact with tracker reports.
+User reports enable comprehensive statistics and analytics, presenting summary data in various perspectives through tables and graphs. This section details API calls to interact with tracker reports.
 
-Find information on obtaining data from report in our [how-tos](../../../how-to/how-to-obtain-information-from-report.md).
-
+For information on how to obtain data from reports, refer to the [guide](../../../guides/data-retrieval/obtain-reports.md).
 
 ## API actions
 
@@ -67,7 +65,7 @@ Retrieve generated report as a file.
 | name      | description                                                                                       | type                                           |
 |:----------|:--------------------------------------------------------------------------------------------------|:-----------------------------------------------|
 | report_id | ID of a report that should be deleted.                                                            | int                                            |
-| format    | A format of report that should be downloaded. Can be "xls", xlsx" or "pdf".                       | [enum](../../../getting-started.md#data-types) | 
+| format    | A format of report that should be downloaded. Can be "xls", xlsx" or "pdf".                       | [enum](../../../getting-started/introduction.md#data-types) | 
 | headless  | Optional parameter. Default=`false`. If need report without title page and TOC, set it to `true`. | boolean                                        |
 
 #### Examples
@@ -106,8 +104,8 @@ Requests a report generation with the specified parameters.
 
 | name        | description                                                                                                                                                          | type        |
 |:------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------|
-| from        | A string containing [date/time](../../../getting-started.md#datetime-formats).                                                                                       | string      |
-| to          | A string containing [date/time](../../../getting-started.md#datetime-formats). Specified date must be after "from" date.                                             | string      |
+| from        | A string containing [date/time](../../../getting-started/introduction.md#datetime-formats).                                                                                       | string      |
+| to          | A string containing [date/time](../../../getting-started/introduction.md#datetime-formats). Specified date must be after "from" date.                                             | string      |
 | title       | Report title. Default title will be used if null.                                                                                                                    | string      |
 | geocoder    | Which geocoder to use. See [geocoder/](../../tracking/geocoder.md).                                                                                                  | string      |
 | trackers    | List of trackers' IDs to be included in report (if report is by trackers).                                                                                           | int array   |
@@ -261,13 +259,13 @@ Returns info about all available generated or in-progress reports.
     * `plugins` - array of objects. List of parameters for all plugins which were used to generate report.
     * `locale_info` - object with information about the locale, timezone, and measurement system used for the report.
 * `percent` - int. Report readiness in percent.
-* `type` - [enum](../../../getting-started.md#data-types). Type of created report.
+* `type` - [enum](../../../getting-started/introduction.md#data-types). Type of created report.
 * `from` - string. "from" parameter from generate.
 * `to` - string. "to" parameter from generate.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `retrieve`

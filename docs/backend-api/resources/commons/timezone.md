@@ -20,7 +20,7 @@ Information about all supported timezones for the specified locale. Does not req
 
 | name   | description     | type                                        |
 |:-------|:----------------|:--------------------------------------------|
-| locale | Name of locale. | [enum](../../getting-started.md#data-types) |
+| locale | Name of locale. | [enum](../../getting-started/introduction.md#data-types) |
 
 #### Example
 
@@ -57,4 +57,4 @@ Information about all supported timezones for the specified locale. Does not req
 
 #### Errors
 
-* [General](../../getting-started.md#error-codes) types only.
+* [General](../../getting-started/introduction.md#error-codes) types only.

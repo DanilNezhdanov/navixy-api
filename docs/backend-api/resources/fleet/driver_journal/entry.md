@@ -5,10 +5,9 @@ description: Contains driver journal entry object description and API calls to w
 
 # Driver journal entry
 
-Contains driver journal entry object description and API calls to work with it. Using the driver journal, you can monitor
-trips and categorize them by status to see the full picture of transport usage. Driver Entry is an already categorized trip.
+Contains driver journal entry object description and API calls to work with it. Using the driver journal, you can monitor trips and categorize them by status to see the full picture of transport usage. Driver Entry is an already categorized trip.
 
-To get information on how-to work with driver journals refer to our [instructions](../../../how-to/driver-journals-usage.md).
+To get information on how-to work with driver journals refer to our [instructions](../../../guides/fleet-management/driver-journals.md).
 
 
 ## Driver journal entry object
@@ -40,10 +39,10 @@ To get information on how-to work with driver journals refer to our [instruction
 
 * `id` - int. An ID of an entry.
 * `tracker_id` - int. An ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked. 
-* `start_date` - [date/time](../../../getting-started.md#data-types). Start date of a journal entry.
-* `end_date` - [date/time](../../../getting-started.md#data-types). End date of a journal entry.
+* `start_date` - [date/time](../../../getting-started/introduction.md#data-types). Start date of a journal entry.
+* `end_date` - [date/time](../../../getting-started/introduction.md#data-types). End date of a journal entry.
 * `employee_id` - nullable int. An ID of employee (driver).
-* `type` - [enum](../../../getting-started.md#data-types). Type of journal entry. Can be "work", "personal", "other".
+* `type` - [enum](../../../getting-started/introduction.md#data-types). Type of journal entry. Can be "work", "personal", "other".
 * `comment` - nullable string. Comment for entry.
 * `start_location` - location object. Where entry starts.
 * `end_location` - location object. Where entry ends.
@@ -68,8 +67,8 @@ If there are no `entry_ids` in request, entries will be selected by intersecting
 | name       | description                                                                                                                        | type                                                |
 |:-----------|:-----------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|
 | tracker_id | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked.                                    | int                                                 |
-| from       | Include tracks which end after this date, e.g. "2020-10-13 00:00:00".                                                              | [date/time](../../../getting-started.md#data-types) |
-| to         | Include tracks which end after this date, e.g. "2020-10-14 00:00:00".                                                              | [date/time](../../../getting-started.md#data-types) |
+| from       | Include tracks which end after this date, e.g. "2020-10-13 00:00:00".                                                              | [date/time](../../../getting-started/introduction.md#data-types) |
+| to         | Include tracks which end after this date, e.g. "2020-10-14 00:00:00".                                                              | [date/time](../../../getting-started/introduction.md#data-types) |
 | entry_ids  | Optional. Array of entry IDs.                                                                                                      | int array                                           |
 | types      | Optional. Types of the driver journal entry, e.g. `["work", "personal", "other"]`.                                                 | string array                                        |
 | sort       | Optional. Set of sort options. Each option is a pair of column name and sorting direction, e.g. `["start_date=asc", "type=desc"]`. | string array                                        |
@@ -128,7 +127,7 @@ If there are no `entry_ids` in request, entries will be selected by intersecting
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `create`
@@ -159,7 +158,7 @@ Creates driver journal entries.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types.
+* [General](../../../getting-started/introduction.md#error-codes) types.
 
 
 ### `update`
@@ -183,7 +182,7 @@ Updates driver journal entry. Only two fields `type` and `comment` are available
 ```
 
 * `id` - int. An ID of the driver journal entry.
-* `type` - [enum](../../../getting-started.md#data-types). Type of journal entry. Can be "work", "personal", "other".
+* `type` - [enum](../../../getting-started/introduction.md#data-types). Type of journal entry. Can be "work", "personal", "other".
 * `comment` - string. New comment of the driver journal entry.
 
 #### Example
@@ -205,7 +204,7 @@ Updates driver journal entry. Only two fields `type` and `comment` are available
 #### Errors
 * 201 – if tracker not found
 * 204 - if entry not found. 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `delete`
@@ -242,7 +241,7 @@ Deletes driver journal entries.
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.
 
 
 ### `download`
@@ -255,8 +254,8 @@ and `to` parameters).
 | name                | description                                                                                                                                 | type                                                |
 |:--------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|
 | tracker_id          | ID of the tracker (aka "object_id"). Tracker must belong to authorized user and not be blocked.                                             | int                                                 |
-| from                | Include tracks which end after this date, e.g. "2020-10-13 00:00:00".                                                                       | [date/time](../../../getting-started.md#data-types) |
-| to                  | Include tracks which end after this date, e.g. "2020-10-14 00:00:00".                                                                       | [date/time](../../../getting-started.md#data-types) |
+| from                | Include tracks which end after this date, e.g. "2020-10-13 00:00:00".                                                                       | [date/time](../../../getting-started/introduction.md#data-types) |
+| to                  | Include tracks which end after this date, e.g. "2020-10-14 00:00:00".                                                                       | [date/time](../../../getting-started/introduction.md#data-types) |
 | entry_ids           | Optional. Array of entry IDs.                                                                                                               | int array                                           |
 | types               | Optional. Types of the driver journal entry, e.g. `["work", "personal", "other"]`.                                                          | string array                                        |
 | sort                | Optional. Set of [sort options](#list). Each option is a pair of column name and sorting direction, e.g. `["start_date=asc", "type=desc"]`. | string array                                        |
@@ -284,4 +283,4 @@ A driver journal report file (standard file download).
 
 #### Errors
 
-* [General](../../../getting-started.md#error-codes) types only.
+* [General](../../../getting-started/introduction.md#error-codes) types only.

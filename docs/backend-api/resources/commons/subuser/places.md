@@ -146,7 +146,7 @@ Gets a list of places to which this sub-user has access.
 | tag_ids    | Optional. Tag IDs assigned to places. Places found must include all tags from a list.                                                           | int array                                                     |
 | offset     | Optional. Offset from start of found places for pagination.                                                                                     | int                                                           |
 | limit      | Optional. Limit of found places for pagination.                                                                                                 | int                                                           |
-| order      | Optional. Specify list ordering. Can be any of `id`, `label`, `description`, `location`, `external_id`, `assigned_date`. Default order by `id`. | [enum](../../../../backend-api/getting-started.md#data-types) |
+| order      | Optional. Specify list ordering. Can be any of `id`, `label`, `description`, `location`, `external_id`, `assigned_date`. Default order by `id`. | [enum](../../../../backend-api/getting-started/introduction.md#data-types) |
 
 #### Examples
 

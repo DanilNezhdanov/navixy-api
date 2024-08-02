@@ -1,4 +1,4 @@
 title: Places
 nav:
-  - Creating geofences: create-geofences.md
-  - Managing POIs: manage-pois.md
+  - Manage geofences: manage-geofences.md
+  - Manage POIs: manage-pois.md

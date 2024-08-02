@@ -101,7 +101,7 @@ Only API key `hash`.
 * `reference` - string. Internal 2Checkout (formerly Avangate) subscription code. Pass it to /subscription/avangate/cancel.
 * `code` - string. 2Checkout (formerly Avangate) product code.
 * `quantity` - int. Count.
-* `expiration_date` - [date/time](../../getting-started.md#data-types). Next renew date/time.
+* `expiration_date` - [date/time](../../getting-started/introduction.md#data-types). Next renew date/time.
 
 #### Errors
 
