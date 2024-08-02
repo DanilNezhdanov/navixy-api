@@ -2,8 +2,7 @@
 title: Automation with Zapier
 description: Work with API using Zapier.
 ---
-
-# Zapier
+# Zapier Integration
 
 Automation is simply setting something up to run automatically. Automation is all around you, even if you don't realize 
 it. Take your smartphone, for example. You receive alerts whenever you receive a text message, voice mail, or email.
@@ -37,7 +36,7 @@ geofence leaving you can open an account and switch output responsible for its w
 done automatically, isn't it?
 
 You can [create a rule in the UI](https://www.navixy.com/docs/user/web-interface-docs/rules-docs/create-rule/) or make a 
-new one [with APIs](../../backend-api/guides/rules-notifications/use-rules.md).
+new one [with APIs](../backend-api/guides/rules-notifications/use-rules.md).
 
 Open the [invitation link](https://zapier.com/developer/public-invite/150604/ce501cb480b559ee2b402283f0c8faa9/)
 to get access to the Navixy triggers and actions. Without this link actions will be not in search results. Click on the
@@ -45,11 +44,11 @@ to get access to the Navixy triggers and actions. Without this link actions will
 
 Here you will see a dashboard with all your Zaps. You can create, update, switch on/off your Zaps.
 
-![Dashboard Zap](../assets/dashboardZap.png)
+![Dashboard Zap](../general/assets/dashboardZap.png)
 
 Let's create a Zap. In a new window we should choose our app. Specify Navixy into search line and choose it from results.
 
-![Search for Navixy app](../assets/searchApp.png)
+![Search for Navixy app](../general/assets/searchApp.png)
 
 After it, you will see the Zap's body that contains triggers and actions. Start with a trigger and choose your first in 
 a dropdown. We need to get all new geofence exit events for all user's trackers on the platform and search for new of them
@@ -57,11 +56,11 @@ constantly. So let's choose a New Tracker Event.
 
 The program will request you connect an account. 
 
-![New account connect](../assets/newAccountConnect.png)
+![New account connect](../general/assets/newAccountConnect.png)
 
 Insert a User Session Key. Go to Navixy Admin Panel -> Users -> User -> click Get session key in the right menu. Read 
 about limitations of [User Session Keys](https://developers.navixy.com/backend-api/resources/commons/api-keys/).
-Also, you can [create an API key](../../backend-api/getting-started/authentication.md)
+Also, you can [create an API key](../backend-api/getting-started/authentication.md)
 for one user and make as many Zaps as you want with it. At the same time API keys will not expire.
 
 There you should choose the correct server where your account is located. If your user account ID starts with 
@@ -72,17 +71,17 @@ There you should choose the correct server where your account is located. If you
 
 The next step is to configure a trigger. To create a simple Zap we recommend you use the New Tracker Event.
 
-![Trigger New Tracker Event](../assets/NewTrackerEvent.png)
+![Trigger New Tracker Event](../general/assets/NewTrackerEvent.png)
 
 ???+ example "Specify tracker IDs"
 
     You can find it in the admin panel. Admin Panel > Trakers -> ID column
 
-    ![Tracker ID admin panel](../assets/trackerIDPanel.png)
+    ![Tracker ID admin panel](../general/assets/trackerIDPanel.png)
 
     Or in the user inteface. Platform -> Tracking -> Show device Info -> Copy ID from the URL
 
-    ![Tracker ID user interface](../assets/trackerIDUI.png)
+    ![Tracker ID user interface](../general/assets/trackerIDUI.png)
 
 ???+ example "Set event types"
 
@@ -231,11 +230,11 @@ and use case.
 
     Is an action for devices that can change one output at a time. For example, enable immobilizer on the first output.
 
-    ![Choose set ouput](../assets/choose-set-ouput.png)
+    ![Choose set ouput](../general/assets/choose-set-ouput.png)
 
     Here we should choose an account again. It is already in the dropdown. The next what we should do is to set up action settings.
 
-    ![Set output settings](../assets/set-output-settings.png)
+    ![Set output settings](../general/assets/set-output-settings.png)
 
     Zapier asks for the next information to proceed:
 
@@ -247,11 +246,11 @@ and use case.
 
     Is an action for devices that can change outputs with one general command. If we need to change one particular output state on such devices we should specify a new state for one and previous states for others.
 
-    ![Choose set ouputs](../assets/choose-set-outputs.png)
+    ![Choose set ouputs](../general/assets/choose-set-outputs.png)
 
     Here we should choose an account again. It is already in the dropdown. The next what we should do is to set up action settings.
 
-    ![Set outputs settings](../assets/set-outputs-settings.png)
+    ![Set outputs settings](../general/assets/set-outputs-settings.png)
 
     Zapier asks for the next information from us:
 
@@ -262,11 +261,11 @@ and use case.
 
     Is an action to send any command to a device. In our example, we use the command to switch digital output 1 on the Teltonika FMB920 device.
 
-    ![Choose send gprs command](../assets/choose-send-gprs-command.png)
+    ![Choose send gprs command](../general/assets/choose-send-gprs-command.png)
 
     Here we should choose an account again. It is already in the dropdown. The next what we should do is to set up action settings.
 
-    ![Set send gprs command settings](../assets/set-send-gprs-command-settings.png)
+    ![Set send gprs command settings](../general/assets/set-send-gprs-command-settings.png)
 
     Zapier requests to specify the next info:
 
