@@ -11,11 +11,9 @@
             "id": "8fd8520147a30a51",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "general/postman.md",
-                "mode": "source",
-                "source": false
+                "file": "general/assets/choose-set-outputs.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "general/postman.md",
+                "file": "general/assets/choose-set-outputs.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "general/postman.md",
+                "file": "general/assets/choose-set-outputs.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "general/postman.md"
+                "file": "general/assets/choose-set-outputs.png"
               }
             }
           }
@@ -147,5 +145,10 @@
     }
   },
   "active": "8fd8520147a30a51",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "eco-fleet-api/getting-started.md",
+    "eco-fleet-api/resources/trackers/resampling.md",
+    "eco-fleet-api/resources/trackers/sensors/quality.md",
+    "general/postman.md"
+  ]
 }
